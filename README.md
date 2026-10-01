@@ -1,11 +1,11 @@
-# Lavie Legacy Collection (Di Sản FiveM)
+# Lavie Heritage (Di Sản FiveM)
 
 [![FiveM](https://img.shields.io/badge/FiveM-FXServer-f40552?style=flat-square)](https://fivem.net/)
 [![Framework](https://img.shields.io/badge/Framework-ESX%20Legacy-2f80ed?style=flat-square)](https://github.com/esx-framework/esx_core)
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 [![Author](https://img.shields.io/badge/Author-Lavie-blueviolet?style=flat-square)](https://github.com/lavie2k)
 
-Bộ sưu tập mã nguồn 34 FiveM resources hoàn chỉnh do **Lavie** phát triển cho máy chủ **Los Santos Legacy**, nay được chính thức đóng góp hoàn toàn miễn phí cho cộng đồng FiveM mã nguồn mở.
+Bộ sưu tập mã nguồn 34 FiveM resources hoàn chỉnh do **Lavie** phát triển cho máy chủ **Los Santos Legacy**, nay được chính thức đóng góp hoàn toàn miễn phí cho cộng đồng FiveM mã nguồn mở dưới tên **Lavie Heritage**.
 
 > *"Hôm nay tôi chính thức đóng cửa server và dành tặng toàn bộ mã nguồn do chính tay tôi viết lại cho cộng đồng FiveM như một món quà và một di sản gửi gắm lại."* — **Lavie**
 
@@ -92,7 +92,7 @@ Clone hoặc tải repository này vào thư mục `resources/` của máy chủ
 
 ```bash
 cd /path/to/server-data/resources
-git clone <repository_url> [lavie-legacy]
+git clone <repository_url> [lavie-heritage]
 ```
 
 ### 2. Import Database (SQL)
