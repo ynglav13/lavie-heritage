@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lavie Medical</title>
+    <link rel="stylesheet" href="damage/style.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container" style="display: none;">
+        <section class="report-sheet" aria-label="Kiểm Tra Thương Tích">
+            <header class="report-header">
+                <div>
+                    <p class="eyebrow">Tình Trạng Cơ Thể</p>
+                    <h1>Kiểm Tra Thương Tích</h1>
+                </div>
+                <div class="report-meta">
+                    <span>Cập Nhật: <strong id="exam-time">--:--</strong></span>
+                    <span class="esc-hint"><kbd>ESC</kbd> Đóng</span>
+                </div>
+            </header>
+
+            <section class="summary-grid">
+                <div class="summary-card summary-wide">
+                    <span>Người Được Kiểm Tra</span>
+                    <strong id="target-name">Không Xác Định</strong>
+                </div>
+                <div class="summary-card">
+                    <span>Tổng Vết Thương</span>
+                    <strong id="total-injuries">0</strong>
+                </div>
+                <div class="summary-card">
+                    <span>Nặng Nhất</span>
+                    <strong id="highest-severity">Không Có</strong>
+                </div>
+                <div class="summary-card">
+                    <span>Trạng Thái</span>
+                    <strong id="patient-status">Ổn</strong>
+                </div>
+            </section>
+
+            <section class="report-body">
+                <aside class="body-panel">
+                    <div class="panel-title">
+                        <span>Vùng Bị Thương</span>
+                        <small>Theo Mức Nặng Nhất</small>
+                    </div>
+
+                    <div class="body-map" aria-hidden="true">
+                        <div class="body-figure">
+                            <img src="images/body-xray.png" alt="">
+                            <div class="body-zones">
+                                <span id="zone-head" class="zone-marker zone-head"></span>
+                                <span id="zone-neck" class="zone-marker zone-neck"></span>
+                                <span id="zone-torso" class="zone-marker zone-torso"></span>
+                                <span id="zone-left-arm" class="zone-marker zone-left-arm"></span>
+                                <span id="zone-right-arm" class="zone-marker zone-right-arm"></span>
+                                <span id="zone-left-leg" class="zone-marker zone-left-leg"></span>
+                                <span id="zone-right-leg" class="zone-marker zone-right-leg"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="zone-tags" id="zone-tags"></div>
+
+                    <div class="legend">
+                        <span><i class="dot stable"></i> Nhẹ</span>
+                        <span><i class="dot moderate"></i> Vừa</span>
+                        <span><i class="dot critical"></i> Nặng</span>
+                    </div>
+                </aside>
+
+                <section class="findings-panel">
+                    <div class="panel-title">
+                        <span>Danh Sách Vết Thương</span>
+                        <small id="findings-summary">Không Có Dữ Liệu</small>
+                    </div>
+
+                    <div class="table-shell">
+                        <div class="list-header">
+                            <div class="col-id">#</div>
+                            <div class="col-bone">Vùng</div>
+                            <div class="col-cause">Nguyên Nhân</div>
+                            <div class="col-damage">Mức Độ</div>
+                            <div class="col-time">Ghi Nhận</div>
+                        </div>
+                        <div class="list-content" id="damage-list"></div>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
+
+    <main id="seat-selector" class="hidden" aria-hidden="true">
+        <section class="seat-card" role="dialog" aria-modal="true" aria-labelledby="seat-title">
+            <header class="seat-header">
+                <div>
+                    <h1 id="seat-title">CHỌN VỊ TRÍ</h1>
+                    <p id="seat-target">Nạn nhân ID: --</p>
+                </div>
+                <button id="seat-close" type="button" aria-label="Đóng">×</button>
+            </header>
+            <div class="seat-body">
+                <div class="seat-row">
+                    <button class="seat disabled occupied" type="button" disabled>Ghế Lái</button>
+                </div>
+                <div class="divider"></div>
+                <div id="passenger-seats" class="passenger-seats"></div>
+                <p id="seat-empty" class="hidden">Không có ghế hành khách khả dụng</p>
+            </div>
+        </section>
+    </main>
+    <script src="damage/app.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

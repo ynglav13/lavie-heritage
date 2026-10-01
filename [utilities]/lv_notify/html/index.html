@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang = "en">
+<head>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1">
+    <title>lv_notify</title>
+    <link rel = "stylesheet" href = "css/style-v2.css">
+</head>
+<body>
+    <div id = "notify-root" aria-live = "polite"></div>
+    <div id = "confirm-modal" class = "confirm-container">
+        <div class = "confirm-box">
+            <h3 class = "confirm-title" id = "modal-title"></h3>
+            <p class = "confirm-message" id = "modal-message"></p>
+            <div class = "confirm-buttons">
+                <button id = "confirm-no" class = "confirm-btn no-btn"></button>
+                <button id = "confirm-yes" class = "confirm-btn yes-btn"></button>
+            </div>
+        </div>
+    </div>
+    <script src = "js/app.js"></script>
+</body>
+</html>

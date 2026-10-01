@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Legacy Turf</title>
+</head>
+<body>
+    <main id="admin" class="admin hidden">
+        <header class="admin-header">
+            <div>
+                <p class="eyebrow">Turf Panel</p>
+                <h1>Turf control</h1>
+            </div>
+            <div class="header-actions">
+                <button id="refresh" class="icon-button" type="button" title="Làm mới">↻</button>
+                <button id="close" class="icon-button danger" type="button" title="Đóng">×</button>
+            </div>
+        </header>
+
+        <section id="active-card" class="active-card">
+            <div>
+                <span class="label">EVENT HIỆN TẠI</span>
+                <strong id="active-name">Chưa có event</strong>
+                <small id="active-state">STOPPED</small>
+            </div>
+            <div class="active-actions">
+                <button id="monitor" type="button">Monitor: OFF</button>
+                <button id="lock" class="warning" type="button">Lock</button>
+                <button id="unlock" type="button">Unlock</button>
+                <button id="stop" class="danger-fill" type="button">Stop</button>
+            </div>
+        </section>
+
+        <section class="workspace">
+            <aside class="zone-pane">
+                <div class="pane-title">
+                    <div>
+                        <span class="label">ZONE ĐÃ LƯU</span>
+                        <b id="zone-count">0 zone</b>
+                    </div>
+                    <div class="new-actions">
+                        <button id="new-circle" type="button">+ Circle</button>
+                        <button id="new-poly" type="button">+ Poly</button>
+                    </div>
+                </div>
+                <div id="zone-list" class="zone-list"></div>
+            </aside>
+
+            <section class="editor-pane">
+                <div id="empty-editor" class="empty-editor">
+                    <span>◎</span>
+                    <p>Chọn một zone hoặc tạo zone mới.</p>
+                </div>
+
+                <form id="zone-form" class="zone-form hidden">
+                    <div class="form-heading">
+                        <div>
+                            <span class="label">CẤU HÌNH</span>
+                            <h2 id="form-title">Zone</h2>
+                        </div>
+                        <span id="shape-badge" class="shape-badge">CIRCLE</span>
+                    </div>
+
+                    <label>
+                        Tên zone
+                        <input id="zone-name" maxlength="64" autocomplete="off" placeholder="Ví dụ: Sân bay Sandy">
+                    </label>
+
+                    <div id="radius-field">
+                        <label>
+                            Bán kính (m)
+                            <input id="zone-radius" type="number" min="5" max="1000" step="1" value="100">
+                        </label>
+                        <label id="recenter-field" class="check-line hidden">
+                            <input id="zone-recenter" type="checkbox">
+                            Lấy lại tâm từ vị trí đang đứng
+                        </label>
+                    </div>
+
+                    <label>
+                        Màu zone
+                        <select id="zone-color">
+                            <option value="1">Đỏ</option>
+                            <option value="2">Xanh lá</option>
+                            <option value="3" selected>Xanh dương</option>
+                            <option value="5">Vàng</option>
+                            <option value="27">Tím</option>
+                            <option value="47">Cam</option>
+                        </select>
+                    </label>
+
+                    <label class="vehicle-card">
+                        <input id="zone-vehicles" type="checkbox" checked>
+                        <span>
+                            <b>Cho phép sử dụng xe</b>
+                            <small>Nếu tắt, member sẽ bị buộc xuống và không thể lên xe trong zone.</small>
+                        </span>
+                    </label>
+
+                    <div id="event-override" class="event-override hidden">
+                        <label class="check-line">
+                            <input id="start-vehicles" type="checkbox">
+                            Cho phép xe trong lần Start này
+                        </label>
+                    </div>
+
+                    <div class="form-actions">
+                        <button id="save" class="primary" type="submit">Lưu</button>
+                        <button id="redraw" class="hidden" type="button">Vẽ lại Poly</button>
+                        <button id="start" class="success" type="button">Start Turf</button>
+                        <button id="delete" class="danger" type="button">Xóa</button>
+                    </div>
+                    <p id="form-error" class="form-error"></p>
+                </form>
+            </section>
+        </section>
+
+        <footer class="admin-footer">
+            <label>Overlay</label>
+            <select id="overlay-side"><option value="right">Bên phải</option><option value="left">Bên trái</option></select>
+            <input id="overlay-scale" type="range" min="70" max="135" value="100">
+            <span id="overlay-scale-value">100%</span>
+        </footer>
+    </main>
+
+    <aside id="observer" class="observer hidden">
+        <header>
+            <div><span>TURF OBSERVER</span><strong id="observer-zone">Zone</strong></div>
+            <div class="observer-meta"><b id="observer-state">OPEN</b><span id="observer-count">0</span></div>
+        </header>
+        <ul id="observer-list"></ul>
+    </aside>
+
+    <div id="notices" class="notices"></div>
+
+    <section id="member" class="member hidden">
+        <span id="member-kicker">BẠN ĐANG TRONG</span>
+        <strong id="member-zone">Turf</strong>
+        <small id="member-state">OPEN</small>
+    </section>
+
+    <section id="countdown" class="countdown hidden">
+        <span>QUAY LẠI TURF</span>
+        <strong id="countdown-value">10</strong>
+        <small>Bạn sẽ bị loại khi hết thời gian</small>
+    </section>
+
+    <section id="poly-editor" class="poly-editor hidden">
+        <span>POLYZONE EDITOR</span>
+        <strong><b id="poly-points">0</b> điểm</strong>
+        <p><kbd>E</kbd> Thêm điểm · <kbd>Backspace</kbd> Hoàn tác · <kbd>Enter</kbd> Lưu · <kbd>Esc</kbd> Hủy</p>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>

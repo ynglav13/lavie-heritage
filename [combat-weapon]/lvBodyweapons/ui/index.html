@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weapon Position Adjuster</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app" style="display: none;">
+        <div id="drag-overlay" style="display: none;"></div>
+
+        <div id="dashboard-view" class="nui-container">
+            <div class="panel-header">
+                <h2><i class="fa-solid fa-crosshairs"></i> WEAPON SLING SYSTEM</h2>
+                <p>Configure weapon attachment offsets on the body</p>
+                <button class="close-btn" id="btn-close-dashboard"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="dashboard-body">
+                <div class="dash-column">
+                    <h3><i class="fa-solid fa-briefcase"></i> AVAILABLE WEAPONS</h3>
+                    <div class="weapon-grid" id="inventory-weapons">
+                    </div>
+                </div>
+
+                <div class="dash-column">
+                    <h3><i class="fa-solid fa-gear"></i> ATTACHED WEAPONS</h3>
+                    <div class="config-list" id="configured-weapons">
+                    </div>
+                </div>
+            </div>
+
+            <div id="setup-section" class="setup-section" style="display: none;">
+                <h3><i class="fa-solid fa-location-dot"></i> Setup Weapon Attachment</h3>
+                <p id="setup-weapon-name">Weapon: Pistol</p>
+                <div class="control-group">
+                    <label for="setup-bone-select">Select bone/position</label>
+                    <select id="setup-bone-select">
+                    </select>
+                </div>
+                <div class="setup-actions">
+                    <button class="btn btn-secondary" id="btn-setup-cancel">Cancel</button>
+                    <button class="btn btn-primary" id="btn-setup-start">Start Adjusting</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="editor-view" class="control-panel" style="display: none;">
+            <div class="panel-header">
+                <h2>BẢNG CHỈNH VỊ TRÍ SÚNG</h2>
+                <p id="weapon-title">Pistol - Lưng</p>
+            </div>
+
+            <div class="panel-body">
+                <div class="control-group">
+                    <label for="bone-select">Vị trí gắn súng (Bone)</label>
+                    <select id="bone-select"></select>
+                </div>
+
+                <div class="control-group">
+                    <div class="control-label-row">
+                        <span>Xoay nhân vật (Rotate Character)</span>
+                        <span class="value-display" id="val-char-rot">0°</span>
+                    </div>
+                    <div class="slider-row">
+                        <input type="range" id="slider-char-rot" min="0" max="360" step="1" value="0">
+                    </div>
+                </div>
+
+                <div class="editor-toolbar">
+                    <button id="btn-undo" class="tool-btn" title="Hoàn tác (Ctrl+Z)">↶ Hoàn tác</button>
+                    <button id="btn-redo" class="tool-btn" title="Làm lại (Ctrl+Y)">↷ Làm lại</button>
+                    <button id="btn-reset-all" class="tool-btn danger-soft">Đặt lại tất cả</button>
+                </div>
+
+                <div class="control-group">
+                    <label>Bước chỉnh vị trí</label>
+                    <div id="position-steps" class="sensitivity-tabs"></div>
+                </div>
+
+                <div class="divider">VỊ TRÍ</div>
+
+                <div class="axis-control" data-axis-row="x">
+                    <div class="control-label-row"><span>X — Trái / Phải</span><button class="axis-reset" data-reset-axis="x">Reset</button></div>
+                    <div class="slider-row"><button class="adjust-btn" data-axis="x" data-dir="-">−</button><input type="range" id="slider-x"><button class="adjust-btn" data-axis="x" data-dir="+">+</button><input class="axis-number" id="input-x" type="number"></div>
+                </div>
+                <div class="axis-control" data-axis-row="y">
+                    <div class="control-label-row"><span>Y — Trước / Sau</span><button class="axis-reset" data-reset-axis="y">Reset</button></div>
+                    <div class="slider-row"><button class="adjust-btn" data-axis="y" data-dir="-">−</button><input type="range" id="slider-y"><button class="adjust-btn" data-axis="y" data-dir="+">+</button><input class="axis-number" id="input-y" type="number"></div>
+                </div>
+                <div class="axis-control" data-axis-row="z">
+                    <div class="control-label-row"><span>Z — Lên / Xuống</span><button class="axis-reset" data-reset-axis="z">Reset</button></div>
+                    <div class="slider-row"><button class="adjust-btn" data-axis="z" data-dir="-">−</button><input type="range" id="slider-z"><button class="adjust-btn" data-axis="z" data-dir="+">+</button><input class="axis-number" id="input-z" type="number"></div>
+                </div>
+
+                <div class="control-group rotation-step-group">
+                    <label>Bước chỉnh góc xoay</label>
+                    <div id="rotation-steps" class="sensitivity-tabs"></div>
+                </div>
+
+                <div class="divider">GÓC XOAY</div>
+
+                <div class="axis-control" data-axis-row="rx">
+                    <div class="control-label-row"><span>RX — Ngửa / Cúi</span><button class="axis-reset" data-reset-axis="rx">Reset</button></div>
+                    <div class="slider-row"><button class="adjust-btn" data-axis="rx" data-dir="-">−</button><input type="range" id="slider-rx"><button class="adjust-btn" data-axis="rx" data-dir="+">+</button><input class="axis-number" id="input-rx" type="number"></div>
+                </div>
+                <div class="axis-control" data-axis-row="ry">
+                    <div class="control-label-row"><span>RY — Nghiêng</span><button class="axis-reset" data-reset-axis="ry">Reset</button></div>
+                    <div class="slider-row"><button class="adjust-btn" data-axis="ry" data-dir="-">−</button><input type="range" id="slider-ry"><button class="adjust-btn" data-axis="ry" data-dir="+">+</button><input class="axis-number" id="input-ry" type="number"></div>
+                </div>
+                <div class="axis-control" data-axis-row="rz">
+                    <div class="control-label-row"><span>RZ — Xoay tròn</span><button class="axis-reset" data-reset-axis="rz">Reset</button></div>
+                    <div class="slider-row"><button class="adjust-btn" data-axis="rz" data-dir="-">−</button><input type="range" id="slider-rz"><button class="adjust-btn" data-axis="rz" data-dir="+">+</button><input class="axis-number" id="input-rz" type="number"></div>
+                </div>
+            </div>
+
+            <div class="help-section">
+                <h4>HƯỚNG DẪN DÙNG CHUỘT</h4>
+                <ul>
+                    <li><span>Kéo chuột trái:</span> Xoay tròn súng (Yaw)</li>
+                    <li><span>Kéo chuột phải:</span> Nghiêng súng (Pitch / Roll)</li>
+                    <li><span>Ctrl+Z / Ctrl+Y:</span> Hoàn tác / làm lại</li>
+                    <li><span>Enter / Esc:</span> Lưu / hủy</li>
+                </ul>
+            </div>
+
+            <div class="panel-footer">
+                <button id="btn-cancel" class="btn btn-secondary">Hủy</button>
+                <button id="btn-save" class="btn btn-primary">Lưu Vị Trí</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

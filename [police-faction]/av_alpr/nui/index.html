@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AV ALPR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container" style="display:none;">
+        <div class="header" id="header-drag">
+            <span>Automatic License Plate Recognition</span>
+            <div class="window-controls" id="edit-controls" style="display: none;">
+                <span id="btn-scale-down" title="Decrease Size">[-]</span>
+                <span id="btn-scale-up" title="Increase Size">[+]</span>
+                <span id="btn-save" title="Save & Close">&#10003;</span>
+            </div>
+        </div>
+        <div class="content">
+            <div class="left-panel">
+                <div class="selected-vehicle-panel">
+                    <div class="panel-title">Selected Vehicle</div>
+                    <img class="owner-photo" id="selected-owner-photo" alt="Owner photo" hidden>
+                    <div class="info-row">
+                        <span class="label">Plate:</span>
+                        <span class="value" id="selected-plate"></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Color:</span>
+                        <span class="value" id="selected-color"></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Model:</span>
+                        <span class="value" id="selected-model"></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Owner:</span>
+                        <span class="value" id="selected-owner"></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="label">Flags:</span>
+                        <span class="value flags-value" id="selected-flags">None</span>
+                    </div>
+                </div>
+                <div class="plate-displays-bottom">
+                    <div class="plate-display" id="camera-plate-display">
+                        <div class="plate-visual">
+                            <span class="plate-text" id="camera-visual-text"></span>
+                        </div>
+                        <div class="display-label">CAMERA</div>
+                    </div>
+                    <div class="plate-display" id="selected-plate-display">
+                        <div class="plate-visual">
+                            <span class="plate-text" id="selected-visual-text"></span>
+                        </div>
+                        <div class="display-label">SELECTED</div>
+                    </div>
+                </div>
+            </div>
+            <div class="log-section">
+                <div class="log-header">
+                    <span style="width: 35%">PLATE</span>
+                    <span style="width: 30%">COLOR</span>
+                    <span style="width: 35%">TIME</span>
+                </div>
+                <div class="log-list" id="log-list">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stalker DSR 2X Radar UI -->
+    <div id="radar-container" style="display:none;">
+        <div class="radar-device">
+            <!-- Left Side / Power Button -->
+            <div class="radar-left">
+                <button class="radar-pwr-btn" id="radar-pwr-btn">
+                    <span>PWR</span>
+                </button>
+            </div>
+            
+            <!-- Display Panel Grid -->
+            <div class="radar-displays">
+                <!-- Front Antenna Row -->
+                <div class="radar-row front-row">
+                    <div class="radar-indicators">
+                        <span class="indicator-label" id="ind-front-same">SAME</span>
+                        <span class="indicator-label" id="ind-front-opp">OPP</span>
+                        <span class="indicator-label" id="ind-front-xmit">XMIT</span>
+                    </div>
+                    <div class="radar-led-display orange-led">
+                        <span class="led-label-top">FRONT</span>
+                        <div class="led-digits" id="front-target-val">---</div>
+                    </div>
+                    <div class="radar-row-middle">
+                        <span class="indicator-arrow text-orange">&#9650;</span>
+                        <span class="indicator-arrow text-orange">&#9660;</span>
+                    </div>
+                    <div class="radar-led-display red-led">
+                        <span class="led-label-top">FAST</span>
+                        <div class="led-digits" id="front-fast-val">---</div>
+                        <span class="led-label-bottom">LOCK</span>
+                    </div>
+                </div>
+
+                <!-- Rear Antenna Row -->
+                <div class="radar-row rear-row">
+                    <div class="radar-indicators">
+                        <span class="indicator-label" id="ind-rear-same">SAME</span>
+                        <span class="indicator-label" id="ind-rear-opp">OPP</span>
+                        <span class="indicator-label" id="ind-rear-xmit">XMIT</span>
+                    </div>
+                    <div class="radar-led-display orange-led">
+                        <span class="led-label-bottom">REAR</span>
+                        <div class="led-digits" id="rear-target-val">---</div>
+                    </div>
+                    <div class="radar-row-middle">
+                        <span class="indicator-arrow text-orange">&#9650;</span>
+                        <span class="indicator-arrow text-orange">&#9660;</span>
+                    </div>
+                    <div class="radar-led-display red-led">
+                        <span class="led-label-top">FAST</span>
+                        <div class="led-digits" id="rear-fast-val">---</div>
+                        <span class="led-label-bottom">LOCK</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Patrol / Logo Section (Right Side) -->
+            <div class="radar-right">
+                <div class="radar-logo-section">
+                    <img src="lsg.png" alt="Server Logo" class="radar-server-logo" style="max-height: 25px; margin-bottom: 2px;">
+                    <div class="radar-logo-subtitle">STALKER DSR 2X</div>
+                </div>
+                <div class="patrol-display-wrapper">
+                    <div class="radar-led-display green-led">
+                        <div class="led-digits" id="patrol-speed-val">---</div>
+                        <span class="led-label-bottom">PATROL SPEED</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stalker DSR 2X Remote Control UI -->
+    <div id="remote-container" style="display:none;">
+        <div class="remote-device">
+            <!-- Top Button (Moving / Stationary) -->
+            <div class="remote-row text-center">
+                <button class="remote-btn btn-oval" id="btn-rc-power">
+                    <span class="btn-text-bold">PWR / MODE</span>
+                    <span class="btn-text-small">START / STOP</span>
+                </button>
+            </div>
+
+            <div class="remote-label">FRONT ANTENNA</div>
+
+            <!-- Front Antenna Block -->
+            <div class="remote-grid-3">
+                <button class="remote-btn btn-square" id="btn-rc-front-opp">
+                    <span class="btn-text-bold">OPP</span>
+                    <span class="btn-text-small">LK/REL</span>
+                </button>
+                <button class="remote-btn btn-square" id="btn-rc-front-xmit">
+                    <span class="btn-text-arrow">&#9650;</span>
+                    <span class="btn-text-bold">XMIT</span>
+                    <span class="btn-text-small">HOLD</span>
+                </button>
+                <button class="remote-btn btn-square" id="btn-rc-front-same">
+                    <span class="btn-text-bold">SAME</span>
+                    <span class="btn-text-small">LK/REL</span>
+                </button>
+            </div>
+
+            <div class="remote-divider"></div>
+
+            <!-- Rear Antenna Block -->
+            <div class="remote-grid-3">
+                <button class="remote-btn btn-square" id="btn-rc-rear-opp">
+                    <span class="btn-text-small">LK/REL</span>
+                    <span class="btn-text-bold">OPP</span>
+                </button>
+                <button class="remote-btn btn-square" id="btn-rc-rear-xmit">
+                    <span class="btn-text-small">HOLD</span>
+                    <span class="btn-text-bold">XMIT</span>
+                    <span class="btn-text-arrow">&#9660;</span>
+                </button>
+                <button class="remote-btn btn-square" id="btn-rc-rear-same">
+                    <span class="btn-text-small">LK/REL</span>
+                    <span class="btn-text-bold">SAME</span>
+                </button>
+            </div>
+
+            <div class="remote-label">REAR ANTENNA</div>
+
+            <!-- Menu & Blank Buttons -->
+            <div class="remote-grid-2 margin-v">
+                <button class="remote-btn btn-square" id="btn-rc-menu">
+                    <span class="btn-text-bold">MENU</span>
+                    <span class="btn-text-small">LIMIT ADJUST</span>
+                </button>
+                <button class="remote-btn btn-square" id="btn-rc-blank">
+                    <span class="btn-text-bold">CLEAR</span>
+                    <span class="btn-text-small">RELEASE LOCK</span>
+                </button>
+            </div>
+
+            <!-- Toggle Display buttons -->
+            <div class="remote-grid-2 margin-v">
+                <button class="remote-btn btn-square" id="btn-rc-toggle-alpr" style="background: #3a4b6e; border-color: #2a3854;">
+                    <span class="btn-text-bold">TOGGLE ALPR</span>
+                    <span class="btn-text-small">ON / OFF</span>
+                </button>
+                <button class="remote-btn btn-square" id="btn-rc-toggle-radar" style="background: #3a4b6e; border-color: #2a3854;">
+                    <span class="btn-text-bold">TOGGLE RADAR</span>
+                    <span class="btn-text-small">ON / OFF</span>
+                </button>
+            </div>
+
+            <!-- Dedicated Reset & Close buttons -->
+            <div class="remote-grid-2 margin-t">
+                <button class="remote-btn btn-square" id="btn-rc-reset-ui" style="background: #c05621; border-color: #7b341e;">
+                    <span class="btn-text-bold" style="color: white;">RESET UI</span>
+                    <span class="btn-text-small" style="color: #feebc8;">RESTORE</span>
+                </button>
+                <button class="remote-btn btn-square" id="btn-rc-close" style="background: #a30000; border-color: #7a0000;">
+                    <span class="btn-text-bold" style="color: white;">CLOSE</span>
+                    <span class="btn-text-small" style="color: #fed7d7;">REMOTE</span>
+                </button>
+            </div>
+
+            <!-- Footer logo -->
+            <div class="remote-footer">
+                <span class="remote-brand">STALKER</span>
+                <span class="remote-model">DSR 2X</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

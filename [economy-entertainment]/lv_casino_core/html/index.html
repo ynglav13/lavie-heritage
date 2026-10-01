@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Diamond Casino</title>
+</head>
+<body>
+    <main id="casino-hud" aria-live="polite">
+        <section id="status" class="hud-section" aria-hidden="true">
+            <div class="status-heading">
+                <span id="status-title"></span>
+                <span id="status-state"></span>
+            </div>
+            <div id="status-text"></div>
+            <div id="status-items"></div>
+        </section>
+        <section id="controls" class="hud-section" aria-hidden="true">
+            <span id="controls-hint"></span>
+            <div id="controls-actions"></div>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

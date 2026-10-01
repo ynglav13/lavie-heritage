@@ -1,0 +1,40 @@
+body
+{
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#container
+{
+    position: absolute;
+    top: 5%;
+    right: 1%;
+    display: none;
+    font-family: sans-serif;
+}
+
+#text
+{
+    font-size: 1vh;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 
+        -1px -1px 0 #000,  
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+}
+
+.yellow
+{
+    color: #f0c850;
+}
+
+.white
+{
+    color: white;
+}

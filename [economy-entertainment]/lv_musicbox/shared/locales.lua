@@ -1,0 +1,57 @@
+Locales = {}
+
+Locales.vi =
+{
+    title = 'SpityFork',
+    open = 'Mở',
+    close = 'Đóng',
+    play = 'Phát',
+    pause = 'Tạm Dừng',
+    resume = 'Tiếp Tục',
+    stop = 'Tắt',
+    volume = 'Âm Lượng',
+    loop = 'Lặp Lại',
+    favorites = 'Yêu Thích',
+    recent = 'Gần Đây',
+    source = 'Nguồn Phát',
+    no_source = 'Không có nguồn phát gần bạn',
+    input_placeholder = 'Nhập YouTube ID hoặc Link trực tiếp...',
+    now_playing = 'Đang Phát',
+    idle = 'Đang Chờ',
+    favorite = 'Lưu',
+    remove = 'Xóa',
+    carry = 'Cầm',
+    back = 'Đeo Lưng',
+    drop = 'Đặt Xuống',
+    pickup = 'Thu Hồi',
+    open_musicbox = 'Mở SpityFork',
+    placing = 'Đang Dặt Loa',
+    placed = 'Đã đặt loa',
+    picked_up = 'Đã thu hồi loa',
+    invalid_item = 'Loa không hợp lệ',
+    in_vehicle_place = 'Không thể đặt khi đang ở trong phương tiện',
+    resolver_missing = 'Chưa cấu hình YouTube Resolver',
+    invalid_input = 'Vui lòng nhập Link YouTube hoặc Link trực tiếp hợp lệ',
+    not_allowed = 'Bạn không thể điều khiển loa này',
+    too_far = 'Bạn đang ở quá xa',
+    cooldown = 'Vui lòng đợi trước khi phát bài mới',
+    already_loading = 'Bài hát này đang được chuẩn bị vui lòng đợi',
+    loading_track = 'Đang Xử Lý Bài Gát...',
+    loading_audio = 'Đã lấy được nhạc đang tải Audio...',
+    direct_url_disabled = 'Phát Link trực tiếp đang bị tắt',
+    resolver_failed = 'Không thể tải bài hát này',
+    duration_blocked = 'Bài hát này quá dài',
+    inventory_missing = 'Bạn không có vật phẩm này',
+    source_limit = 'Bạn đã đạt giới hạn đặt loa',
+    action_failed = 'Thao tác thất bại',
+    saved = 'Đã Lưu',
+    removed = 'Đã Xóa'
+}
+
+Locales.ar = Locales.en
+Locales.cz = Locales.en
+Locales.ro = Locales.en
+Locales.it = Locales.en
+Locales.fr = Locales.en
+Locales.de = Locales.en
+Locales.tr = Locales.en

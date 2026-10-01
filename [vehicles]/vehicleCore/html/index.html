@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>Vehicle Holographic Lock UI</title>
+    <link rel = "stylesheet" href = "style.css">
+    <link href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel = "stylesheet">
+</head>
+<body>
+    <div id = "hologram-container" class = "hidden">
+        <div class = "toast-panel" id = "lock-panel">
+            <div class = "icon-section">
+                <i id = "lock-icon" class ="fa-solid fa-lock"></i>
+            </div>
+            <div class = "text-section">
+                <div class = "status-title" id = "lock-title">VEHICLE LOCKED</div>
+                <div class = "status-desc" id = "lock-desc">The doors have been locked.</div>
+            </div>
+        </div>
+    </div>
+    <audio id = "crash-effect-audio" src = "bv.mp3" preload = "auto"></audio>
+    <script src = "script.js"></script>
+</body>
+</html>

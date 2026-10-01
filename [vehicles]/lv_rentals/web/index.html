@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang = "vi" class = "nui-transparent">
+<head>
+    <meta charset = "UTF-8">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
+    <title>LV Rentals</title>
+    <link rel = "preconnect" href = "https://fonts.googleapis.com">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+    <link href = "https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel = "stylesheet">
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body class = "nui-transparent">
+    <main id = "app" class="hidden">
+        <section class = "shell">
+            <header class = "topbar">
+                <div>
+                    <p id = "eyebrow">Starcar</p>
+                    <h1 id = "title">Thuê Phương Tiện</h1>
+                </div>
+                <button id = "closeBtn" class = "icon-btn" title = "Đóng">×</button>
+            </header>
+
+            <section id = "rentalView" class = "view hidden">
+                <div class = "rental-content">
+
+                    <div class = "rent-hero">
+                        <div>
+                            <h2>Thuê Phương Tiện</h2>
+                            <p>Chọn Phương Tiện Và Số Giờ thuê sau đó nhận chìa khoá sau khi thanh toán</p>
+                        </div>
+                    </div>
+
+                    <div class = "rent-fields">
+                        <label><span>Điểm Thuê</span><input id = "stationName" disabled></label>
+                        <label><span>Số Giờ Thuê</span><input id = "hours" type = "number" min = "1" step = "1" value = "1"></label>
+                        <label><span>Phí Cọc</span><input id = "stationDeposit" disabled value = "$0"></label>
+                    </div>
+
+                    <div class = "rent-grid-wrap">
+                        <main>
+                            <div class = "station-info">
+                                <div>
+                                    <span id = "stationCode"></span>
+                                    <h2 id = "stationTitle"></h2>
+                                </div>
+                            </div>
+                            <div id = "vehicleGrid" class = "vehicle-grid"></div>
+                        </main>
+                    </div>
+                </div>
+            </section>
+
+            <section id = "adminView" class = "view hidden">
+                <aside class = "admin-sidebar">
+                    <div class = "admin-profile">
+                        <div class = "avatar">LV</div>
+                        <div>
+                            <strong>Rental Core</strong>
+                            <span>Admin Panel</span>
+                        </div>
+                    </div>
+                    <nav class = "tabs">
+                        <button class = "tab active" data-tab = "stations">⌂ Stations</button>
+                        <button class = "tab" data-tab = "spawns">⌘ Spawns</button>
+                        <button class = "tab" data-tab = "vehicles">▣ Vehicles</button>
+                        <button class = "tab" data-tab = "active">◆ Active</button>
+                    </nav>
+                </aside>
+                <div class = "admin-main">
+                    <div class = "admin-head">
+                        <h2>My Dashboard</h2>
+                    </div>
+                    <div class = "admin-stats">
+                        <article><span>Stations</span><strong id = "statStations">0</strong></article>
+                        <article><span>Vehicles</span><strong id = "statVehicles">0</strong></article>
+                        <article><span>Active</span><strong id = "statActive">0</strong></article>
+                        <article><span>Max hours</span><strong id = "statHours">0</strong></article>
+                    </div>
+                    <div class = "admin-workspace">
+                        <div id = "stationsTab" class = "tab-panel"></div>
+                        <div id = "spawnsTab" class = "tab-panel hidden"></div>
+                        <div id = "vehiclesTab" class = "tab-panel hidden"></div>
+                        <div id = "activeTab" class = "tab-panel hidden"></div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <script src = "app.js"></script>
+</body>
+</html>

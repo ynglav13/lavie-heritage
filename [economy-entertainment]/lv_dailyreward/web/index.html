@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <title>Daily Pass</title>
+</head>
+<body>
+    <main id="app" class="hidden">
+        <section class="panel">
+            <button id="close" aria-label="Đóng">×</button>
+            <header>
+                <div class="brand">
+                    <img src="lsg.png" alt="Logo server">
+                    <div>
+                        <span class="eyebrow">LOS SANTOS LEGACY</span>
+                        <h1 id="title">Điểm danh hằng ngày</h1>
+                    </div>
+                </div>
+                <div class="streak">
+                    <span>TIẾN ĐỘ HIỆN TẠI</span>
+                    <strong id="streak">0 / 30 ngày</strong>
+                </div>
+            </header>
+
+            <section class="hero">
+                <div class="hero-copy">
+                    <span class="hero-kicker">DAILY PASS</span>
+                    <h2>Điểm danh đều đặn,<br><em>nhận quà liền tay</em></h2>
+                    <p id="status">Nhận thưởng hôm nay để duy trì tiến độ.</p>
+                    <div class="hero-actions">
+                        <button id="claim">ĐIỂM DANH HÔM NAY</button>
+                        <button id="claim-past-premium" class="hidden">NHẬN BÙ QUÀ PRIME</button>
+                    </div>
+                </div>
+                <div class="hero-visual" aria-hidden="true">
+                    <div class="halo halo-one"></div>
+                    <div class="halo halo-two"></div>
+                    <img src="astro.png" alt="">
+                </div>
+            </section>
+
+            <section class="rewards-section">
+                <div class="section-title">
+                    <div>
+                        <span>PHẦN THƯỞNG 30 NGÀY</span>
+                        <h3>Daily Pass</h3>
+                    </div>
+                    <p>Mốc đặc biệt: Ngày 10 · 20 · 30</p>
+                </div>
+
+                <div class="reward-track">
+                    <div class="track-label free-label">
+                        <span>MIỄN PHÍ</span>
+                        <strong id="free-label">FREE REWARDS</strong>
+                        <small>Quà miễn phí</small>
+                    </div>
+                    <div class="track-body"><div id="free-rewards" class="rewards"></div></div>
+                </div>
+
+                <div id="premium-track" class="reward-track premium-track">
+                    <div class="track-label premium-label">
+                        <span>NÂNG CAO</span>
+                        <strong id="premium-label">PRIME REWARDS</strong>
+                        <small id="premium-status">Yêu cầu Prime</small>
+                    </div>
+                    <div class="track-body"><div id="premium-rewards" class="rewards"></div></div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <script src="app.js"></script>
+</body>
+</html>

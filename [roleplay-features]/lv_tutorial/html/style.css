@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body
+{
+    background: transparent;
+    overflow: hidden;
+}
+
+.tutorial-widget
+{
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 6px;
+    padding: 16px 24px;
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    animation: slideIn 0.5s ease;
+    min-width: 280px;
+    max-width: 350px;
+}
+
+@keyframes slideIn
+{
+    from
+    {
+        transform: translate(120%, -50%);
+        opacity: 0;
+    }
+    to
+    {
+        transform: translate(0, -50%);
+        opacity: 1;
+    }
+}
+
+.title
+{
+    font-size: 13px;
+    font-weight: 600;
+    color: #a1a1aa;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+#progress-text
+{
+    color: #fff;
+    margin-left: 6px;
+}
+
+.name
+{
+    font-size: 18px;
+    font-weight: 600;
+    color: #3b82f6; /* Blue to stand out */
+}
+
+.desc
+{
+    font-size: 14px;
+    font-weight: 400;
+    color: #e4e4e7;
+    line-height: 1.4;
+}

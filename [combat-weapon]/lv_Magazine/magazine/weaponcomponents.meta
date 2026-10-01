@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CWeaponComponentInfoBlob>
+  <Infos>
+    <Item type="CWeaponComponentClipInfo">
+      <Name>COMPONENT_PISTOL_CLIP_01</Name>
+      <Model>w_pi_pistol_mag1</Model>
+      <LocName>WCT_CLIP1</LocName>
+      <LocDesc>WCD_P_CLIP1</LocDesc>
+      <AttachBone>AAPClip</AttachBone>
+      <WeaponAttachBone>WAPClip</WeaponAttachBone>
+      <AccuracyModifier type="NULL" />
+      <DamageModifier type="NULL" />
+      <bShownOnWheel value="false" />
+      <CreateObject value="true" />
+      <HudDamage value="0" />
+      <HudSpeed value="0" />
+      <HudCapacity value="0" />
+      <HudAccuracy value="0" />
+      <HudRange value="0" />
+      <AmmoInfo />
+      <ClipSize value="15" />
+      <ReloadData ref="RELOAD_DEFAULT_WITH_EMPTIES" />
+    </Item>
+    <Item type="CWeaponComponentClipInfo">
+      <Name>COMPONENT_COMBATPISTOL_CLIP_01</Name>
+      <Model>w_pi_combatpistol_mag1</Model>
+      <LocName>WCT_CLIP1</LocName>
+      <LocDesc>WCD_CP_CLIP1</LocDesc>
+      <AttachBone>AAPClip</AttachBone>
+      <WeaponAttachBone>WAPClip</WeaponAttachBone>
+      <AccuracyModifier type="NULL" />
+      <DamageModifier type="NULL" />
+      <bShownOnWheel value="false" />
+      <CreateObject value="true" />
+      <HudDamage value="0" />
+      <HudSpeed value="0" />
+      <HudCapacity value="0" />
+      <HudAccuracy value="0" />
+      <HudRange value="0" />
+      <AmmoInfo />
+      <ClipSize value="15" />
+      <ReloadData ref="RELOAD_DEFAULT_WITH_EMPTIES" />
+    </Item>
+    <Item type="CWeaponComponentClipInfo">
+      <Name>COMPONENT_APPISTOL_CLIP_01</Name>
+      <Model>w_pi_appistol_mag1</Model>
+      <LocName>WCT_CLIP1</LocName>
+      <LocDesc>WCD_AP_CLIP1</LocDesc>
+      <AttachBone>AAPClip</AttachBone>
+      <WeaponAttachBone>WAPClip</WeaponAttachBone>
+      <AccuracyModifier type="NULL" />
+      <DamageModifier type="NULL" />
+      <bShownOnWheel value="false" />
+      <CreateObject value="true" />
+      <HudDamage value="0" />
+      <HudSpeed value="0" />
+      <HudCapacity value="0" />
+      <HudAccuracy value="0" />
+      <HudRange value="0" />
+      <AmmoInfo />
+      <ClipSize value="15" />
+      <ReloadData ref="RELOAD_DEFAULT_WITH_EMPTIES" />
+    </Item>
+    <Item type="CWeaponComponentClipInfo">
+      <Name>COMPONENT_CERAMICPISTOL_CLIP_01</Name>
+      <Model>w_pi_ceramic_pistol_mag1</Model>
+      <LocName>WCT_CLIP1</LocName>
+      <LocDesc>WCD_CERP_CLIP1</LocDesc>
+      <AttachBone>AAPClip</AttachBone>
+      <WeaponAttachBone>WAPClip</WeaponAttachBone>
+      <AccuracyModifier type="NULL" />
+      <DamageModifier type="NULL" />
+      <bShownOnWheel value="false" />
+      <CreateObject value="true" />
+      <HudDamage value="0" />
+      <HudSpeed value="0" />
+      <HudCapacity value="0" />
+      <HudAccuracy value="0" />
+      <HudRange value="0" />
+      <AmmoInfo />
+      <ClipSize value="15" />
+      <ReloadData ref="RELOAD_DEFAULT_WITH_EMPTIES" />
+    </Item>
+    <Item type="CWeaponComponentClipInfo">
+      <Name>COMPONENT_PISTOLXM3_CLIP_01</Name>
+      <Model>w_pi_pistolxm3_mag1</Model>
+      <LocName>WCT_CLIP1</LocName>
+      <LocDesc>WCD_PXM3_CLIP1</LocDesc>
+      <AttachBone>AAPClip</AttachBone>
+      <WeaponAttachBone>WAPClip</WeaponAttachBone>
+      <AccuracyModifier type="NULL" />
+      <DamageModifier type="NULL" />
+      <bShownOnWheel value="false" />
+      <CreateObject value="true" />
+      <HudDamage value="0" />
+      <HudSpeed value="0" />
+      <HudCapacity value="0" />
+      <HudAccuracy value="0" />
+      <HudRange value="0" />
+      <AmmoInfo />
+      <ClipSize value="15" />
+      <ReloadData ref="RELOAD_DEFAULT_WITH_EMPTIES" />
+    </Item>
+    <Item type="CWeaponComponentClipInfo">
+      <Name>COMPONENT_PISTOL_MK2_CLIP_01</Name>
+      <Model>w_pi_pistolmk2_mag1</Model>
+      <LocName>WCT_CLIP1</LocName>
+      <LocDesc>WCD_PI_CLIP1</LocDesc>
+      <AttachBone>AAPClip</AttachBone>
+      <WeaponAttachBone>WAPClip</WeaponAttachBone>
+      <AccuracyModifier type="NULL" />
+      <DamageModifier type="NULL" />
+      <bShownOnWheel value="false" />
+      <CreateObject value="true" />
+      <HudDamage value="0" />
+      <HudSpeed value="0" />
+      <HudCapacity value="0" />
+      <HudAccuracy value="0" />
+      <HudRange value="0" />
+      <AmmoInfo />
+      <ClipSize value="15" />
+      <ReloadData ref="RELOAD_DEFAULT_WITH_EMPTIES" />
+    </Item>
+    <Item type="CWeaponComponentClipInfo">
+      <Name>COMPONENT_TECPISTOL_CLIP_01</Name>
+      <Model>w_sb_tec9_mag1</Model>
+      <LocName>WCT_CLIP1</LocName>
+      <LocDesc>WCD_TEC_CLIP1</LocDesc>
+      <AttachBone>AAPClip</AttachBone>
+      <WeaponAttachBone>WAPClip</WeaponAttachBone>
+      <AccuracyModifier type="NULL" />
+      <DamageModifier type="NULL" />
+      <bShownOnWheel value="false" />
+      <CreateObject value="true" />
+      <HudDamage value="0" />
+      <HudSpeed value="0" />
+      <HudCapacity value="0" />
+      <HudAccuracy value="0" />
+      <HudRange value="0" />
+      <AmmoInfo />
+      <ClipSize value="15" />
+      <ReloadData ref="RELOAD_DEFAULT_WITH_EMPTIES" />
+    </Item>
+  </Infos>
+  <InfoBlobName />
+</CWeaponComponentInfoBlob>

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="vi">
+<head>
+    <meta charset = "utf-8">
+    <meta name = "viewport" content="width=device-width, initial-scale=1">
+    <title>SpityFork</title>
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel = "preconnect" href = "https://fonts.googleapis.com">
+    <link rel = "preconnect" href = "https://fonts.gstatic.com" crossorigin>
+    <link href = "https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap" rel = "stylesheet">
+    <link rel = "stylesheet" href = "style.css?v=2.0.1">
+</head>
+<body>
+    <main id = "app" class = "app" aria-hidden="true">
+        <section class = "panel spotify-shell">
+            <aside class = "sidebar">
+                <div class = "brand">
+                    <div class = "brand-mark"><i class="fas fa-wave-square"></i></div>
+                    <div>
+                        <strong>SPITYFORK</strong>
+                        <span>Máy Phát Nhạc</span>
+                    </div>
+                </div>
+
+                <nav class = "library-nav" aria-label = "Thư Viện Nhạc">
+                    <button id = "tabCdn" class = "nav-item active" type = "button">
+                        <i class = "fas fa-house"></i><span>Nhạc Có Sẵn</span>
+                    </button>
+                    <button id = "tabQueue" class = "nav-item" type = "button">
+                        <i class = "fas fa-list-ol"></i><span>Hàng Đợi</span>
+                        <span id = "queueBadge" class = "queue-badge" style = "display: none;">0</span>
+                    </button>
+                    <button id = "tabFavorites" class = "nav-item" type = "button">
+                        <i class = "fas fa-heart"></i><span>Đã Yêu Thích</span>
+                    </button>
+                    <button id = "tabRecent" class = "nav-item" type = "button">
+                        <i class = "fas fa-clock-rotate-left"></i><span>Nghe Gần Đây</span>
+                    </button>
+                </nav>
+
+                <div class = "sidebar-section">
+                    <div class = "sidebar-label">Thiết Bị Đang Chọn</div>
+                    <div class = "source-control">
+                        <i class = "fas fa-volume-high"></i>
+                        <select id = "sourceSelect" class = "source-select" aria-label = "Thiết Bị Đang Chọn">
+                            <option value = "">Không Tìm Thấy Loa</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class = "sidebar-section device-section">
+                    <div class = "sidebar-label">Thiết Bị</div>
+                    <div id = "deviceActions" class="device-actions">
+                        <button data-device-action = "back" class = "action-btn" type = "button">
+                            <i class = "fas fa-person"></i><span>Đeo Lưng</span>
+                        </button>
+                        <button data-device-action = "drop" class = "action-btn" type = "button">
+                            <i class = "fas fa-arrow-down"></i><span>Đặt Xuống</span>
+                        </button>
+                        <button data-device-action="pickup" class = "action-btn" type = "button">
+                            <i class = "fas fa-box"></i><span>Thu Hồi</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class = "sidebar-tip">
+                    <i class = "fas fa-circle-info"></i>
+                    <span>Bài hát đang được tải hãy chờ đợi trong giây lát</span>
+                </div>
+            </aside>
+
+            <section class = "main-view">
+                <header class = "topbar">
+                    <div class = "search-bar">
+                        <i class = "fas fa-magnifying-glass search-icon"></i>
+                        <input id = "trackInput" class = "track-input" type = "text" autocomplete = "off" spellcheck = "false"
+                            placeholder = "Dán URL YouTube hoặc nhập tên File nhạc...">
+                        <button id = "playBtn" class = "search-button play-btn" type = "button" aria-label = "Phát Bài Hát" title = "Phát Ngay">
+                            <span>Phát Ngay</span>
+                        </button>
+                        <button id = "queueAddBtn" class = "search-button queue-add-btn" type = "button" aria-label = "Thêm Vào Hàng Đợi" title = "Thêm Vào Hàng Đợi">
+                            <span>Thêm Hàng Đợi</span>
+                        </button>
+                    </div>
+                    <button id = "closeBtn" class = "close-btn" type = "button" aria-label = "Đóng">
+                        <i class = "fas fa-xmark"></i>
+                    </button>
+                </header>
+
+                <div class = "content-scroll">
+                    <section class = "hero">
+                        <div class = "hero-art-wrap">
+                            <img id = "nowPlayingArt" src = "https://i.ibb.co/JRmHJ255/lsg.png" alt = "Ảnh Bài Hát Đang Phát">
+                            <div id = "artLoadingOverlay" class = "art-loading-overlay" style = "display: none;">
+                                <i class = "fas fa-compact-disc fa-spin"></i>
+                            </div>
+                            <div class = "art-glow"></div>
+                        </div>
+                        <div class = "hero-copy">
+                            <span class = "hero-kicker"><i class = "fas fa-music"></i> SPITYFORK</span>
+                            <h1 id = "titleText">SpityFork</h1>
+                            <p id = "statusText">Chọn Một Bài Hát Để Phát</p>
+                        </div>
+                    </section>
+
+                    <section id = "recentSection" class = "music-section" hidden>
+                        <div class = "section-heading">
+                            <div>
+                                <span class = "section-eyebrow">Quay Lại</span>
+                                <h2>Nghe Gần Đây</h2>
+                            </div>
+                        </div>
+                        <div id = "recentList" class="recent-list-horizontal"></div>
+                    </section>
+
+                    <section id = "librarySection" class = "music-section library-section">
+                        <div class = "section-heading">
+                            <div>
+                                <span class = "section-eyebrow">Bộ Sưu Tập</span>
+                                <h2 id = "libraryTitle">Nhạc Có Sẵn</h2>
+                            </div>
+                            <button id = "clearQueueBtn" class = "action-btn danger" type = "button" style = "display: none;">
+                                <i class = "fas fa-trash"></i><span>Xóa Hàng Đợi</span>
+                            </button>
+                        </div>
+                        <div id = "cdnSearchWrap" class = "search-bar cdn-search-bar" style = "margin-bottom: 16px;">
+                            <i class = "fas fa-magnifying-glass search-icon"></i>
+                            <input id = "cdnSearchInput" class = "track-input" type = "text" placeholder = "Tìm kiếm tên bài hát trong kho nhạc..." autocomplete = "off" spellcheck = "false">
+                        </div>
+                        <div id = "cdnList" class = "music-grid"></div>
+                        <div id = "queueList" class = "music-grid" style = "display: none;"></div>
+                        <div id = "favoritesList" class = "music-grid" style = "display: none;"></div>
+                    </section>
+                </div>
+            </section>
+
+            <footer class = "player-bar">
+                <div class = "now-playing-mini">
+                    <div class = "mini-art"><i class = "fas fa-music"></i></div>
+                    <div class = "track-details">
+                        <div class = "track-title-row">
+                            <span id = "footerTrackTitle">Chưa Có Bài Hát</span>
+                            <span id = "footerTrackStatus" class = "track-status-check">Đang Chờ</span>
+                        </div>
+                        <div id = "footerTrackArtist" class = "track-artist-name">SpityFork</div>
+                    </div>
+                    <button id = "favBtn" class="icon-btn favorite-control" type = "button" aria-label = "Yêu Thích">
+                        <i class = "far fa-heart"></i>
+                    </button>
+                </div>
+
+                <div class = "player-center">
+                    <div class = "player-controls">
+                        <button id = "prevBtn" class = "icon-btn" type = "button" aria-label = "Tua Lùi 10 Giây">
+                            <i class = "fas fa-backward-step"></i>
+                        </button>
+                        <button id = "playPauseBtn" class = "play-pause-btn" type = "button" aria-label = "Phát Hoặc Tạm Dừng">
+                            <i class = "fas fa-play"></i>
+                        </button>
+                        <button id = "nextBtn" class = "icon-btn" type = "button" aria-label = "Tua Tới 10 Giây">
+                            <i class = "fas fa-forward-step"></i>
+                        </button>
+                        <button id = "stopBtn" class = "icon-btn stop-control" type = "button" aria-label = "Dừng">
+                            <i class = "fas fa-stop"></i>
+                        </button>
+                    </div>
+                    <div class = "progress-row">
+                        <span id = "currentTime" class = "time-display">00:00</span>
+                        <input id = "playbackProgress" class = "progress-slider" type = "range" min = "0" max = "100" value = "0">
+                        <span id = "totalTime" class = "time-display">00:00</span>
+                    </div>
+                </div>
+
+                <div class = "player-settings">
+                    <div class = "setting-control" title = "Phạm Vi Nghe">
+                        <i class = "fas fa-tower-broadcast"></i>
+                        <input id = "distanceRange" type = "range" min = "1" max = "100" value = "25">
+                    </div>
+                    <div class = "setting-control" title = "Âm Lượng">
+                        <i class = "fas fa-volume-high"></i>
+                        <input id = "volumeRange" type = "range" min = "0" max = "100" value="75">
+                    </div>
+                </div>
+            </footer>
+        </section>
+    </main>
+
+    <script src = "app.js?v=2.0.1"></script>
+</body>
+</html>

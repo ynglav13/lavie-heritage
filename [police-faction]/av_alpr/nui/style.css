@@ -1,0 +1,690 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+@font-face {
+    font-family: 'Plate-Font';
+    src: url('fonts/plate-font.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+    user-select: none;
+}
+
+#container {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 600px;
+    /* Reduced width */
+    height: 350px;
+    /* Reduced height */
+    background: rgba(10, 15, 25, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.6);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    transform-origin: top left;
+    border-radius: 12px;
+}
+
+.header {
+    background: rgba(0, 0, 0, 0.35);
+    padding: 6px 12px;
+    /* Reduced padding */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: grab;
+    border-radius: 12px 12px 0 0;
+    font-size: 14px;
+    /* Increased font size */
+}
+
+.window-controls span {
+    margin-left: 8px;
+    /* Reduced margin */
+    cursor: pointer;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1px 6px;
+    /* Reduced padding */
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.2s;
+    font-size: 13px;
+    /* Increased font size */
+}
+
+.window-controls span:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.content {
+    display: flex;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+.left-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 12px;
+    /* Reduced padding */
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.selected-vehicle-panel {
+    position: relative;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    padding: 8px 76px 8px 8px;
+    /* Reduced padding */
+    margin-bottom: 12px;
+    /* Reduced margin */
+    flex-shrink: 0;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    border-radius: 8px;
+}
+
+.selected-vehicle-panel.locked {
+    border-color: rgba(255, 215, 0, 0.8);
+    /* Stronger yellow border */
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+    /* Stronger yellow shadow */
+}
+
+.panel-title {
+    color: #fff;
+    font-size: 15px;
+    /* Increased font size */
+    margin-bottom: 5px;
+    /* Reduced margin */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 3px;
+    /* Reduced padding */
+}
+
+.owner-photo {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 58px;
+    height: 58px;
+    object-fit: cover;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 6px;
+}
+
+.owner-photo[hidden] {
+    display: none;
+}
+
+.info-row {
+    display: flex;
+    margin-bottom: 3px;
+    /* Reduced margin */
+    align-items: center;
+}
+
+.label {
+    width: 60px;
+    color: #aaa;
+    font-size: 15px;
+    /* Increased font size */
+}
+
+.value {
+    flex: 1;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 2px 5px;
+    /* Adjusted padding */
+    font-size: 15px;
+    /* Increased font size */
+    border-radius: 4px;
+    min-height: 18px;
+    /* Adjusted min-height */
+}
+
+.flags-value.has-flags {
+    color: #ff6b6b;
+    font-weight: 700;
+}
+
+.plate-displays-bottom {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.plate-display {
+    text-align: center;
+    margin: 3px;
+    /* Reduced margin */
+}
+
+.display-label {
+    margin-top: 4px;
+    /* Reduced margin */
+    font-size: 13px;
+    /* Increased font size */
+    color: #aaa;
+}
+
+.plate-visual {
+    background-color: transparent;
+    background-image: url('plates/0.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 130px;
+    /* Slightly reduced width */
+    height: 65px;
+    /* Slightly reduced height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: none;
+    box-shadow: none;
+    border-radius: 4px;
+}
+
+.plate-text {
+    font-family: 'Plate-Font', sans-serif;
+    font-size: 36px;
+    /* Slightly reduced font size for fitting */
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin-top: 2px;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.plate-text-blue {
+    color: #182853;
+}
+
+.plate-text-black {
+    color: #111111;
+}
+
+.plate-text-red {
+    color: #a30000;
+}
+
+.plate-text-white {
+    color: #f0f0f0;
+}
+
+.plate-text-yellow {
+    color: #c99a51;
+}
+
+.plate-text-orange {
+    color: #c7a824;
+}
+
+.plate-text-default-blue {
+    color: rgba(45, 62, 98);
+}
+
+
+.log-section {
+    width: 40%;
+    background: rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.log-header {
+    display: flex;
+    padding: 7px 9px;
+    /* Reduced padding */
+    background: rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+    /* Increased font size */
+    color: #fff;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.log-list {
+    flex: 1;
+    overflow-y: auto;
+}
+
+.log-item {
+    display: flex;
+    padding: 5px 9px;
+    /* Reduced padding */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    font-size: 15px;
+    /* Increased font size */
+    cursor: pointer;
+    color: #eee;
+    transition: background 0.1s;
+}
+
+.log-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+::-webkit-scrollbar {
+    width: 4px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================================================
+   STALKER DSR 2X RADAR & REMOTE STYLES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+#radar-container {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    width: 650px;
+    height: 180px;
+    transform-origin: bottom right;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.radar-device {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #1c1d22 0%, #101114 100%);
+    border: 6px solid #2d2e35;
+    border-radius: 12px;
+    box-shadow: inset 0 2px 5px rgba(255, 255, 255, 0.05), 
+                0 15px 35px rgba(0,0,0,0.8),
+                0 0 0 1px rgba(0, 0, 0, 0.5);
+    display: flex;
+    padding: 10px;
+    box-sizing: border-box;
+    position: relative;
+    user-select: none;
+}
+
+/* Left side power button block */
+.radar-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 65px;
+    border-right: 2px dashed rgba(255, 255, 255, 0.05);
+    padding-right: 8px;
+}
+
+.radar-pwr-btn {
+    width: 48px;
+    height: 48px;
+    background: #3c914e;
+    border: 2px solid #285f34;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 11px;
+    cursor: pointer;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3),
+                0 4px 6px rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.1s ease;
+}
+
+.radar-pwr-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+}
+
+.radar-pwr-btn.active {
+    background: #4ade80;
+    box-shadow: 0 0 12px rgba(74, 222, 128, 0.5);
+    border-color: #22c55e;
+}
+
+/* Center display rows */
+.radar-displays {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0 12px;
+}
+
+.radar-row {
+    display: flex;
+    height: 68px;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 6px;
+    padding: 2px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.radar-indicators {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50px;
+    gap: 2px;
+}
+
+.indicator-label {
+    font-size: 9px;
+    font-weight: 700;
+    color: #331f00; /* Dimmed state */
+    transition: color 0.15s ease;
+}
+
+.indicator-label.active {
+    color: #ff9f0a; /* Glow state */
+    text-shadow: 0 0 8px rgba(255, 159, 10, 0.8);
+}
+
+.radar-led-display {
+    flex: 1;
+    height: 100%;
+    background: #000;
+    border: 2px solid #222;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 6px;
+    overflow: hidden;
+}
+
+.led-digits {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+/* Segment colors & glows */
+.orange-led .led-digits {
+    color: #221100; /* Dimmed background state */
+}
+.orange-led.active .led-digits {
+    color: #ff9900;
+    text-shadow: 0 0 12px rgba(255, 153, 0, 0.8);
+}
+
+.red-led .led-digits {
+    color: #220000; /* Dimmed */
+}
+.red-led.active .led-digits {
+    color: #ff2a2a;
+    text-shadow: 0 0 12px rgba(255, 42, 42, 0.8);
+}
+
+.green-led .led-digits {
+    color: #002200; /* Dimmed */
+}
+.green-led.active .led-digits {
+    color: #39ff14;
+    text-shadow: 0 0 12px rgba(57, 255, 20, 0.8);
+}
+
+.led-label-top {
+    position: absolute;
+    top: 2px;
+    font-size: 8px;
+    font-weight: bold;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+.led-label-bottom {
+    position: absolute;
+    bottom: 2px;
+    font-size: 8px;
+    font-weight: bold;
+    color: #666;
+    letter-spacing: 1px;
+}
+
+.radar-row-middle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+}
+
+.indicator-arrow {
+    font-size: 10px;
+    opacity: 0.15;
+}
+.indicator-arrow.active {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255, 153, 0, 0.8);
+}
+
+/* Right side section (Logo & Patrol display) */
+.radar-right {
+    display: flex;
+    flex-direction: column;
+    width: 140px;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 2px dashed rgba(255, 255, 255, 0.05);
+    padding-left: 8px;
+}
+
+.radar-logo-section {
+    text-align: center;
+    color: #d1d5db;
+    margin-top: 4px;
+}
+
+.radar-logo-title {
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    font-style: italic;
+}
+
+.radar-logo-subtitle {
+    font-size: 9px;
+    letter-spacing: 1px;
+    color: #ff9900;
+}
+
+.patrol-display-wrapper {
+    width: 100%;
+    height: 52px;
+    margin-bottom: 2px;
+}
+
+.patrol-display-wrapper .radar-led-display {
+    margin: 0;
+    height: 100%;
+}
+
+/* ==========================================================================
+   STALKER DSR 2X REMOTE CONTROL UI
+   ========================================================================== */
+#remote-container {
+    position: absolute;
+    top: 50%;
+    left: 80px;
+    transform: translateY(-50%);
+    width: 250px;
+    z-index: 1001;
+}
+
+.remote-device {
+    background: #111113;
+    border: 5px solid #202125;
+    border-radius: 28px;
+    padding: 22px 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.9),
+                inset 0 1px 3px rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+}
+
+.remote-row {
+    margin-bottom: 12px;
+}
+
+.remote-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 10px;
+}
+
+.remote-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.remote-label {
+    text-align: center;
+    font-size: 9px;
+    font-weight: 800;
+    color: #6a6c75;
+    letter-spacing: 1px;
+    margin: 8px 0;
+    text-transform: uppercase;
+}
+
+.remote-divider {
+    height: 2px;
+    background: rgba(255, 255, 255, 0.05);
+    margin: 8px 0;
+}
+
+.remote-btn {
+    background: #25262c;
+    border: 1px solid #1c1d22;
+    color: #e5e7eb;
+    box-shadow: 0 4px 4px rgba(0,0,0,0.4),
+                inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.08s ease;
+    user-select: none;
+    outline: none;
+}
+
+.remote-btn:active {
+    transform: scale(0.96);
+    background: #18191d;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.6);
+}
+
+.btn-oval {
+    width: 80%;
+    margin: 0 auto;
+    height: 38px;
+    border-radius: 18px;
+}
+
+.btn-square {
+    height: 48px;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.btn-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin: 0 auto;
+    background: #1b263b;
+    border-color: #0d1b2a;
+}
+
+.btn-light-blue {
+    background: #3a4b6e;
+    border-color: #2a3854;
+}
+
+.btn-text-bold {
+    font-weight: 700;
+    font-size: 10px;
+    letter-spacing: 0.5px;
+}
+
+.btn-text-small {
+    font-size: 7.5px;
+    color: #9ca3af;
+    margin-top: 1px;
+    letter-spacing: 0.2px;
+}
+
+.btn-text-arrow {
+    font-size: 12px;
+    line-height: 1;
+}
+
+.margin-v {
+    margin: 14px 0;
+}
+
+.margin-t {
+    margin-top: 14px;
+}
+
+.remote-footer {
+    text-align: center;
+    margin-top: 18px;
+    color: #6a6c75;
+}
+
+.remote-brand {
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 1px;
+    display: block;
+    font-style: italic;
+}
+
+.remote-model {
+    font-size: 8px;
+    letter-spacing: 1px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-orange {
+    color: #ff9900;
+}

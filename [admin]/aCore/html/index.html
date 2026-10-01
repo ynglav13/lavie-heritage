@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Panel</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div id="announce-overlay" class="announce-overlay hidden">
+    <div class="announce-box">
+        
+        <div class="announce-title">THÔNG BÁO ADMIN</div>
+        <div id="announce-admin" class="announce-admin"></div>
+        <div id="announce-msg" class="announce-msg"></div>
+    </div>
+</div>
+
+<div id="notify-container"></div>
+
+<div id="panel" class="panel hidden">
+    <div class="panel-header">
+        <div class="header-left">
+            <span class="header-title">ADMIN PANEL</span>
+            <span id="header-rank" class="header-rank"></span>
+        </div>
+        <div class="header-right">
+            <span id="player-count" class="player-count">0 players</span>
+            <button id="btn-close" class="btn-close" onclick="App.close()">Đóng</button>
+        </div>
+    </div>
+
+    <div class="panel-tabs">
+        <button class="tab-btn active" data-tab="players" onclick="App.switchTab('players')">
+            
+            Người Chơi
+        </button>
+        <button class="tab-btn" data-tab="bans" onclick="App.switchTab('bans')">
+            
+            Danh Sách Ban
+        </button>
+        <button class="tab-btn" data-tab="reports" onclick="App.switchTab('reports')">
+            
+            Reports
+            <span id="report-count" class="tab-badge hidden">0</span>
+        </button>
+        <button class="tab-btn" data-tab="giftcodes" onclick="App.switchTab('giftcodes')">
+            
+            Giftcodes
+        </button>
+    </div>
+
+    <div class="panel-body">
+        <!-- TAB: PLAYERS -->
+        <div id="tab-players" class="tab-content active">
+            <div class="tab-toolbar">
+                <div class="search-box">
+                    
+                    <input id="player-search" type="text" placeholder="Tìm kiếm..." oninput="App.filterPlayers(this.value)">
+                </div>
+                <button class="btn-refresh" onclick="API.getPlayers()">
+                    
+                    Làm mới
+                </button>
+            </div>
+            <div class="split-view">
+                <div id="player-list" class="player-list"></div>
+                <div id="player-detail" class="player-detail">
+                    <div class="empty-state">
+                        
+                        <p>Chọn người chơi để xem thông tin</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TAB: BANS -->
+        <div id="tab-bans" class="tab-content">
+            <div class="tab-toolbar">
+                <span class="total-label" id="ban-total">0 bản ghi</span>
+                <button class="btn-refresh" onclick="API.getBans(App.banPage)">
+                    
+                    Tải lại
+                </button>
+            </div>
+            <div id="ban-list" class="record-list"></div>
+            <div class="pagination">
+                <button onclick="App.prevBanPage()" id="ban-prev">‹ Trước</button>
+                <span id="ban-page-info">Trang 1</span>
+                <button onclick="App.nextBanPage()" id="ban-next">Sau ›</button>
+            </div>
+        </div>
+
+        <!-- TAB: REPORTS -->
+        <div id="tab-reports" class="tab-content">
+            <div class="tab-toolbar">
+                <span class="total-label" id="report-total">0 report</span>
+                <button class="btn-refresh" onclick="API.getReports()">
+                    
+                    Tải lại
+                </button>
+            </div>
+            <div id="report-list" class="report-list"></div>
+        </div>
+
+        <!-- TAB: GIFTCODES -->
+        <div id="tab-giftcodes" class="tab-content">
+            <div class="tab-toolbar">
+                <span class="total-label" id="giftcode-total">0 giftcode</span>
+                <button class="btn-refresh" onclick="API.getGiftcodes()">
+                    
+                    Tải lại
+                </button>
+            </div>
+            <div id="giftcode-list" class="record-list"></div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Action Modal -->
+<div id="action-modal" class="modal hidden">
+    <div class="modal-box">
+        <div class="modal-header">
+            <span id="modal-title">Thao tác</span>
+            <button onclick="App.closeModal()" class="modal-close">Đóng</button>
+        </div>
+        <div class="modal-body" id="modal-body"></div>
+        <div class="modal-footer">
+            <button onclick="App.closeModal()" class="btn-secondary">Hủy</button>
+            <button id="modal-confirm" class="btn-danger">Xác nhận</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

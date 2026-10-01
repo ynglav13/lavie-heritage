@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Andreas ID Card</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400;700&family=Roboto+Condensed:wght@300;400;700&family=Share+Tech+Mono&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="app">
+
+        <!-- ===================== FORM VIEW ===================== -->
+        <div id="form-view" class="view hidden">
+            <div class="paper-overlay" id="form-overlay"></div>
+            <div class="form-paper">
+
+                <!-- Paper Header -->
+                <div class="paper-header">
+                    <div class="header-main">
+                        <div class="paper-seal">
+                            <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="25" cy="25" r="23" fill="none" stroke="#c8961e" stroke-width="1.5" />
+                                <circle cx="25" cy="25" r="18" fill="rgba(200,150,30,0.15)" stroke="#c8961e"
+                                    stroke-width="0.8" />
+                                <circle cx="25" cy="16" r="6" fill="#c8961e" opacity="0.9" />
+                                <path d="M9,38 L16,24 L22,32 L25,20 L28,32 L34,22 L41,38Z" fill="none" stroke="#c8961e"
+                                    stroke-width="1.2" stroke-linejoin="round" />
+                                <path d="M9,40 L16,27 L22,34 L25,23 L28,34 L34,25 L41,40Z"
+                                    fill="rgba(200,150,30,0.3)" />
+                                <text x="25" y="48" text-anchor="middle" font-size="5" fill="#c8961e"
+                                    font-family="Arial" font-weight="bold" letter-spacing="0.8">★ ★ ★</text>
+                            </svg>
+                        </div>
+                        <div class="header-text-block">
+                            <div class="header-state">STATE OF SAN ANDREAS</div>
+                            <div class="header-dept">Department of Motor Vehicles</div>
+                            <div class="header-title">APPLICATION FOR IDENTIFICATION CARD</div>
+                            <div class="header-note">(Fill in CAPITAL LETTERS only • Đọc kỹ trước khi điền)</div>
+                        </div>
+                    </div>
+                    <div class="header-photo-col">
+                        <div class="paper-photo-box" id="paper-photo-box">
+                            <img id="photo-preview-img" alt="Photograph">
+                            <div id="photo-placeholder" class="paper-photo-ph">
+                                <i class="fas fa-camera"></i>
+                                <span>Photograph</span>
+                            </div>
+                        </div>
+                        <div class="paper-form-num">Form SA-DVM-2024</div>
+                    </div>
+                    <button class="paper-close-btn" id="form-close-btn" title="Đóng (ESC)">✕</button>
+                </div>
+
+                <!-- Instructions bar -->
+                <div class="paper-instructions">
+                    <i class="fas fa-circle-info"></i>
+                    &nbsp;Các ô có dấu (<span class="req-star">*</span>) là bắt buộc. &nbsp;|&nbsp; Phí cấp thẻ:
+                    <strong>$5,000</strong> (thu khi được sĩ quan duyệt). &nbsp;|&nbsp; Ảnh phải là ảnh 3x4 được sự chấp
+                    nhận của sĩ quan mà bạn đăng ký.
+                </div>
+
+                <!-- Form table -->
+                <div class="paper-body">
+                    <table class="paper-table">
+                        <tbody>
+                            <tr class="paper-row">
+                                <td class="r-num">1</td>
+                                <td class="r-label">Họ và Tên <span class="req-star">*</span></td>
+                                <td class="r-input name-cell">
+                                    <div class="name-pair">
+                                        <div class="name-sub">
+                                            <span class="sub-tag">LN</span>
+                                            <input type="text" id="f-lastname" class="paper-input"
+                                                placeholder="HỌ (LAST NAME)">
+                                        </div>
+                                        <div class="name-sub">
+                                            <span class="sub-tag">FN</span>
+                                            <input type="text" id="f-firstname" class="paper-input"
+                                                placeholder="TÊN (FIRST NAME)">
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr class="paper-row">
+                                <td class="r-num">2</td>
+                                <td class="r-label">Ngày Sinh <span class="req-star">*</span></td>
+                                <td class="r-input">
+                                    <input type="date" id="f-dob" class="paper-input paper-date">
+                                </td>
+                            </tr>
+                            <tr class="paper-row">
+                                <td class="r-num">3</td>
+                                <td class="r-label">Giới Tính</td>
+                                <td class="r-input">
+                                    <div class="sex-row" id="sex-row">
+                                        <label class="sex-opt"><input type="radio" name="sex" id="sex-m" value="M">
+                                            <span class="sex-box"></span> Male (Nam)</label>
+                                        <label class="sex-opt"><input type="radio" name="sex" id="sex-f" value="F">
+                                            <span class="sex-box"></span> Female (Nữ)</label>
+                                        <span class="sex-auto-note">(Auto từ nhân vật)</span>
+                                    </div>
+                                    <input type="hidden" id="f-sex" value="M">
+                                </td>
+                            </tr>
+                            <tr class="paper-row">
+                                <td class="r-num">3a</td>
+                                <td class="r-label">Quốc Tịch <span class="req-star">*</span></td>
+                                <td class="r-input">
+                                    <select id="f-nationality" class="paper-select">
+                                        <option value="USA">United States (USA)</option>
+                                        <option value="CAN">Canada (CAN)</option>
+                                        <option value="MEX">Mexico (MEX)</option>
+                                        <option value="BRA">Brazil (BRA)</option>
+                                        <option value="UK">United Kingdom (UK)</option>
+                                        <option value="GER">Germany (GER)</option>
+                                        <option value="FRA">France (FRA)</option>
+                                        <option value="ITA">Italy (ITA)</option>
+                                        <option value="ESP">Spain (ESP)</option>
+                                        <option value="POL">Poland (POL)</option>
+                                        <option value="NED">Netherlands (NED)</option>
+                                        <option value="BEL">Belgium (BEL)</option>
+                                        <option value="SWE">Sweden (SWE)</option>
+                                        <option value="NOR">Norway (NOR)</option>
+                                        <option value="DEN">Denmark (DEN)</option>
+                                        <option value="FIN">Finland (FIN)</option>
+                                        <option value="SUI">Switzerland (SUI)</option>
+                                        <option value="AUT">Austria (AUT)</option>
+                                        <option value="AUS">Australia (AUS)</option>
+                                        <option value="NZ">New Zealand (NZ)</option>
+                                        <option value="JPN">Japan (JPN)</option>
+                                        <option value="CHN">China (CHN)</option>
+                                        <option value="KOR">South Korea (KOR)</option>
+                                        <option value="IND">India (IND)</option>
+                                        <option value="TUR">Turkey (TUR)</option>
+                                        <option value="KSA">Saudi Arabia (KSA)</option>
+                                        <option value="UAE">United Arab Emirates (UAE)</option>
+                                        <option value="RSA">South Africa (RSA)</option>
+                                        <option value="ARG">Argentina (ARG)</option>
+                                        <option value="CHI">Chile (CHI)</option>
+                                        <option value="RUS">Russia Federation (RUS)</option>
+                                        <option value="VIETNAM">Việt Nam (VIE)</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="paper-row">
+                                <td class="r-num">4</td>
+                                <td class="r-label">Màu Tóc</td>
+                                <td class="r-input">
+                                    <select id="f-hair" class="paper-select">
+                                        <option value="BLK">Đen — Black (BLK)</option>
+                                        <option value="BRN">Nâu — Brown (BRN)</option>
+                                        <option value="BLD">Vàng — Blonde (BLD)</option>
+                                        <option value="RED">Đỏ — Red (RED)</option>
+                                        <option value="GRY">Xám — Gray (GRY)</option>
+                                        <option value="WHT">Trắng — White (WHT)</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="paper-row">
+                                <td class="r-num">5</td>
+                                <td class="r-label">Màu Mắt</td>
+                                <td class="r-input">
+                                    <select id="f-eyes" class="paper-select">
+                                        <option value="BRN">Nâu — Brown (BRN)</option>
+                                        <option value="BLU">Xanh dương — Blue (BLU)</option>
+                                        <option value="GRN">Xanh lá — Green (GRN)</option>
+                                        <option value="HZL">Hạt dẻ — Hazel (HZL)</option>
+                                        <option value="GRY">Xám — Gray (GRY)</option>
+                                        <option value="BLK">Đen — Black (BLK)</option>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr class="paper-row">
+                                <td class="r-num">6</td>
+                                <td class="r-label">Chiều Cao (HGT)</td>
+                                <td class="r-input">
+                                    <input type="text" id="f-height" class="paper-input" placeholder="VD: 175 cm">
+                                </td>
+                            </tr>
+                            <tr class="paper-row">
+                                <td class="r-num">7</td>
+                                <td class="r-label">Cân Nặng (WGT)</td>
+                                <td class="r-input">
+                                    <input type="text" id="f-weight" class="paper-input" placeholder="VD: 65 kg">
+                                </td>
+                            </tr>
+                            <tr class="paper-row">
+                                <td class="r-num">8</td>
+                                <td class="r-label">Địa Chỉ <span class="req-star">*</span></td>
+                                <td class="r-input">
+                                    <input type="text" id="f-address" class="paper-input"
+                                        placeholder="123 GROVE STREET, LOS SANTOS, SA 90001">
+                                </td>
+                            </tr>
+                            <tr class="paper-row photo-row" style="display: none;">
+                                <td class="r-num">9</td>
+                                <td class="r-label">Ảnh 3x4 <span class="req-star">*</span></td>
+                                <td class="r-input photo-input-cell">
+                                    <input type="text" id="f-photo" class="paper-input"
+                                        placeholder="https://i.imgur.com/xxxxxxx.jpg">
+                                    <div class="photo-url-status" id="photo-status"></div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Declaration -->
+                    <div class="paper-declaration">
+                        <p>Tôi xin cam đoan rằng tất cả thông tin cung cấp trong đơn này là đúng sự thật. Tôi hiểu rằng
+                            cung cấp thông tin sai lệch có thể dẫn đến từ chối hoặc hủy bỏ thẻ ID.</p>
+                    </div>
+
+                    <!-- Footer: date + signature -->
+                    <div class="paper-sig-section">
+                        <div class="sig-date">
+                            Ngày / Date: <span class="sig-date-val" id="today-date"></span>
+                            &nbsp;&nbsp;&nbsp; Tháng / Month: <span class="sig-date-val" id="today-month"></span>
+                            &nbsp;&nbsp;&nbsp; Năm / Year: <span class="sig-date-val" id="today-year"></span>
+                        </div>
+                        <div class="sig-line-wrap">
+                            Signature of Applicant: <span class="sig-val-handwritten" id="paper-sig-name"></span>
+                        </div>
+                    </div>
+
+                    <!-- Submit bar -->
+                    <div class="paper-submit-bar">
+                        <div class="form-error-wrap">
+                            <div class="form-error-msg hidden" id="form-error">
+                                <i class="fas fa-triangle-exclamation"></i> <span id="form-error-text"></span>
+                            </div>
+                        </div>
+                        <div class="paper-submit-btns">
+                            <button class="btn-paper-cancel" id="btn-cancel">
+                                <i class="fas fa-times"></i> Hủy
+                            </button>
+                            <button class="btn-paper-submit" id="btn-submit">
+                                <i class="fas fa-paper-plane"></i> Nộp Đơn
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===================== CARD VIEW ===================== -->
+        <div id="card-view" class="view hidden">
+            <div class="dark-overlay" id="card-overlay"></div>
+            <div class="card-scene">
+                <div class="id-card" id="id-card">
+                    <div class="card-security-layer"></div>
+                    <div class="card-bear-mark" aria-hidden="true">
+                        <svg viewBox="0 0 150 72" xmlns="http://www.w3.org/2000/svg">
+                            <path class="bear-shape"
+                                d="M9 49 L17 37 L26 31 L34 20 L48 12 L68 9 L88 14 L99 25 L113 30 L126 38 L141 41 L137 49 L123 49 L116 57 L113 67 L104 67 L102 55 L89 51 L76 53 L71 67 L61 67 L60 55 L44 52 L35 58 L31 67 L21 67 L22 56 L13 55 Z" />
+                            <path class="bear-cut" d="M13 49 L29 42 L40 31 L49 22 L62 16 L51 32 L38 42 L24 50 Z" />
+                            <path class="star-shape"
+                                d="M114 4 L121 25 L143 25 L125 38 L132 59 L114 46 L96 59 L103 38 L85 25 L107 25 Z" />
+                        </svg>
+                    </div>
+
+                    <!-- California-style Header -->
+                    <div class="card-header-new">
+                        <div class="header-left">
+                            <div class="state-seal-mini">
+                                <svg viewBox="0 0 56 56" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="28" cy="28" r="26" fill="none" stroke="#b8860b" stroke-width="1.5" />
+                                    <circle cx="28" cy="28" r="21" fill="rgba(184,134,11,0.08)" stroke="#b8860b"
+                                        stroke-width="0.8" />
+                                    <path d="M14,38 L22,26 L28,32 L32,22 L36,32 L42,26 L48,38 Z" fill="none"
+                                        stroke="#b8860b" stroke-width="1.2" stroke-linejoin="round" />
+                                    <text x="28" y="50" text-anchor="middle" font-size="4.5" fill="#b8860b"
+                                        font-family="Arial" font-weight="bold">★ ★ ★</text>
+                                </svg>
+                            </div>
+                            <div class="state-name-block">
+                                <div class="state-name-main">SAN ANDREAS</div>
+                                <div class="state-name-sub">USA</div>
+                            </div>
+                        </div>
+                        <div class="card-type-right">
+                            <div class="card-type-line1" id="cd-card-type">IDENTIFICATION CARD</div>
+                        </div>
+                    </div>
+
+                    <!-- Card Content Grid -->
+                    <div class="card-content-grid">
+                        <!-- Left Section: Hologram strip, Main Photo, and Signature -->
+                        <div class="left-col">
+                            <div class="holo-photo-row">
+                                <div class="card-holo-strip">
+                                    <div class="holo-text" id="cd-holo-text">L-1 SA</div>
+                                </div>
+                                <div class="card-photo-wrap">
+                                    <img id="cd-photo" src="" alt="Photo" class="card-photo-img">
+                                    <div class="card-photo-placeholder" id="cd-photo-ph"><i class="fas fa-user"></i>
+                                    </div>
+                                    <div class="card-photo-holo"></div>
+                                    <div class="card-photo-watermark" id="cd-photo-wm"></div>
+                                    <div class="donor-badge">DONOR</div>
+                                </div>
+                            </div>
+                            <div class="card-signature-new">
+                                <div class="sig-line" id="cd-sig-text"></div>
+                                <div class="sig-label">Signature / Chữ ký</div>
+                            </div>
+                        </div>
+
+                        <!-- Middle & Right Section: DMV details and Physical attributes -->
+                        <div class="main-fields-col">
+                            <!-- ID, EXP, DOB row -->
+                            <div class="top-meta-fields">
+                                <div class="meta-field-item">
+                                    <span class="f-num">4d</span> <span class="ci-label">ID</span>
+                                    <span class="ci-id" id="cd-id-number"></span>
+                                </div>
+                                <div class="meta-field-item">
+                                    <span class="f-num">4b</span> <span class="ci-label">EXP</span>
+                                    <span class="ci-val ci-red" id="cd-expire"></span>
+                                </div>
+                                <div class="meta-field-item">
+                                    <span class="f-num">3</span> <span class="ci-label">DOB</span>
+                                    <span class="ci-val ci-red" id="cd-dob"></span>
+                                </div>
+                            </div>
+
+                            <!-- Name & Address -->
+                            <div class="name-address-fields">
+                                <div class="field-block">
+                                    <span class="f-num">1</span> <span class="ci-label">LN</span>
+                                    <span class="ci-val ci-name-bold" id="cd-lastname"></span>
+                                </div>
+                                <div class="field-block">
+                                    <span class="f-num">2</span> <span class="ci-label">FN</span>
+                                    <span class="ci-val ci-name-bold" id="cd-firstname"></span>
+                                </div>
+                                <div class="field-block address-block">
+                                    <span class="f-num">8</span> <span class="ci-label">ADDR</span>
+                                    <span class="ci-val" id="cd-address"></span>
+                                </div>
+                            </div>
+
+                            <div class="permit-panel" id="cd-permit-panel">
+                                <div class="permit-panel-head">
+                                    <span>PERMITS</span>
+                                    <span id="cd-permit-count">00</span>
+                                </div>
+                                <div class="permit-chip-row">
+                                    <div class="permit-chip permit-chip-driver" id="cd-driver-permit">
+                                        <i class="fas fa-car-side"></i>
+                                        <div>
+                                            <span class="permit-code">DRV C</span>
+                                            <span class="permit-name">Driving Privileges</span>
+                                        </div>
+                                    </div>
+                                    <div class="permit-chip permit-chip-weapon" id="cd-weapon-permit">
+                                        <i class="fas fa-gun"></i>
+                                        <div>
+                                            <span class="permit-code">WPN</span>
+                                            <span class="permit-name">Weapon Permit</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="permit-empty" id="cd-permit-empty">NO ENDORSEMENTS</div>
+                            </div>
+
+                            <!-- Bottom Attributes Row -->
+                            <div class="physical-attrs-grid">
+                                <div class="attr-item"><span class="f-num">15</span> <span class="ci-label">SEX</span>
+                                    <span id="cd-sex" class="ci-val-bold"></span>
+                                </div>
+                                <div class="attr-item"><span class="f-num">16</span> <span class="ci-label">NAT</span>
+                                    <span id="cd-nationality" class="ci-val-bold"></span>
+                                </div>
+                                <div class="attr-item"><span class="f-num">17</span> <span class="ci-label">HGT</span>
+                                    <span id="cd-height" class="ci-val-bold"></span>
+                                </div>
+                                <div class="attr-item"><span class="f-num">18</span> <span class="ci-label">WGT</span>
+                                    <span id="cd-weight" class="ci-val-bold"></span>
+                                </div>
+                                <div class="attr-item"><span class="f-num">19</span> <span class="ci-label">EYES</span>
+                                    <span id="cd-eyes" class="ci-val-bold"></span>
+                                </div>
+                                <div class="attr-item"><span class="f-num">20</span> <span class="ci-label">HAIR</span>
+                                    <span id="cd-hair" class="ci-val-bold"></span>
+                                </div>
+                            </div>
+
+                            <!-- Footer Meta Code -->
+                            <div class="bottom-meta-row">
+                                <div class="iss-field">
+                                    <span class="f-num">4a</span> <span class="ci-label">ISS</span>
+                                    <span id="cd-issue" class="ci-val-bold"></span>
+                                </div>
+                                <div class="card-dd" id="cd-dd"></div>
+                            </div>
+                        </div>
+
+                        <!-- Right Section: Ghost Photo -->
+                        <div class="right-ghost-col">
+                            <div class="card-ghost-wrap">
+                                <img id="cd-ghost" src="" alt="" class="card-ghost-img">
+                                <div class="card-ghost-num" id="cd-ghost-num"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="police-actions hidden" id="police-actions">
+                    <div class="police-actions-label"><i class="fas fa-shield-halved"></i> Tùy chọn</div>
+                    <button class="btn btn-reject-card" id="btn-reject-card">
+                        <i class="fas fa-times-circle"></i> Từ Chối
+                    </button>
+                    <button class="btn btn-approve-card" id="btn-approve-card">
+                        <i class="fas fa-check-circle"></i> Duyệt & Cấp ($5,000)
+                    </button>
+                </div>
+
+                <button class="btn-close-card" id="btn-close-card">
+                    <i class="fas fa-times"></i> Đóng
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
