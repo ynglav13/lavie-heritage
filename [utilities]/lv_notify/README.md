@@ -1,57 +1,42 @@
+# lv_notify
 
-## Client usage
+UI thông báo đơn giản cho client và server.
+
+## Client
 
 ```lua
 exports['lv_notify']:Notify({
     type = 'success',
-    title = 'Lavie',
+    title = 'Thông báo',
     message = 'Bạn đã nhận thành công',
     duration = 4500
 })
 ```
 
-Short form:
-
+Rút gọn:
 ```lua
-exports['lv_notify']:lv_notify('Thông báo nhanh', 'info', 3500, 'Lavie')
+exports['lv_notify']:lv_notify('Thông báo nhanh', 'info', 3500, 'Hệ thống')
 ```
 
-Event fallback:
-
-```lua
-TriggerEvent('lv_notify:client:notify', {
-    type = 'warning',
-    message = 'Hay can than khu vuc phia truoc'
-})
-```
-
-## Server usage
+## Server
 
 ```lua
 exports['lv_notify']:Notify(source, {
     type = 'success',
-    title = 'He thong',
-    message = 'Giao dich thanh cong',
+    title = 'Hệ thống',
+    message = 'Giao dịch thành công',
     duration = 4500
 })
 ```
 
-Short form:
-
-```lua
-exports['lv_notify']:lv_notify(source, 'Bạn vừa nhận tiền', 'money', 4000, 'Tài chính')
-```
-
-Notify everyone:
-
+Thông báo toàn server:
 ```lua
 exports['lv_notify']:NotifyAll({
     type = 'info',
-    title = 'May chu',
+    title = 'Máy chủ',
     message = 'Thông báo toàn server'
 })
 ```
 
 ## Types
-
-Available by default: `info`, `success`, `warning`, `error`, `police`, `ambulance`, `money`.
+`info`, `success`, `warning`, `error`, `police`, `ambulance`, `money`.
