@@ -18,18 +18,14 @@ local function GetDefaultRanks()
     return ranks
 end
 
--- =============================================
---   Startup
--- =============================================
+-- Startup
 AddEventHandler('onClientResourceStart', function(res)
     if res ~= GetCurrentResourceName() then return end
     Citizen.Wait(500)
     TriggerServerEvent('admincore:requestRankNames')
 end)
 
--- =============================================
---   Sync rank names tu server
--- =============================================
+-- Sync rank names tu server
 RegisterNetEvent('admincore:syncRankNames', function(cache)
     if isNuiOpen then
         SendNUIMessage({ type = 'syncRankNames', data = GetDefaultRanks() })
@@ -113,9 +109,7 @@ RegisterCommand = function(commandName, handler, restricted)
     end, restricted)
 end
 
--- =============================================
---   /apanel – Mo/dong Admin Panel
--- =============================================
+-- /apanel – Mo/dong Admin Panel
 RegisterCommand('apanel', function()
     if LocalPlayer.state.isWatchdog then
         TriggerEvent('admincore:notify', 'Role Watchdog không có quyền truy cập admin panel.', 'error')
@@ -176,9 +170,7 @@ RegisterCommand('rpanel', function()
     end
 end, false)
 
--- =============================================
---   NUI Callbacks
--- =============================================
+-- NUI Callbacks
 RegisterNUICallback('close', function(_, cb)
     isNuiOpen = false
     SetNuiFocus(false, false)
@@ -256,9 +248,7 @@ RegisterNUICallback('deleteGiftcode', function(data, cb)
     cb('ok')
 end)
 
--- =============================================
---   Nhan data tu server → NUI
--- =============================================
+-- Nhan data tu server → NUI
 RegisterNetEvent('admincore:updatePlayers', function(players)
     if isNuiOpen then
         SendNUIMessage({ type = 'updatePlayers', data = players })
@@ -314,9 +304,7 @@ RegisterNetEvent('admincore:showInfo', function(info)
     SendNUIMessage({ type = 'showInfo', data = info })
 end)
 
--- =============================================
---   Teleport
--- =============================================
+-- Teleport
 RegisterNetEvent('admincore:teleport', function(x, y, z, heading)
     local ped = PlayerPedId()
     SetEntityCoords(ped, x, y, z, false, false, false, false)
@@ -368,17 +356,13 @@ RegisterNetEvent('admincore:advisorHelpReturn', function()
     end
 end)
 
--- =============================================
---   Freeze
--- =============================================
+-- Freeze
 RegisterNetEvent('admincore:setFrozen', function(state)
     isFrozen = state
     FreezeEntityPosition(PlayerPedId(), state)
 end)
 
--- =============================================
---   Revive
--- =============================================
+-- Revive
 RegisterNetEvent('admincore:revive', function()
     local ped    = PlayerPedId()
     local coords = GetEntityCoords(ped)
@@ -459,9 +443,7 @@ RegisterNetEvent('admincore:unjail', function(coords)
     TriggerEvent('admincore:notify', 'Bạn đã được thả.', 'success')
 end)
 
--- =============================================
---   Announce
--- =============================================
+-- Announce
 RegisterNetEvent('admincore:announce', function(message, adminName)
     local text = ("{FF0000}[OOC]{FFFFFF} %s: %s"):format(adminName, message)
     if GetResourceState('custom-chat') == 'started' then
@@ -476,9 +458,7 @@ RegisterNetEvent('admincore:announce', function(message, adminName)
     })
 end)
 
--- =============================================
---   Notify
--- =============================================
+-- Notify
 local function ShowAdminNotify(msg, msgType)
     if GetResourceState('lv_notify') == 'started' then
         exports['lv_notify']:Notify({
@@ -508,9 +488,7 @@ RegisterNetEvent('admincore:notify', function(msg, msgType)
     ShowAdminNotify(msg, msgType)
 end)
 
--- =============================================
---   God Mode
--- =============================================
+-- God Mode
 RegisterNetEvent('admincore:toggleGod', function()
     isGod = not isGod
     local ped = PlayerPedId()
@@ -520,9 +498,7 @@ RegisterNetEvent('admincore:toggleGod', function()
     TriggerEvent('admincore:notify', 'God mode: ' .. (isGod and 'BẬT' or 'TẮT'), isGod and 'success' or 'info')
 end)
 
--- =============================================
---   Invisible
--- =============================================
+-- Invisible
 RegisterNetEvent('admincore:toggleInvisible', function()
     isInvisible = not isInvisible
     LocalPlayer.state:set('aCoreInvisible', isInvisible, true)
@@ -531,9 +507,7 @@ RegisterNetEvent('admincore:toggleInvisible', function()
     TriggerEvent('admincore:notify', 'Ẩn hình: ' .. (isInvisible and 'BẬT' or 'TẮT'), isInvisible and 'success' or 'info')
 end)
 
--- =============================================
---   Set Ped Model (Tạm thời)
--- =============================================
+-- Set Ped Model (Tạm thời)
 RegisterNetEvent('admincore:setPed', function(modelName)
     local modelHash = GetHashKey(modelName)
     
@@ -561,9 +535,7 @@ RegisterNetEvent('admincore:setPed', function(modelName)
     TriggerEvent('admincore:notify', ('Đã đổi ped thành %s tạm thời.'):format(modelName), 'success')
 end)
 
--- =============================================
---   Spawn Vehicle
--- =============================================
+-- Spawn Vehicle
 RegisterNetEvent('admincore:spawnVehicle', function(model)
     local hash = GetHashKey(model)
     if not IsModelValid(hash) then
@@ -610,9 +582,7 @@ RegisterNetEvent('admincore:spawnVehicle', function(model)
     end)
 end)
 
--- =============================================
---   Delete vehicle
--- =============================================
+-- Delete vehicle
 RegisterNetEvent('admincore:deleteVehicle', function()
     local ped    = PlayerPedId()
     local coords = GetEntityCoords(ped)
@@ -626,9 +596,7 @@ RegisterNetEvent('admincore:deleteVehicle', function()
     end
 end)
 
--- =============================================
---   Fix vehicle
--- =============================================
+-- Fix vehicle
 local function fixVehicle(veh)
     if veh and veh ~= 0 and DoesEntityExist(veh) then
         SetVehicleFixed(veh)
@@ -694,9 +662,7 @@ RegisterNetEvent('admincore:fixVehicleByNetId', function(netId, expectedPlate)
     fixVehicle(veh)
 end)
 
--- =============================================
---   Vehicle Color Picker (ox_lib)
--- =============================================
+-- Vehicle Color Picker (ox_lib)
 RegisterNetEvent('admincore:openColorPicker', function()
     local ped = PlayerPedId()
     local veh = GetVehiclePedIsIn(ped, false)
@@ -739,9 +705,7 @@ RegisterNetEvent('admincore:openColorPicker', function()
 end)
 
 
--- =============================================
---   Admin Duty 3D Text
--- =============================================
+-- Admin Duty 3D Text
 local DUTY_TEXT_SCALE = 0.22
 local ADVISOR_TEXT_SCALE = 0.20
 local NAMETAG_TEXT_SCALE = 0.20
@@ -886,9 +850,7 @@ Citizen.CreateThread(function()
     end
 end)
 
--- =============================================
---   Lay admin level khi load
--- =============================================
+-- Lay admin level khi load
 Citizen.CreateThread(function()
     while ESX.GetPlayerData().identifier == nil do
         Citizen.Wait(200)
@@ -917,9 +879,7 @@ RegisterNetEvent('admincore:setWatchdog', function(state)
     LocalPlayer.state:set('isWatchdog', state == true, true)
 end)
 
--- =============================================
---   Nametags (ESP)
--- =============================================
+-- Nametags (ESP)
 local showNametags = false
 
 RegisterNetEvent('admincore:toggleNametags', function()

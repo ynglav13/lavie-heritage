@@ -892,8 +892,7 @@ RegisterNetEvent('lv_musicbox:server:play', function(payload)
     local sourceId = sourceData.id
 
     resolveTrack(src, requestedInput, function(ok, result)
-        -- A different request may have been started while the HTTP resolver
-        -- was still working. Never let the older response replace it.
+        -- skip response cu neu da co request moi
         if sources[sourceId] ~= sourceData or sourceData.resolveToken ~= resolveToken then
             sendPlayStatus(src, requestId, 'error', locale('action_failed'), sourceId)
             return

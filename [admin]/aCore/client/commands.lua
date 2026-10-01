@@ -72,7 +72,7 @@ RegisterCommand('getvector4', function()
     end)
 end, false)
 
--- Register chat suggestions for Admin commands
+-- chat suggestions
 CreateThread(function()
     TriggerEvent('chat:addSuggestion', '/setinjury', 'Đặt trạng thái thương tích của người chơi', {
         { name = 'id', help = 'ID người chơi (hoặc r / me)' },

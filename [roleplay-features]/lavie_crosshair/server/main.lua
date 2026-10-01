@@ -107,7 +107,7 @@ local function LoadPlayerCrosshair(playerId, xPlayer)
             end
         end
 
-        -- double check validity of loaded crosshair type
+        
         if not IsValidCrosshair(settings.type, playerId) then
             settings.type = Config.DefaultType or 'cross'
         end
@@ -128,7 +128,7 @@ RegisterNetEvent('lavie_crosshair:requestSettings', function()
     end
 end)
 
--- Fetch settings for all online players if script is restarted
+-- reload settings khi restart script
 AddEventHandler('onResourceStart', function(resourceName)
     if GetCurrentResourceName() ~= resourceName then return end
     Wait(1000)

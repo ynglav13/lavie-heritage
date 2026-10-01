@@ -37,11 +37,7 @@ function AdminFunctions.GetCharacterInfo(xPlayer)
     }
 end
 
--- =============================================
---   IsOwner: Kiểm tra xem src có phải là Owner không
--- =============================================
----@param src number|table
----@return boolean
+-- IsOwner: Kiểm tra xem src có phải là Owner không
 function AdminFunctions.IsOwner(src)
     if not src then return false end
     if src == 0 then return true end
@@ -74,11 +70,7 @@ function AdminFunctions.IsOwner(src)
     return false
 end
 
--- =============================================
---   GetLevel: Lấy admin level của player (theo src)
--- =============================================
----@param src number|table  player server ID or xPlayer table
----@return number
+-- GetLevel: Lấy admin level của player (theo src)
 function AdminFunctions.GetLevel(src)
     if not src then return 0 end
     if src == 0 then return Config.MaxAdminLevel end
@@ -97,19 +89,13 @@ function AdminFunctions.GetLevel(src)
     return AdminCache[xPlayer.identifier] or 0
 end
 
--- =============================================
---   SetAdminStateBag: Đồng bộ AdminRank xuống client statebag
--- =============================================
----@param targetSrc number
----@param level number
+-- SetAdminStateBag: Đồng bộ AdminRank xuống client statebag
 function AdminFunctions.SetAdminStateBag(targetSrc, level)
     -- Replicate = true → client có thể đọc qua LocalPlayer.state.AdminRank
     Player(targetSrc).state:set('AdminRank', level, true)
 end
 
--- =============================================
---   SyncPermissions: Đồng bộ với ESX Group & FiveM ACE
--- =============================================
+-- SyncPermissions: Đồng bộ với ESX Group & FiveM ACE
 function AdminFunctions.SyncPermissions(targetSrc, level)
     local xTarget = ESX.GetPlayerFromId(targetSrc)
     local shouldGrantExternalAdmin = level >= (Config.ExternalAdminAceMinLevel or Config.MaxAdminLevel)
@@ -142,20 +128,12 @@ function AdminFunctions.SyncPermissions(targetSrc, level)
     end
 end
 
--- =============================================
---   GetLevelByIdentifier: Dùng khi không có src
--- =============================================
----@param identifier string
----@return number
+-- GetLevelByIdentifier: Dùng khi không có src
 function AdminFunctions.GetLevelByIdentifier(identifier)
     return AdminCache[identifier] or 0
 end
 
--- =============================================
---   IsWatchdog: Kiểm tra xem src có role Watchdog không
--- =============================================
----@param src number|table  player server ID or xPlayer table
----@return boolean
+-- IsWatchdog: Kiểm tra xem src có role Watchdog không
 function AdminFunctions.IsWatchdog(src)
     if not src then return false end
     if src == 0 then return false end
@@ -184,24 +162,15 @@ function AdminFunctions.IsWatchdog(src)
     return false
 end
 
--- =============================================
---   HasPermission
--- =============================================
----@param src number
----@param action string
----@return boolean
+-- HasPermission
 function AdminFunctions.HasPermission(src, action)
     if AdminFunctions.IsWatchdog(src) then return false end
     local lvl = AdminFunctions.GetLevel(src)
     return Permissions.Has(lvl, action)
 end
 
--- =============================================
---   IsAdminDutyAllowed & RequireAdminDuty
+-- IsAdminDutyAllowed & RequireAdminDuty
 --   Admin level <= 4 phải On Duty mới dùng được lệnh admin
--- =============================================
----@param src number|table
----@return boolean
 function AdminFunctions.IsAdminDutyAllowed(src)
     if not src or src == 0 then return true end
     if AdminFunctions.IsWatchdog(src) then return false end
@@ -223,8 +192,6 @@ function AdminFunctions.IsAdminDutyAllowed(src)
     return false
 end
 
----@param src number|table
----@return boolean
 function AdminFunctions.RequireAdminDuty(src)
     if AdminFunctions.IsWatchdog(src) then
         AdminFunctions.Notify(src, 'Role Watchdog không có quyền thực hiện hành động này.', 'error')
@@ -243,13 +210,7 @@ function AdminFunctions.RequireAdminDuty(src)
 end
 
 
--- =============================================
---   SetLevel: Đặt level admin
--- =============================================
----@param src number       Admin thực hiện
----@param targetSrc number Target player
----@param level number     Level mới (0-6, không được đặt 7 qua command)
----@return boolean, string
+-- SetLevel: Đặt level admin
 function AdminFunctions.SetLevel(src, targetSrc, level)
     local adminLevel  = AdminFunctions.GetLevel(src)
     local targetLevel = AdminFunctions.GetLevel(targetSrc)
@@ -311,9 +272,6 @@ function AdminFunctions.SetLevel(src, targetSrc, level)
 end
 
 
----@param src number
----@param msg string
----@param msgType string 'success'|'error'|'info'|'warning'
 function AdminFunctions.Notify(src, msg, msgType)
     if src ~= 0 and GetResourceState('lv_notify') == 'started' then
         exports['lv_notify']:Notify(src, {
@@ -329,8 +287,6 @@ function AdminFunctions.Notify(src, msg, msgType)
 end
 
 
----@param src number  admin
----@param targetSrc number
 function AdminFunctions.GetInfo(src, targetSrc)
     local xTarget = ESX.GetPlayerFromId(targetSrc)
     if not xTarget then
@@ -366,9 +322,7 @@ function AdminFunctions.GetInfo(src, targetSrc)
     AdminLogger.Log(src, 'getinfo', targetSrc, 'Xem thông tin người chơi')
 end
 
--- =============================================
---   Teleport: Goto / GetHere
--- =============================================
+-- Teleport: Goto / GetHere
 function AdminFunctions.Goto(src, targetSrc)
     local coords = GetEntityCoords(GetPlayerPed(targetSrc))
     TriggerClientEvent('admincore:teleport', src, coords.x, coords.y, coords.z + 1.0)
@@ -392,9 +346,7 @@ function AdminFunctions.GetHere(src, targetSrc)
     AdminLogger.Log(src, 'gethere', targetSrc, nil)
 end
 
--- =============================================
---   Freeze / Unfreeze
--- =============================================
+-- Freeze / Unfreeze
 function AdminFunctions.Freeze(src, targetSrc)
     if FrozenPlayers[targetSrc] then
         FrozenPlayers[targetSrc] = nil
@@ -411,9 +363,7 @@ function AdminFunctions.Freeze(src, targetSrc)
     end
 end
 
--- =============================================
---   Revive
--- =============================================
+-- Revive
 function AdminFunctions.Revive(src, targetSrc)
     targetSrc = tonumber(targetSrc)
     local xTarget = targetSrc and ESX.GetPlayerFromId(targetSrc) or nil
@@ -474,9 +424,7 @@ function AdminFunctions.Revive(src, targetSrc)
     return true
 end
 
--- =============================================
---   Kick
--- =============================================
+-- Kick
 function AdminFunctions.Kick(src, targetSrc, reason)
     local adminName = GetPlayerName(src)
     reason = reason or 'Không có lý do'
@@ -491,9 +439,7 @@ function AdminFunctions.Kick(src, targetSrc, reason)
     AdminLogger.Log(src, 'kick', targetSrc, ('Lý do: %s'):format(reason))
 end
 
--- =============================================
---   Ban
--- =============================================
+-- Ban
 function AdminFunctions.Ban(src, targetSrc, reason, duration)
     targetSrc = tonumber(targetSrc)
     if not targetSrc or not GetPlayerName(targetSrc) then
@@ -540,9 +486,7 @@ function AdminFunctions.Ban(src, targetSrc, reason, duration)
     return true
 end
 
--- =============================================
---   Unban
--- =============================================
+-- Unban
 function AdminFunctions.Unban(src, banId, reason)
     local xAdmin = src ~= 0 and ESX.GetPlayerFromId(src) or nil
     local adminId = xAdmin and xAdmin.identifier or 'console'
@@ -568,9 +512,7 @@ AdminFunctions.RavenBan   = AdminFunctions.Ban
 AdminFunctions.RavenKick  = AdminFunctions.Kick
 AdminFunctions.RavenUnban = AdminFunctions.Unban
 
--- =============================================
---   Warn
--- =============================================
+-- Warn
 function AdminFunctions.Warn(src, targetSrc, reason)
     local xTarget    = ESX.GetPlayerFromId(targetSrc)
     local xAdmin     = ESX.GetPlayerFromId(src)
@@ -607,9 +549,7 @@ function AdminFunctions.Warn(src, targetSrc, reason)
 end
 
 
--- =============================================
---   SetJob
--- =============================================
+-- SetJob
 function AdminFunctions.SetJob(src, targetSrc, job, grade)
     local xTarget = ESX.GetPlayerFromId(targetSrc)
     if not xTarget then
@@ -622,9 +562,7 @@ function AdminFunctions.SetJob(src, targetSrc, job, grade)
     AdminLogger.Log(src, 'setjob', targetSrc, ('Job: %s | Grade: %d'):format(job, grade or 0))
 end
 
--- =============================================
---   SetMoney
--- =============================================
+-- SetMoney
 function AdminFunctions.SetMoney(src, targetSrc, accountType, amount)
     local xTarget = ESX.GetPlayerFromId(targetSrc)
     if not xTarget then
@@ -646,9 +584,7 @@ function AdminFunctions.SetMoney(src, targetSrc, accountType, amount)
     AdminLogger.Log(src, 'setmoney', targetSrc, ('%s = %d'):format(accountType, amount))
 end
 
--- =============================================
---   GiveItem
--- =============================================
+-- GiveItem
 function AdminFunctions.GiveItem(src, targetSrc, item, amount)
     local xTarget = ESX.GetPlayerFromId(targetSrc)
     if not xTarget then
@@ -661,9 +597,7 @@ function AdminFunctions.GiveItem(src, targetSrc, item, amount)
     AdminLogger.Log(src, 'giveitem', targetSrc, ('%dx %s'):format(amount, item))
 end
 
--- =============================================
---   Jail / Unjail
--- =============================================
+-- Jail / Unjail
 function AdminFunctions.Jail(src, targetSrc, duration, reason)
     local expireAt = os.time() + (duration or Config.DefaultJailDuration) * 60
     local xTarget  = ESX.GetPlayerFromId(targetSrc)
@@ -725,9 +659,7 @@ function AdminFunctions.Unjail(src, targetSrc)
     AdminLogger.Log(src, 'unjail', targetSrc, nil)
 end
 
--- =============================================
---   Announce
--- =============================================
+-- Announce
 function AdminFunctions.Announce(src, message)
     local adminName = GetPlayerName(src)
     local xPlayer = ESX.GetPlayerFromId(src)
@@ -746,9 +678,7 @@ function AdminFunctions.Announce(src, message)
     AdminLogger.Log(src, 'announce', nil, message)
 end
 
--- =============================================
---   ClearWarns
--- =============================================
+-- ClearWarns
 function AdminFunctions.ClearWarns(src, targetSrc)
     local xTarget = ESX.GetPlayerFromId(targetSrc)
     if not xTarget then return end
@@ -758,25 +688,19 @@ function AdminFunctions.ClearWarns(src, targetSrc)
     AdminLogger.Log(src, 'clearwarns', targetSrc, nil)
 end
 
--- =============================================
---   SpawnVehicle (server-side trigger)
--- =============================================
+-- SpawnVehicle (server-side trigger)
 function AdminFunctions.SpawnVehicle(src, model)
     TriggerClientEvent('admincore:spawnVehicle', src, model)
     AdminLogger.Log(src, 'spawnveh', nil, ('Model: %s'):format(model))
 end
 
--- =============================================
---   DeleteVehicle
--- =============================================
+-- DeleteVehicle
 function AdminFunctions.DeleteVehicle(src, targetSrc)
     TriggerClientEvent('admincore:deleteVehicle', targetSrc or src)
     AdminLogger.Log(src, 'deleteveh', targetSrc, nil)
 end
 
--- =============================================
---   FixVehicle
--- =============================================
+-- FixVehicle
 function AdminFunctions.FixVehicle(src, targetSrc)
     TriggerClientEvent('admincore:fixVehicle', targetSrc)
 
@@ -787,9 +711,7 @@ function AdminFunctions.FixVehicle(src, targetSrc)
     AdminLogger.Log(src, 'fixveh', targetSrc, nil)
 end
 
--- =============================================
---   FixVehicleByPlate
--- =============================================
+-- FixVehicleByPlate
 function AdminFunctions.FixVehicleByPlate(src, plate)
     local normalizedPlate = tostring(plate or ''):upper():gsub('%s+', '')
     if normalizedPlate == '' then
@@ -816,9 +738,7 @@ function AdminFunctions.FixVehicleByPlate(src, plate)
     AdminFunctions.Notify(src, ('Không tìm thấy xe đang tồn tại có biển số: %s'):format(plate), 'error')
 end
 
--- =============================================
---   SetRankName: Dat ten rank cho level
--- =============================================
+-- SetRankName: Dat ten rank cho level
 function AdminFunctions.SetRankName(src, targetSrc, name, color)
     if not AdminFunctions.HasPermission(src, 'setrankname') then
         AdminFunctions.Notify(src, 'Bạn không có quyền thực hiện lệnh này.', 'error')
@@ -864,13 +784,7 @@ function AdminFunctions.SetRankName(src, targetSrc, name, color)
     TriggerEvent('admincore:refreshCache')
 end
 
--- =============================================
---   SetWatchdog: Cấp hoặc xóa role Watchdog
--- =============================================
----@param src number       Admin thực hiện (0 = console)
----@param targetSrc number Target player server ID
----@param status boolean|nil true = cấp, false = xóa, nil = toggle
----@return boolean, string
+-- SetWatchdog: Cấp hoặc xóa role Watchdog
 function AdminFunctions.SetWatchdog(src, targetSrc, status)
     if src ~= 0 and not AdminFunctions.HasPermission(src, 'setlevel') and AdminFunctions.GetLevel(src) < 4 then
         return false, 'Bạn không có quyền thực hiện lệnh này.'

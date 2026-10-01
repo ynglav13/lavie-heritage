@@ -277,7 +277,6 @@ local function extendCrossingDeadline(spikeData, currentTime)
 end
 
 local function scheduleTriggeredGroupRemoval(groupKey)
-    -- Auto-removal when vehicle runs over spike disabled
 end
 
 local function rejectPlacement(src, pending, verifiedCleanupIds)

@@ -374,7 +374,7 @@ RegisterNetEvent('lv_dailyreward:claim', function()
         end
     end
 
-    -- Automatically include any past missed Prime rewards for previously checked-in days
+    -- bu thuong prime cac ngay truoc
     for day = 1, passDays() do
         if day ~= claimDay and hasDay(state.unclaimedPremiumDays, day) then
             local pastReward = Config.DailyPass.PrimeRewards[day]

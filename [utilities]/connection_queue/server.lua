@@ -84,34 +84,28 @@ AddEventHandler('playerConnecting', function(name, setKickReason, deferrals)
     local identifiers = GetIdentifiers(src)
     print(string.format("[ConnectionQueue] Player '%s' connecting. Steam: %s, Discord: %s", name, tostring(identifiers.steam), tostring(identifiers.discord)))
 
-    -- 1. Check Steam
     if not identifiers.steam then
         deferrals.done(Config.Messages.NoSteam)
         return
     end
 
-    -- 2. Check License
     local licenseFull = identifiers.licenseFull
     if not licenseFull then
         deferrals.done("Không tìm thấy License Rockstar. Vui lòng thử kết nối lại.")
         return
     end
 
-    -- Get player priority
     local priority = GetPriority(licenseFull, identifiers.steam)
 
-    -- Check maintenance convar / config
     local convarVal = tostring(GetConvar('queue_maintenance', '0')):match("^%s*(.-)%s*$")
     local isMaintenance = Config.MaintenanceMode == true or GetConvarInt('queue_maintenance', 0) == 1 or convarVal == '1' or convarVal == 'true'
 
-    -- Admin bypass maintenance check
     local isAdmin = priority >= Config.Points.Admin
     if isMaintenance and Config.AdminBypassMaintenance and isAdmin then
         print(string.format("[ConnectionQueue] Admin '%s' bypassed maintenance mode.", name))
         isMaintenance = false
     end
 
-    -- Discord role bypass maintenance check
     if isMaintenance and Config.MaintenanceBypassRole and Config.MaintenanceBypassRole ~= "" then
         local roleList = nil
         local apiError = false

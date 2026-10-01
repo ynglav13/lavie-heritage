@@ -971,10 +971,7 @@ local function appendAuditValues(parameters, record, offset)
     offset = offset or 0
 
     for index = 1, #auditColumns do
-        -- Keep the numeric position aligned with the SQL placeholder. Missing
-        -- numeric keys are converted to SQL NULL by oxmysql. Do not use
-        -- json.null here: on the CFX Lua runtime it is a function reference,
-        -- which oxmysql serializes as the function body instead of NULL.
+        -- fix oxmysql params
         parameters[offset + index] = values[index]
     end
 
@@ -983,9 +980,7 @@ end
 
 local function buildPersistenceQueries(batch)
     local auditRows = {}
-    -- The string marker keeps this sparse Lua table encoded as an object.
-    -- oxmysql then rebuilds the positional array and fills absent keys with
-    -- JavaScript null, including trailing NULL columns.
+    -- sparse params oxmysql
     local auditParameters = { __legacySparseParameters = true }
     local outboxRows = {}
     local outboxParameters = {}

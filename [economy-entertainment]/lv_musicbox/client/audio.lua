@@ -140,10 +140,7 @@ local function getPlaybackPosition(sourceData)
     return current
 end
 
--- SendNUIMessage does not queue messages while the NUI document is still
--- loading. Do not cache an audioPlay until JavaScript has acknowledged that
--- its message listener is installed, otherwise this client will only ever
--- receive audioUpdate for a sound that was never created.
+-- doi nui load xong moi cache am thanh
 function LVMusic.SetAudioReady()
     nuiAudioReady = true
     activeAudio = {}

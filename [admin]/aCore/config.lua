@@ -2,7 +2,7 @@ Config = {}
 
 -- Owner theo character identifier (char_id), ví dụ: char1:licensexxxxxxxx...
 Config.Owners = {
-    -- 'discord:929158298798805022',
+    -- 'license:...',
 }
 
 Config.DefaultLevelNames = {
@@ -47,9 +47,7 @@ Config.Watchdog = {
     color = '#94a3b8',
 }
 
--- =============================================
---   DISCORD LOGGING
--- =============================================
+-- DISCORD LOGGING
 Config.Discord = {
     enabled     = true,
     webhook     = '',
@@ -85,9 +83,7 @@ Config.ReportDiscord = {
     },
 }
 
--- =============================================
---   AUTO-BAN KHI ĐẠT GIỚI HẠN WARN
--- =============================================
+-- AUTO-BAN KHI ĐẠT GIỚI HẠN WARN
 Config.AutoBan = {
     enabled     = true,
     warnLimit   = 3,
@@ -95,9 +91,7 @@ Config.AutoBan = {
     reason      = 'Đạt giới hạn cảnh cáo tối đa (%d lần)',
 }
 
--- =============================================
---   ADMIN PANEL & UI
--- =============================================
+-- ADMIN PANEL & UI
 Config.PanelKey      = 57        -- F3 (FiveM key code)
 Config.DutyColor     = { r = 255, g = 165, b = 0, a = 200 }
 

@@ -5,7 +5,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](LICENSE)
 [![Author](https://img.shields.io/badge/Author-Lavie-blueviolet?style=flat-square)](https://github.com/lavie2k)
 
-Bộ sưu tập mã nguồn 34 FiveM resources hoàn chỉnh do **Lavie** phát triển cho máy chủ **Los Santos Legacy**, nay được chính thức đóng góp hoàn toàn miễn phí cho cộng đồng FiveM mã nguồn mở dưới tên **Lavie Heritage**.
+Bộ sưu tập mã nguồn 33 FiveM resources hoàn chỉnh do **Lavie** phát triển cho máy chủ **Los Santos Legacy**, nay được chính thức đóng góp hoàn toàn miễn phí cho cộng đồng FiveM mã nguồn mở dưới tên **Lavie Heritage**.
 
 > *"Hôm nay tôi chính thức đóng cửa server và dành tặng toàn bộ mã nguồn do chính tay tôi viết lại cho cộng đồng FiveM như một món quà và một di sản gửi gắm lại."* — **Lavie**
 
@@ -16,7 +16,7 @@ Toàn bộ mã nguồn đã được **làm sạch 100%**:
 
 ---
 
-## Danh Mục Tài Nguyên (34 Resources)
+## Danh Mục Tài Nguyên (33 Resources)
 
 ### 1. Quản Trị & Sự Kiện (`[admin]`)
 * **`aCore`**: Hệ thống Admin Core toàn diện — quản trị người chơi, phân quyền, cảnh cáo (warn), phạt tù (jail), và **hệ thống ban/unban độc lập lưu trữ trực tiếp trên database MySQL/MariaDB**.
@@ -56,7 +56,6 @@ Toàn bộ mã nguồn đã được **làm sạch 100%**:
 * **`prime_status`**: Hệ thống tài khoản hội viên Prime VIP với danh hiệu, quyền lợi và đồng bộ Role Discord.
 
 ### 7. Kinh Tế & Giải Trí (`[economy-entertainment]`)
-* **`lv_casino_core`**: Hệ thống trung tâm điều phối casino — mua bán chip, đổi tiền và tích hợp webhook log.
 * **`lv_dailyreward`**: Hệ thống điểm danh nhận thưởng hàng ngày theo chuỗi liên tục (daily login streak).
 * **`lv_gacha`**: Vòng quay may mắn / mở hòm nhận quà với giao diện hiệu ứng động NUI.
 * **`lv_investment`**: NPC đầu tư tài chính, mua cổ phần và nhận cổ tức theo chu kỳ.
@@ -155,7 +154,6 @@ ensure lavie_crosshair
 ensure prime_status
 
 # === ECONOMY & ENTERTAINMENT ===
-ensure lv_casino_core
 ensure lv_dailyreward
 ensure lv_gacha
 ensure lv_investment

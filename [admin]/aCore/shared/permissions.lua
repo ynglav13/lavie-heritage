@@ -37,9 +37,6 @@ do
     end
 end
 
----@param level number
----@param action string
----@return boolean
 function Permissions.Has(level, action)
     if level <= 0 then return false end
     if level == 2 or level == 3 then
@@ -80,8 +77,6 @@ function Permissions.Has(level, action)
     return perms[action] == true or perms['*'] == true
 end
 
----@param level number
----@return table
 function Permissions.GetAll(level)
     if level == 2 or level == 3 then
         return {
@@ -101,8 +96,6 @@ function Permissions.GetAll(level)
     return result
 end
 
----@param level number
----@return string
 function Permissions.GetLevelName(level)
     -- RankNameCache được load từ DB ở server/main.lua
     if IsDuplicityVersion then

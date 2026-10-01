@@ -255,9 +255,7 @@ local function clampEditorValue(value, minimum, maximum)
         return 0.0
     end
 
-    -- JSON values such as 30/90/150 are decoded by Lua 5.4 as integers.
-    -- FiveM attachment rotations are float parameters; keeping the integer
-    -- subtype made only the float clamp bounds (-180.0/180.0) visibly apply.
+    -- force float
     value = value + 0.0
     return math.max(minimum + 0.0, math.min(maximum + 0.0, value)) + 0.0
 end
@@ -387,8 +385,7 @@ RegisterNUICallback('saveConfig', function(data, cb)
             SendNUIMessage({ action = 'saveState', saving = false })
             SendNUIMessage({ action = 'hideEditor' })
 
-            -- Apply the confirmed value immediately instead of briefly
-            -- rebuilding the old attachment while the DB refresh is pending.
+            -- update cache
             playerWeaponConfig[cleanInfo.weaponItem] = {
                 weapon = cleanInfo.weaponItem,
                 coords = json.encode(cleanCoords),
@@ -498,9 +495,7 @@ local playerBodyWeapons = {}
 function updateMyBodyWeaponsState()
     if not ESX.IsPlayerLoaded() then return end
 
-    -- Keep the last valid replicated state while editing. Publishing an empty
-    -- table here made every client delete the weapon and caused visible sync
-    -- flicker (and occasionally a stale empty state after closing the editor).
+    -- skip khi dang edit
     if adjust.editMode then return end
     
     local data = {}

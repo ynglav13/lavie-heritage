@@ -47,7 +47,7 @@ function isAuthorized(req) {
   return expectedBuffer.length === suppliedBuffer.length && require("node:crypto").timingSafeEqual(expectedBuffer, suppliedBuffer);
 }
 
-// Helper POST JSON request with Timeout
+// post json helper
 function requestPostJson(urlStr, bodyObj, timeoutMs = 30000) {
   return new Promise((resolve, reject) => {
     const url = new URL(urlStr);
@@ -91,7 +91,7 @@ function requestPostJson(urlStr, bodyObj, timeoutMs = 30000) {
   });
 }
 
-// Fallback Extractor: Local yt-dlp
+// fallback yt-dlp
 function extractWithYtDlp(youtubeUrl) {
   return new Promise((resolve, reject) => {
     const args = [
@@ -131,11 +131,11 @@ function extractWithYtDlp(youtubeUrl) {
   });
 }
 
-// Primary Extractor with Fallback Strategy
+
 async function resolveAudioStreamOnce(videoId) {
   const youtubeUrl = `https://www.youtube.com/watch?v=${videoId}`;
 
-  // Strategy 1: Attempt GenDownload API
+  // gen download api
   try {
     console.log(`[Resolve:${videoId}] Requesting GenDownload API...`);
     const info = await requestPostJson("https://gendownload.com/api/extract", { url: youtubeUrl });
@@ -155,7 +155,7 @@ async function resolveAudioStreamOnce(videoId) {
     console.warn(`[Resolve:${videoId}] GenDownload failed (${err.message}). Trying yt-dlp fallback...`);
   }
 
-  // Strategy 2: Fallback to local yt-dlp binary
+  // fallback yt-dlp
   try {
     const fallbackData = await extractWithYtDlp(youtubeUrl);
     console.log(`[Resolve:${videoId}] ✅ Resolved using yt-dlp fallback!`);
@@ -343,7 +343,6 @@ function startBackgroundDownload(filename, streamData) {
   return promise;
 }
 
-// ─── Helper Response ───────────────────────────────────────────────────────
 function writeJson(res, status, payload) {
   res.writeHead(status, {
     "content-type": "application/json; charset=utf-8",
@@ -367,14 +366,13 @@ function getPublicBaseUrl(req) {
   return `${proto}://${host}`.replace(/\/$/, "");
 }
 
-// ─── Stream Local File ───────────────────────────────────────────────────────
 function streamLocalFile(filePath, req, res) {
   const stat = fs.statSync(filePath);
   const total = stat.size;
 
   setCors(res);
 
-  // Safely handle zero-byte empty files created by failed downloads
+  
   if (total === 0) {
     writeJson(res, 404, { error: "File is empty or still downloading" });
     return;
@@ -392,7 +390,7 @@ function streamLocalFile(filePath, req, res) {
     let start = parseInt(parts[0], 10);
     let end = parts[1] ? parseInt(parts[1], 10) : total - 1;
 
-    // Sanitize ranges to prevent ERR_OUT_OF_RANGE
+    
     if (isNaN(start)) start = 0;
     if (isNaN(end) || end >= total) end = total - 1;
 
@@ -426,7 +424,6 @@ function streamLocalFile(filePath, req, res) {
   }
 }
 
-// ─── HTTP Server ────────────────────────────────────────────────────────────
 const server = http.createServer(async (req, res) => {
   setCors(res);
   if (req.method === "OPTIONS") { res.writeHead(204); res.end(); return; }
@@ -445,7 +442,7 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  // 1. List / Files Endpoint
+  // list endpoint
   if (url.pathname === "/list" || url.pathname === "/files" || url.pathname.endsWith("/list") || url.pathname.endsWith("/files")) {
     fs.readdir(CACHE_DIR, (err, files) => {
       if (err) {
@@ -485,7 +482,7 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  // 2. Resolve Endpoint
+  // resolve endpoint
   if (url.pathname.includes("/resolve")) {
     const parts = url.pathname.split("/").filter(Boolean);
     let id = parts[parts.length - 1];
@@ -530,7 +527,7 @@ const server = http.createServer(async (req, res) => {
         const targetFilename = `${id}.${ext}`;
         const targetFilePath = path.join(CACHE_DIR, targetFilename);
 
-        // Download fully before returning a public URL. /stream never resolves upstream.
+        
         if (!fs.existsSync(targetFilePath)) {
           console.log(`[Resolve:${id}] Download triggered: ${targetFilename}`);
           await startBackgroundDownload(targetFilename, streamData);
@@ -558,7 +555,7 @@ const server = http.createServer(async (req, res) => {
     return;
   }
 
-  // 3. Stream Endpoint
+  // stream endpoint
   if (url.pathname.includes("/stream")) {
     const rawId = url.pathname.replace(/^.*\/stream\/?/, "");
     let id = rawId;
@@ -572,7 +569,7 @@ const server = http.createServer(async (req, res) => {
 
     const filePath = path.join(CACHE_DIR, id);
 
-    // If local file is already completely downloaded, stream directly
+    
     if (fs.existsSync(filePath)) {
       streamLocalFile(filePath, req, res);
       return;

@@ -585,7 +585,7 @@ RegisterCommand('checkprime', function(source, args)
     end
 end, false)
 
--- HTTP Handler for Discord Bot Sync
+-- discord bot sync
 local SYNC_TOKEN = "lslegacy_prime_sync_token_2026_xyz"
 
 local function GetPlayerFromIdentifier(identifier)

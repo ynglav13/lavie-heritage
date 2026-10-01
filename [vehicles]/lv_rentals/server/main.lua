@@ -129,9 +129,7 @@ local function spawnRentalVehicleServer(row, spawn)
     local coords = vec3(spawn.x, spawn.y, spawn.z)
     local heading = spawn.w or 0.0
 
-    -- Passing the plate as a vehicle property lets the current OneSync owner
-    -- apply it even on artifacts where the server plate getter is unavailable
-    -- or temporarily returns stale data.
+    -- set plate khi spawn
     local okSpawn, netId = pcall(ESX.OneSync.SpawnVehicle, row.model, coords, heading,
     {
         plate = plate
@@ -167,8 +165,7 @@ local function spawnRentalVehicleServer(row, spawn)
             break
         end
 
-        -- Some server artifacts expose the setter as an RPC native but do not
-        -- expose the matching getter. The client/state-bag path remains valid.
+
         if plateReadReason and plateReadReason:sub(1, 12) == 'native_error' then
             break
         end
@@ -1126,7 +1123,7 @@ CreateThread(function()
 
     loadActive()
 
-    -- clearStoredRentals('restart_cleanup')
+
 
     broadcastStations()
 

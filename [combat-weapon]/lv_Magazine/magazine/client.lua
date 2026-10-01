@@ -153,8 +153,7 @@ local function applyCanonicalAmmo(result)
         Wait(50)
     end
 
-    -- One bounded retry from a clean native state. Never write clip ammo directly;
-    -- SetAmmoInClip is what previously created reserve ammunition intermittently.
+    -- reset ammo
     SetPedAmmo(ped, weaponHash, 0)
     Wait(0)
     SetPedAmmo(ped, weaponHash, ammo)
@@ -197,8 +196,7 @@ local function playReloadAnimation(result)
     startReloadControlLock()
     applyMagazineComponents(result, ped, weaponHash)
 
-    -- Keep the incoming rounds in reserve so GTA can play its weapon-specific
-    -- reload task. The canonical pass below fills the clip and removes reserve.
+    -- set ammo tam thoi de chay reload anim
     SetPedAmmo(ped, weaponHash, 0)
     Wait(0)
     AddAmmoToPed(ped, weaponHash, ammo)

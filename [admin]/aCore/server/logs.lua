@@ -143,13 +143,7 @@ AddEventHandler('onResourceStop', function(resourceName)
     FlushQueue(reportDiscordQueue, Config.ReportDiscord)
 end)
 
--- =============================================
---   Log entry
--- =============================================
----@param adminSrc   number|string
----@param action     string
----@param targetSrc  number|nil
----@param details    string|nil
+-- Log entry
 function AdminLogger.Log(adminSrc, action, targetSrc, details)
     local isReportLog = ReportLogActions[action] == true
     local actor = getPlayerLogInfo(adminSrc)

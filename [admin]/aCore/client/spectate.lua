@@ -26,7 +26,7 @@ RegisterNetEvent('admincore:startSpectate', function(targetId)
     local selfPed = PlayerPedId()
     savedCoords = GetEntityCoords(selfPed)
 
-    -- Đưa người chơi tàng hình & xuyên tường xuống dưới đất 50m để load map
+    -- teleport xuong duoi map doi load map
     local tCoord = GetEntityCoords(targetPed)
     RequestCollisionAtCoord(tCoord.x, tCoord.y, tCoord.z)
     SetEntityVisible(selfPed, false, false)
@@ -34,7 +34,7 @@ RegisterNetEvent('admincore:startSpectate', function(targetId)
     FreezeEntityPosition(selfPed, true)
     SetEntityCoords(selfPed, tCoord.x, tCoord.y, tCoord.z - 50.0, false, false, false, false)
 
-    -- Chờ chút cho map load rồi bật Spectator Mode của GTA V
+    -- bat spectate
     Citizen.Wait(500)
     targetPed = GetPlayerPed(targetPlayer)
     NetworkSetInSpectatorMode(true, targetPed)
@@ -63,7 +63,7 @@ function StopSpectate()
     isSpectating   = false
     spectateTarget = nil
 
-    -- Tắt Spectator Mode
+    -- tat spectate
     NetworkSetInSpectatorMode(false, PlayerPedId())
 
     local selfPed = PlayerPedId()
@@ -71,7 +71,7 @@ function StopSpectate()
     SetEntityCollision(selfPed, true, true)
     FreezeEntityPosition(selfPed, false)
 
-    -- Trả về vị trí cũ
+    -- tra ve vi tri cu
     if savedCoords then
         SetEntityCoords(selfPed, savedCoords.x, savedCoords.y, savedCoords.z, false, false, false, false)
         savedCoords = nil

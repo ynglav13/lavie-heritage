@@ -15,9 +15,7 @@ local function RequireAdminDuty(src)
     return AdminFunctions.RequireAdminDuty(src)
 end
 
--- =============================================
---   Load admin list + mutes + rank names
--- =============================================
+-- Load admin list + mutes + rank names
 local function LoadAllCaches(syncJails)
     local admins = MySQL.query.await('SELECT identifier, level, rank_name, rank_color FROM admin_levels WHERE level > 0 OR rank_name IS NOT NULL')
     AdminCache = {}
@@ -90,33 +88,25 @@ AddEventHandler('onResourceStart', function(res)
     end)
 end)
 
--- =============================================
---   Refresh cache (sau khi thay đổi level / rank name)
--- =============================================
+-- Refresh cache (sau khi thay đổi level / rank name)
 RegisterNetEvent('admincore:refreshCache', function()
     LoadAllCaches(false)
 end)
 
--- =============================================
---   Lấy rank name để gửi cho client khi join (bỏ qua global rank)
--- =============================================
+-- Lấy rank name để gửi cho client khi join (bỏ qua global rank)
 RegisterNetEvent('admincore:requestRankNames', function()
     -- Gửi cache trống hoặc thay đổi logic ở client, do bây giờ tên theo user
     TriggerClientEvent('admincore:syncRankNames', source, {})
 end)
 
--- =============================================
---   Set Rank Name (lưu DB)
--- =============================================
+-- Set Rank Name (lưu DB)
 RegisterNetEvent('admincore:setRankName', function(targetId, name, color)
     if not RequireAdminDuty(source) then return end
 
     AdminFunctions.SetRankName(source, targetId, name, color)
 end)
 
--- =============================================
---   Sync Permissions khi Player Join
--- =============================================
+-- Sync Permissions khi Player Join
 AddEventHandler('esx:playerLoaded', function(playerId, xPlayer)
     local src = playerId
     local level = AdminFunctions.GetLevel(src)
@@ -202,9 +192,7 @@ AddEventHandler('playerDropped', function()
     lastPlayersListRequest[source] = nil
 end)
 
--- =============================================
---   NUI: Danh sach ban (phan trang)
--- =============================================
+-- NUI: Danh sach ban (phan trang)
 RegisterNetEvent('admincore:getBans', function(page)
     local src = source
     if AdminFunctions.GetLevel(src) < 2 then return end
@@ -218,9 +206,7 @@ RegisterNetEvent('admincore:getBans', function(page)
     TriggerClientEvent('admincore:updateBans', src, bans or {}, total, page)
 end)
 
--- =============================================
---   Exports
--- =============================================
+-- Exports
 exports('GetAdminLevel', function(src) return AdminFunctions.GetLevel(src) end)
 exports('IsAdmin',       function(src) return AdminFunctions.GetLevel(src) >= 1 end)
 exports('IsAdvisor',     function(src) return AdminFunctions.GetLevel(src) == (Config.Advisor.level or 1) end)
@@ -264,9 +250,7 @@ Citizen.CreateThread(function()
     end
 end)
 
--- =============================================
---   NUI: Quan ly giftcode
--- =============================================
+-- NUI: Quan ly giftcode
 RegisterNetEvent('admincore:getGiftcodes', function()
     local src = source
     if not AdminFunctions.HasPermission(src, 'managegiftcodes') then return end
@@ -309,9 +293,7 @@ RegisterNetEvent('admincore:deleteGiftcode', function(code)
     end
 end)
 
--- =============================================
---   Ban Check on Player Connecting
--- =============================================
+-- Ban Check on Player Connecting
 AddEventHandler('playerConnecting', function(name, setKickReason, deferrals)
     local src = source
     deferrals.defer()

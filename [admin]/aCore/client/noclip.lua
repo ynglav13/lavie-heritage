@@ -37,7 +37,7 @@ RegisterNetEvent('admincore:toggleNoclip', function()
         SetEveryoneIgnorePlayer(ped, false)
         SetPoliceIgnorePlayer(ped, false)
         
-        -- Reset velocity to prevent falling damage burst
+        -- reset velocity tranh mat mau
         SetEntityVelocity(entity, 0.0, 0.0, 0.0)
         TriggerEvent('admincore:notify', 'Noclip: TẮT', 'info')
     end
@@ -52,7 +52,7 @@ Citizen.CreateThread(function()
             local entity = IsPedInAnyVehicle(ped, false) and GetVehiclePedIsIn(ped, false) or ped
             local coords = GetEntityCoords(entity)
 
-            -- Vô hiệu hóa phím di chuyển, nhường lại phím Chat/Menu
+            -- khoa di chuyen khi mo chat/menu
             DisableControlAction(0, 32, true) -- W
             DisableControlAction(0, 33, true) -- S
             DisableControlAction(0, 34, true) -- A
@@ -95,7 +95,7 @@ Citizen.CreateThread(function()
                 dz = dz + speed
             end
 
-            -- Update Coords & Heading smoothly without freezing
+            -- update coords
             SetEntityVelocity(entity, 0.0, 0.0, 0.0)
             SetEntityCoordsNoOffset(entity, coords.x + dx, coords.y + dy, coords.z + dz, true, true, true)
             SetEntityHeading(entity, camHeading)

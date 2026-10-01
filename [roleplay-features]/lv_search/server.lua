@@ -174,7 +174,7 @@ AddEventHandler('lv_search:server:requestSteal', function(targetId, clientIsHand
     local isHandsUp = (targetState and targetState.handsup == true) or (clientIsHandsUp == true)
     local isCuffed = targetState and ((targetState.handCuff == true) or (targetState.isCuffed == true))
 
-    -- Case 1: Chết -> Force steal luôn
+    -- chet thi loot luon
     if lifeState == 'dead' then
         Notify(src, ('Đang lục túi đồ của %s (ID: %s)...'):format(tPlayer.getName(), targetId), 'info', 'Cướp đồ')
         Notify(targetId, ('%s (ID: %s) đang lục túi đồ của bạn.'):format(xPlayer.getName(), src), 'warning', 'Cướp đồ')
@@ -184,8 +184,7 @@ AddEventHandler('lv_search:server:requestSteal', function(targetId, clientIsHand
         return
     end
 
-    -- Case 2: Bị thương -> Cho request steal luôn (không bắt buộc handsup/cuffed)
-    -- Case 3: Bình thường -> Bắt buộc handsup hoặc cuffed
+    -- song thi bat buoc phai handsup hoac bi cong tay
     if lifeState ~= 'injured' and not isHandsUp and not isCuffed then
         Notify(src, 'Nạn nhân phải đang giơ tay (handsup), bị còng tay hoặc bị thương/ngất xỉu.', 'error', 'Cướp đồ')
         return

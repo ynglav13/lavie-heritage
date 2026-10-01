@@ -134,9 +134,7 @@ local function PrimeNotify(target, notifyType, message, duration)
     AdminFunctions.Notify(target, message, notifyType or 'info')
 end
 
--- =============================================
---   Helper: parse command args
--- =============================================
+-- Helper: parse command args
 local function requireAdmin(src, action, cb)
     if not AdminFunctions.HasPermission(src, action) then
         AdminFunctions.Notify(src, 'Bạn không có quyền thực hiện lệnh này', 'error')
@@ -684,9 +682,7 @@ AddEventHandler('playerDropped', function()
     end
 end)
 
--- =============================================
---   /ahelp  – Xem danh sach lenh
--- =============================================
+-- /ahelp  – Xem danh sach lenh
 local CommandSyntaxes = {
     ['getinfo'] = '/agetinfo [id]',
     ['goto'] = '/agoto [id]',
@@ -763,9 +759,7 @@ RegisterCommand('ahelp', function(src)
     AdminLogger.Log(src, 'ahelp', nil, 'Xem danh sách lệnh admin')
 end, false)
 
--- =============================================
---   /admins – Danh sach admin online
--- =============================================
+-- /admins – Danh sach admin online
 RegisterCommand('admins', function(src)
     if AdminFunctions.GetLevel(src) < 1 then return end
 
@@ -791,9 +785,7 @@ RegisterCommand('admins', function(src)
 end, false)
 
 
--- =============================================
---   /players – Danh sach nguoi choi online
--- =============================================
+-- /players – Danh sach nguoi choi online
 RegisterCommand('players', function(src)
     if AdminFunctions.GetLevel(src) < 1 then return end
 
@@ -831,9 +823,7 @@ RegisterCommand('players', function(src)
 end, false)
 
 
--- =============================================
---   /getinfo [id]
--- =============================================
+-- /getinfo [id]
 RegisterCommand('agetinfo', function(src, args)
     requireAdmin(src, 'getinfo', function()
         local id = getTarget(src, args[1])
@@ -841,9 +831,7 @@ RegisterCommand('agetinfo', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /goto [id]
--- =============================================
+-- /goto [id]
 RegisterCommand('agoto', function(src, args)
     requireAdmin(src, 'goto', function()
         local id = getTarget(src, args[1])
@@ -867,9 +855,7 @@ RegisterCommand('goto', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /gethere [id]
--- =============================================
+-- /gethere [id]
 RegisterCommand('agethere', function(src, args)
     requireAdmin(src, 'gethere', function()
         local id = getTarget(src, args[1])
@@ -891,9 +877,7 @@ RegisterCommand('abring', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /spectate [id]
--- =============================================
+-- /spectate [id]
 RegisterCommand('aspectate', function(src, args)
     requireAdmin(src, 'spectate', function()
         if not args[1] then
@@ -936,9 +920,7 @@ RegisterCommand('spec', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /freeze [id]
--- =============================================
+-- /freeze [id]
 RegisterCommand('freeze', function(src, args)
     requireAdmin(src, 'freeze', function()
         local id = getTarget(src, args[1])
@@ -946,9 +928,7 @@ RegisterCommand('freeze', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /kick [id] [reason]
--- =============================================
+-- /kick [id] [reason]
 RegisterCommand('kick', function(src, args)
     requireAdmin(src, 'kick', function()
         local id = getTarget(src, args[1])
@@ -974,9 +954,7 @@ RegisterCommand('ban', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /warn [id] [reason]
--- =============================================
+-- /warn [id] [reason]
 RegisterCommand('warn', function(src, args)
     requireAdmin(src, 'warn', function()
         local id = getTarget(src, args[1])
@@ -992,9 +970,7 @@ end, false)
 
 
 
--- =============================================
---   /revive [id?]
--- =============================================
+-- /revive [id?]
 RegisterCommand('revive', function(src, args)
     if isAdvisor(src) then
         local targetId = getAdvisorReviveTarget(src, args[1])
@@ -1012,9 +988,7 @@ RegisterCommand('revive', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /setinjury [id] [helpup|injured|dead|1|2|3]
--- =============================================
+-- /setinjury [id] [helpup|injured|dead|1|2|3]
 RegisterCommand('setinjury', function(src, args)
     requireAdmin(src, 'setinjury', function()
         if not args[1] or not args[2] then
@@ -1113,9 +1087,7 @@ RegisterCommand('setinjury', function(src, args)
 end, false)
 
 
--- =============================================
---   /jail [id] [time_minutes] [reason?]
--- =============================================
+-- /jail [id] [time_minutes] [reason?]
 RegisterCommand('jail', function(src, args)
     requireAdmin(src, 'jail', function()
         local id       = getTarget(src, args[1])
@@ -1170,9 +1142,7 @@ local function UnifiedUnjail(src, targetId)
     end
 end
 
--- =============================================
---   /unjail [id]
--- =============================================
+-- /unjail [id]
 RegisterCommand('unjail', function(src, args)
     requireAdmin(src, 'unjail', function()
         local id = getTarget(src, args[1])
@@ -1180,9 +1150,7 @@ RegisterCommand('unjail', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /unjailic [id]
--- =============================================
+-- /unjailic [id]
 RegisterCommand('unjailic', function(src, args)
     requireAdmin(src, 'unjail', function()
         local id = getTarget(src, args[1])
@@ -1210,9 +1178,7 @@ RegisterCommand('fixtime', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /unban [banId] [reason]
--- =============================================
+-- /unban [banId] [reason]
 -- RegisterCommand('unban', function(src, args)
 --     if AdminFunctions.GetLevel(src) < 4 then
 --         AdminFunctions.Notify(src, 'Lệnh này yêu cầu admin level 4 trở lên.', 'error')
@@ -1231,9 +1197,7 @@ end, false)
 --     end)
 -- end, false)
 
--- =============================================
---   /skiptutorial [id]
--- =============================================
+-- /skiptutorial [id]
 RegisterCommand('skiptutorial', function(src, args)
     requireAdmin(src, 'setlevel', function()
         local id = getTarget(src, args[1])
@@ -1249,9 +1213,7 @@ RegisterCommand('skiptutorial', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /setjob [id] [job] [grade]
--- =============================================
+-- /setjob [id] [job] [grade]
 RegisterCommand('setjob', function(src, args)
     requireAdmin(src, 'setjob', function()
         local id    = getTarget(src, args[1])
@@ -1265,9 +1227,8 @@ RegisterCommand('setjob', function(src, args)
     end)
 end, false)
 
--- -- =============================================
--- --   /setmoney [id] [cash|bank] [amount]
--- -- =============================================
+-- -- /setmoney [id] [cash|bank] [amount]
+
 -- RegisterCommand('setmoney', function(src, args)
 --     requireAdmin(src, 'setmoney', function()
 --         local id      = getTarget(src, args[1])
@@ -1280,10 +1241,7 @@ end, false)
 --         AdminFunctions.SetMoney(src, id, accType, amount)
 --     end)
 -- end, false)
-
--- =============================================
---   /checkinv [id]
--- =============================================
+-- /checkinv [id]
 RegisterCommand('checkinv', function(src, args)
     requireAdmin(src, 'checkinv', function()
         if src == 0 then
@@ -1310,9 +1268,7 @@ RegisterCommand('checkinv', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /giveitem [id] [item] [amount]
--- =============================================
+-- /giveitem [id] [item] [amount]
 RegisterCommand('giveitem', function(src, args)
     requireAdmin(src, 'giveitem', function()
         local id     = getTarget(src, args[1])
@@ -1326,9 +1282,7 @@ RegisterCommand('giveitem', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /spawnveh [model]
--- =============================================
+-- /spawnveh [model]
 RegisterCommand('spawnveh', function(src, args)
     requireAdmin(src, 'spawnveh', function()
         local model = args[1]
@@ -1351,18 +1305,14 @@ RegisterCommand('car', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /deleteveh  – Xoa xe gan nhat
--- =============================================
+-- /deleteveh  – Xoa xe gan nhat
 RegisterCommand('deleteveh', function(src)
     requireAdmin(src, 'deleteveh', function()
         AdminFunctions.DeleteVehicle(src, nil)
     end)
 end, false)
 
--- =============================================
---   /afix [id/biển số]  – Sửa xe theo ID hoặc biển số (bỏ trống để sửa xe đang lái)
--- =============================================
+-- /afix [id/biển số]  – Sửa xe theo ID hoặc biển số (bỏ trống để sửa xe đang lái)
 RegisterCommand('afix', function(src, args)
     requireAdmin(src, 'fixveh', function()
         if #args > 0 then
@@ -1384,9 +1334,7 @@ RegisterCommand('afix', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /fly  – Toggle (client-side)
--- =============================================
+-- /fly  – Toggle (client-side)
 RegisterCommand('fly', function(src)
     requireAdmin(src, 'noclip', function()
         TriggerClientEvent('admincore:toggleNoclip', src)
@@ -1394,9 +1342,7 @@ RegisterCommand('fly', function(src)
     end)
 end, false)
 
--- =============================================
---   /god  – Toggle god mode (client-side)
--- =============================================
+-- /god  – Toggle god mode (client-side)
 RegisterCommand('god', function(src)
     if isAdvisor(src) then
         AdminFunctions.Notify(src, 'Advisor không được tự bật god mode.', 'error')
@@ -1409,9 +1355,7 @@ RegisterCommand('god', function(src)
     end)
 end, false)
 
--- =============================================
---   /invisible – Toggle invisible
--- =============================================
+-- /invisible – Toggle invisible
 RegisterCommand('invisible', function(src)
     requireAdmin(src, 'invisible', function()
         TriggerClientEvent('admincore:toggleInvisible', src)
@@ -1419,9 +1363,7 @@ RegisterCommand('invisible', function(src)
     end)
 end, false)
 
--- =============================================
---   /clearwarns [id]
--- =============================================
+-- /clearwarns [id]
 RegisterCommand('clearwarns', function(src, args)
     requireAdmin(src, 'clearwarns', function()
         local id = getTarget(src, args[1])
@@ -1429,9 +1371,7 @@ RegisterCommand('clearwarns', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /setlevel [id] [level]
--- =============================================
+-- /setlevel [id] [level]
 RegisterCommand('setlevel', function(src, args)
     requireAdmin(src, 'setlevel', function()
         local id    = getTarget(src, args[1])
@@ -1445,9 +1385,7 @@ RegisterCommand('setlevel', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /setwatchdog [id] [1/0]
--- =============================================
+-- /setwatchdog [id] [1/0]
 RegisterCommand('setwatchdog', function(src, args)
     requireAdmin(src, 'setlevel', function()
         local id = getTarget(src, args[1])
@@ -1471,9 +1409,7 @@ RegisterCommand('setwatchdog', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /setprime [id] [days]
--- =============================================
+-- /setprime [id] [days]
 RegisterCommand('setprime', function(src, args)
     local level = AdminFunctions.GetLevel(src)
     if level < 4 then 
@@ -1572,9 +1508,7 @@ RegisterCommand('upgradeprimeplus', function(src, args)
     end
 end, false)
 
--- =============================================
---   /o [message]
--- =============================================
+-- /o [message]
 RegisterCommand('o', function(src, args)
     requireAdmin(src, 'announce', function()
         local msg = table.concat(args, ' ')
@@ -1586,9 +1520,7 @@ RegisterCommand('o', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /ads [message]
--- =============================================
+-- /ads [message]
 RegisterCommand('ads', function(src, args)
     requireAdmin(src, 'announce', function()
         local msg = table.concat(args, ' ')
@@ -1609,9 +1541,7 @@ RegisterCommand('ads', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /a [message] - Admin Chat
--- =============================================
+-- /a [message] - Admin Chat
 RegisterCommand('a', function(src, args)
     sendAdminChat(src, table.concat(args, ' '))
 end, false)
@@ -1649,9 +1579,7 @@ RegisterCommand('toggleadminchat', function(src)
     toggleAdminChat(src)
 end, false)
 
--- =============================================
---   /c [message] - Advisor Chat
--- =============================================
+-- /c [message] - Advisor Chat
 RegisterCommand('c', function(src, args)
     sendAdvisorChat(src, table.concat(args, ' '))
 end, false)
@@ -1690,9 +1618,7 @@ RegisterCommand('tadvisor', function(src)
     toggleAdvisorChat(src)
 end, false)
 
--- =============================================
---   /cduty [name?] - Advisor Duty
--- =============================================
+-- /cduty [name?] - Advisor Duty
 RegisterCommand('cduty', function(src, args)
     toggleAdvisorDuty(src, table.concat(args, ' '))
 end, false)
@@ -1701,9 +1627,7 @@ RegisterCommand('chelp', function(src)
     disableCommand(src)
 end, false)
 
--- =============================================
---   /report [message] - Member report to admin
--- =============================================
+-- /report [message] - Member report to admin
 RegisterCommand('report', function(src, args)
     if not checkCooldown(src, 'report') then return end
 
@@ -1780,9 +1704,7 @@ RegisterNetEvent('admincore:cancelMyReport', function()
     cancelPlayerReport(source)
 end)
 
--- =============================================
---   /rfinish|/endhelp - Finish Advisor help
--- =============================================
+-- /rfinish|/endhelp - Finish Advisor help
 RegisterCommand('rfinish', function(src)
     disableCommand(src)
 end, false)
@@ -1953,9 +1875,7 @@ RegisterNetEvent('admincore:reportAction', function(action, reportId, reason)
     end
 end)
 
--- =============================================
---   /setrankname [id] [name] [color?]
--- =============================================
+-- /setrankname [id] [name] [color?]
 RegisterCommand('setrankname', function(src, args)
     requireAdmin(src, 'setrankname', function()
         local id = getTarget(src, args[1])
@@ -1989,9 +1909,7 @@ RegisterCommand('setrankname', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /nametags – Toggle ESP / Nametags (client-side)
--- =============================================
+-- /nametags – Toggle ESP / Nametags (client-side)
 RegisterCommand('nametags', function(src)
     requireAdmin(src, 'nametags', function()
         TriggerClientEvent('admincore:toggleNametags', src)
@@ -1999,9 +1917,7 @@ RegisterCommand('nametags', function(src)
     end)
 end, false)
 
--- =============================================
---   /setped [id] [model] hoặc /setped [model]
--- =============================================
+-- /setped [id] [model] hoặc /setped [model]
 RegisterCommand('setped', function(src, args)
     requireAdmin(src, 'setped', function()
         local target, model
@@ -2029,9 +1945,7 @@ end, false)
 
 
 
--- =============================================
---   ESX Callback: getMyLevel
--- =============================================
+-- ESX Callback: getMyLevel
 ESX.RegisterServerCallback('admincore:getMyLevel', function(src, cb)
     local level = AdminFunctions.GetLevel(src)
     -- Đảm bảo statebag luôn được đồng bộ khi client request
@@ -2039,16 +1953,12 @@ ESX.RegisterServerCallback('admincore:getMyLevel', function(src, cb)
     cb(level)
 end)
 
--- =============================================
---   Admin Duty System
--- =============================================
+-- Admin Duty System
 RegisterNetEvent('admincore:toggleDuty', function(dutyName)
     toggleAdminDuty(source, dutyName)
 end)
 
--- =============================================
---   Admin List (net event từ client /admins)
--- =============================================
+-- Admin List (net event từ client /admins)
 RegisterNetEvent('admincore:getAdminList', function()
     local src = source
     if AdminFunctions.GetLevel(src) < 1 then return end
@@ -2073,9 +1983,7 @@ RegisterNetEvent('admincore:getAdminList', function()
     TriggerClientEvent('admincore:adminList', src, list)
 end)
 
--- =============================================
---   Action bridge từ NUI
--- =============================================
+-- Action bridge từ NUI
 RegisterNetEvent('admincore:doAction', function(action, ...)
     local src  = source
     local args = { ... }
@@ -2167,9 +2075,7 @@ RegisterNetEvent('admincore:doAction', function(action, ...)
     end
 end)
 
--- =============================================
---   /sethunger [id] [0-100]  — lv_status
--- =============================================
+-- /sethunger [id] [0-100]  — lv_status
 RegisterCommand('sethunger', function(src, args)
     requireAdmin(src, 'sethunger', function()
         local id    = getTarget(src, args[1])
@@ -2208,9 +2114,7 @@ RegisterCommand('sethunger', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /setthirst [id] [0-100]  — lv_status
--- =============================================
+-- /setthirst [id] [0-100]  — lv_status
 RegisterCommand('setthirst', function(src, args)
     requireAdmin(src, 'setthirst', function()
         local id    = getTarget(src, args[1])
@@ -2249,9 +2153,7 @@ RegisterCommand('setthirst', function(src, args)
     end)
 end, false)
 
--- =============================================
---   /carcolor – Chỉnh màu xe bằng oxlib color picker
--- =============================================
+-- /carcolor – Chỉnh màu xe bằng oxlib color picker
 RegisterCommand('carcolor', function(src, args)
     requireAdmin(src, 'spawnveh', function()
         TriggerClientEvent('admincore:openColorPicker', src)
@@ -2321,9 +2223,7 @@ RegisterCommand('afaceid', function(src, args)
     end
 end, false)
 
--- =============================================
---   /alogout [id]
--- =============================================
+-- /alogout [id]
 RegisterCommand('alogout', function(src, args)
     requireAdmin(src, 'logout', function()
         local id = getTarget(src, args[1])
