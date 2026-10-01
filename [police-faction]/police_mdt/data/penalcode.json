@@ -1,0 +1,1082 @@
+[
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 102",
+    "title": "Giải cứu tội phạm",
+    "category": "Tội nhẹ",
+    "fine": 150000.0,
+    "prison_months": 4,
+    "description": "Bất kỳ ai cố ý làm hư hỏng, phá hủy, chiếm đoạt, cố gắng chiếm đoạt, hoặc hỗ trợ người khác chiếm đoạt từ quyền giam giữ/quản lý của bất kỳ sĩ quan hay cá nhân nào, đối với các tài sản cá nhân mà sĩ quan hay cá nhân đó đang phụ trách theo quy trình pháp luật."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 107",
+    "title": "Vượt ngục / Đào tẩu",
+    "category": "Trọng tội",
+    "fine": 220000.0,
+    "prison_months": 60,
+    "description": "Tù nhân trốn thoát hoặc cố gắng trốn thoát khỏi quyền giam giữ của sĩ quan bảo vệ trật tự hoặc cơ sở quản lý của chính phủ."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 109",
+    "title": "Tiếp tay vượt ngục",
+    "category": "Trọng tội",
+    "fine": 180000.0,
+    "prison_months": 24,
+    "description": "Người hỗ trợ tù nhân trốn thoát hoặc cố gắng trốn thoát khỏi cơ sở chính phủ, hoặc mang/gửi bất cứ vật dụng hữu ích nào cho tù nhân nhằm giúp họ đào tẩu."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 484",
+    "title": "Lừa đảo",
+    "category": "Tội nhẹ",
+    "fine": 75000.0,
+    "prison_months": 6,
+    "description": "Người cung cấp chứng cứ mà họ biết rõ là giả mạo hoặc bị làm sai lệch cho một phiên tòa, lời cung khai, cuộc điều tra hoặc thẩm vấn. Hoặc người có ý đồ phạm tội lừa dối người khác để trục lợi tiền bạc hoặc cá nhân."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 136.1",
+    "title": "Đe dọa nhân chứng/Nạn nhân",
+    "category": "Tội nhẹ",
+    "fine": 35000.0,
+    "prison_months": 4,
+    "description": "Người có hành vi ác ý đe dọa hoặc uy hiếp nạn nhân hoặc nhân chứng."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 182",
+    "title": "Âm mưu phạm tội",
+    "category": "Trọng tội",
+    "fine": 60500.0,
+    "prison_months": 10,
+    "description": "Thỏa thuận/âm mưu thực hiện một tội phạm, gian dối và ác ý buộc tội người khác hoặc khiến người khác bị buộc tội. Gian dối khởi kiện hoặc duy trì bất kỳ vụ kiện, tố tụng nào. Lừa đảo chiếm đoạt tài sản bằng các phương thức phạm pháp, nhận tiền hoặc tài sản bằng lời khai gian hoặc lời hứa hảo. Thực hiện hành vi gây hại cho sức khỏe công cộng, đạo đức, hoặc làm sai lệch/cản trở công lý. Mức án tối đa lên tới 125 tháng."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 165",
+    "title": "Tham nhũng",
+    "category": "Tội nhẹ",
+    "fine": 90000.0,
+    "prison_months": 12,
+    "description": "Bất kỳ công chức nào tự nguyện nhận hối lộ, không tuân thủ bổ phận, và/hoặc từ chối hoàn thành nhiệm vụ được giao."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 653",
+    "title": "Lạm dụng tổng đài 911",
+    "category": "Vi phạm vi cảnh",
+    "fine": 15000.0,
+    "prison_months": 0,
+    "description": "Người cố ý và nhận thức rõ việc kích hoạt báo động giả, cản trở, hoặc làm sai lệch thông tin liên quan đến hệ thống khẩn cấp 911."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 186",
+    "title": "Trục lợi bất hợp pháp",
+    "category": "Trọng tội",
+    "fine": 140000.0,
+    "prison_months": 48,
+    "description": "Cá nhân hoặc tổ chức thông qua các hoạt động phi pháp để tạo ra lợi nhuận bất hợp pháp."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 186.5",
+    "title": "Tổ chức tội phạm tống tiền",
+    "category": "Trọng tội",
+    "fine": 120000.0,
+    "prison_months": 60,
+    "description": "Một chuỗi hành vi phạm tội có tổ chức bao gồm giết người, bắt cóc, cướp tài sản, hối lộ, tống tiền và phóng hỏa nhằm thu lợi bất chính."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 186.10",
+    "title": "Rửa tiền",
+    "category": "Trọng tội",
+    "fine": 125000.0,
+    "prison_months": 12,
+    "description": "Người thực hiện hoặc cố gắng thực hiện giao dịch nhằm che giấu nguồn tiền phi pháp để \"làm sạch\" tiền. Công tố viên phải chứng minh được hành vi và ý định phạm tội."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 503",
+    "title": "Tham ô / Biển thủ",
+    "category": "Trọng tội",
+    "fine": 300000.0,
+    "prison_months": 12,
+    "description": "Hành vi chiếm đoạt tiền hoặc tài sản được giao phó dựa trên sự tín nhiệm bởi một người có ý đồ phạm tội."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 186.20",
+    "title": "Khủng bố đường phố / Băng đảng",
+    "category": "Trọng tội",
+    "fine": 460000.0,
+    "prison_months": 24,
+    "description": "Người tích cực tham gia băng đảng tội phạm đường phố khi biết rõ các thành viên của băng đảng đang hoặc đã tham gia vào các hoạt động phạm tội có hệ thống, và cố ý thúc đẩy hoặc tiếp tay cho hành vi trọng tội của băng đảng đó. Phạt tối đa 96 tháng."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 185",
+    "title": "Ngụy trang phạm tội",
+    "category": "Tội nhẹ",
+    "fine": 65000.0,
+    "prison_months": 6,
+    "description": "Đeo mặt nạ, râu giả, hoặc ngụy trang cá nhân để trốn tránh sự phát hiện, nhận dạng trong quá trình thực hiện tội phạm. Hoặc để lẩn trốn khi bị buộc tội, bắt giữ hoặc kết án."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 148(a)(1)",
+    "title": "Chống người thi hành công vụ có bạo lực",
+    "category": "Trọng tội",
+    "fine": 63000.0,
+    "prison_months": 12,
+    "description": "Hành vi trái pháp luật khi cố ý chống đối, cản trở hoặc gây khó dễ cho công chức đang thi hành công vụ bằng bạo lực hoặc đe dọa dùng bạo lực."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 71",
+    "title": "Đe dọa công chức",
+    "category": "Trọng tội",
+    "fine": 85000.0,
+    "prison_months": 18,
+    "description": "Đe dọa gây thương tích hoặc tổn hại tài sản gửi trực tiếp đến sĩ quan bảo vệ trật tự, nhân viên giáo dục hoặc công chức nhằm buộc họ thực hiện hoặc không thực hiện nhiệm vụ công vụ, khi lời đe dọa có tính khả thi rõ ràng."
+  },
+  {
+    "section": "Phần 1: Các Tội Phạm Xâm Phạm Tư Pháp Công",
+    "code": "PC 148(a)(1)",
+    "title": "Chống người thi hành công vụ",
+    "category": "Tội nhẹ",
+    "fine": 86000.0,
+    "prison_months": 6,
+    "description": "Hành vi cố ý chống đối, trì hoãn, gây cản trở công chức đang thực hiện nhiệm vụ chính thức."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 187",
+    "title": "Giết người",
+    "category": "Trọng tội",
+    "fine": 600000.0,
+    "prison_months": 600,
+    "description": "Hành vi tước đoạt mạng sống của người khác trái pháp luật với sự mưu tính hoặc ác ý từ trước."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 187",
+    "title": "Giết sĩ quan thi hành pháp luật",
+    "category": "Trọng tội",
+    "fine": 800000.0,
+    "prison_months": 600,
+    "description": "Bất kỳ người nào thực hiện hành vi giết hại một Sĩ quan bảo vệ trật tự."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 664",
+    "title": "Mưu sát sĩ quan thi hành pháp luật (Bất thành)",
+    "category": "Trọng tội",
+    "fine": 450000.0,
+    "prison_months": 300,
+    "description": "Người cố gắng thực hiện hành vi giết sĩ quan bảo vệ trật tự nhưng bất thành (Không áp dụng cộng dồn hình phạt)."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 192",
+    "title": "Ngộ sát",
+    "category": "Trọng tội",
+    "fine": 164000.0,
+    "prison_months": 60,
+    "description": "Làm chết người khác mà không có ác ý mưu tính trước. Mức phạt tối đa lên đến 300 tháng tù và 500.000 USD."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 203",
+    "title": "Cố ý gây thương tích nghiêm trọng. (Hủy hoại thân thể)",
+    "category": "Trọng tội",
+    "fine": 240000.0,
+    "prison_months": 48,
+    "description": "Hành vi ác ý và trái pháp luật tước bỏ bộ phận cơ thể của người khác, làm tàn phế, biến dạng, cắt lưỡi, chọc mù mắt, hoặc rạch mũi, tai, môi."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 206",
+    "title": "Tra tấn",
+    "category": "Trọng tội",
+    "fine": 320000.0,
+    "prison_months": 48,
+    "description": "Hành vi cố ý gây đau đớn tột cùng về thể xác hoặc tinh thần nhằm mục đích trả thù, tống tiền, ép buộc hoặc thỏa mãn tâm lý tàn bạo, gây thương tích nghiêm trọng cho người khác."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 207",
+    "title": "Bắt cóc",
+    "category": "Trọng tội",
+    "fine": 180000.0,
+    "prison_months": 36,
+    "description": "Bắt giữ, giam cầm, dụ dỗ, tống tiền hoặc mang người khác đi bằng bất kỳ hình thức nào nhằm đòi tiền chuộc, phần thưởng, hoặc tiếp tay cho hành vi đó. Phạt tối đa 180 tháng tù và 50.000 USD."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 236",
+    "title": "Bắt giữ người trái pháp luật",
+    "category": "Tội nhẹ",
+    "fine": 200000.0,
+    "prison_months": 6,
+    "description": "Cố ý khống chế người khác mà không được sự đồng ý, xâm phạm nghiêm trọng quyền tự do và đặt họ vào rủi ro chấn thương thể chất. có thể nâng lên Trọng tội nếu dùng bạo lực (cộng thêm 10 tháng tù và phạt 1.000 USD)."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 211",
+    "title": "Cướp tài sản",
+    "category": "Trọng tội",
+    "fine": 110000.0,
+    "prison_months": 20,
+    "description": "Chiếm đoạt tài sản cá nhân trong quyền sở hữu của người khác ngay trước mặt họ trái với ý muốn của họ, thực hiện thông qua vũ lực hoặc đe dọa."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 215",
+    "title": "Cướp phương tiện giao thông",
+    "category": "Trọng tội",
+    "fine": 70000.0,
+    "prison_months": 24,
+    "description": "Hành vi chiếm đoạt xe cơ giới ngay trước mặt người lái xe hoặc hành khách trên xe trái với ý muốn của họ bằng vũ lực hoặc đe dọa nhằm tước đoạt quyền sở hữu tạm thời hay vĩnh viễn."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 664",
+    "title": "Mưu sát (Bất thành)",
+    "category": "Trọng tội",
+    "fine": 195000.0,
+    "prison_months": 120,
+    "description": "Cố gắng tước đoạt mạng sống người khác với sự chủ tâm ác ý nhưng bất thành. Hình phạt tù và tiền sẽ tăng gấp đôi nếu nạn nhân là quan chức công."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 240",
+    "title": "Hành hung / Đe dọa dùng vũ lực",
+    "category": "Tội nhẹ",
+    "fine": 123000.0,
+    "prison_months": 6,
+    "description": "Hành vi đe dọa hoặc nỗ lực trái pháp luật, kèm theo khả năng thực tế ngay lúc đó, nhằm gây thương tích bạo lực lên người khác."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "217.1",
+    "title": "Hành hung công chức",
+    "category": "Trọng tội",
+    "fine": 100500.0,
+    "prison_months": 24,
+    "description": "Thực hiện hành vi hành hung mà nạn nhân là một công chức nhà nước."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 243(d)",
+    "title": "Cố ý gây thương tích nghiêm trọng",
+    "category": "Trọng tội",
+    "fine": 94500.0,
+    "prison_months": 40,
+    "description": "Sử dụng vũ lực hoặc bạo lực trái pháp luật và cố ý gây ra chấn thương thể chất nghiêm trọng cho người khác."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 243(d)",
+    "title": "Cố ý gây thương tích cho sĩ quan thi hành pháp luật",
+    "category": "Trọng tội",
+    "fine": 95000.0,
+    "prison_months": 50,
+    "description": "Hành vi tấn công bằng vũ khí chết người hoặc gây thương tích nghiêm trọng lên thể xác của một Sĩ quan bảo vệ trật tự."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 243(b)/(c)",
+    "title": "Xô xát / Gây thương tích cho sĩ quan",
+    "category": "Trọng tội",
+    "fine": 95000.0,
+    "prison_months": 50,
+    "description": "Sử dụng bạo lực hoặc vũ lực xâm phạm thân thể mà nạn nhân là công chức đang thi hành nhiệm vụ."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 245(d)(2)",
+    "title": "Tấn công sĩ quan bằng vũ khí chết người",
+    "category": "Trọng tội",
+    "fine": 130000.0,
+    "prison_months": 60,
+    "description": "Tấn công một sĩ quan bảo vệ trật tự bằng vũ khí chết người, bao gồm cả súng ống."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 245",
+    "title": "Tấn công bằng vũ khí chết người",
+    "category": "Trọng tội",
+    "fine": 146000.0,
+    "prison_months": 20,
+    "description": "Tấn công người khác bằng bất kỳ loại vũ khí hoặc hung khí chết người nào."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "BPC 25850",
+    "title": "Tàng trữ trái phép vũ khí",
+    "category": "Trọng tội",
+    "fine": 190000.0,
+    "prison_months": 12,
+    "description": "Vung vẩy, nổ súng, hoặc sở hữu súng mà không có giấy phép hợp pháp; hoặc sở hữu súng không được đăng ký với Sở Cảnh sát Los Angeles."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 417",
+    "title": "Vung vẩy đe dọa bằng súng hoặc vũ khí",
+    "category": "Tội nhẹ",
+    "fine": 98500.0,
+    "prison_months": 6,
+    "description": "Hành vi khua khoáng, vung vẩy súng ống với thái độ giận dữ, kích động hoặc nhằm mục đích đe dọa."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 246.3",
+    "title": "Nổ súng bất cẩn",
+    "category": "Trọng tội",
+    "fine": 90000.0,
+    "prison_months": 12,
+    "description": "Cố ý nổ súng một cách cực kỳ cẩu thả có thể dẫn đến thương tích hoặc chết người."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 32625(a)",
+    "title": "Tàng trữ/Vận chuyển trái phép súng máy",
+    "category": "Trọng tội",
+    "fine": 300000.0,
+    "prison_months": 24,
+    "description": "Sở hữu hoặc vận chuyển bất kỳ loại súng máy tự động nào mà không được pháp luật cho phép."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 30605",
+    "title": "Tàng trữ vũ khí tấn công (Súng trường)",
+    "category": "Trọng tội",
+    "fine": 260000.0,
+    "prison_months": 24,
+    "description": "Sở hữu bất kỳ loại vũ khí quân dụng tấn công nào mà không có quyền sở hữu hợp pháp."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 182",
+    "title": "Âm mưu giết người",
+    "category": "Trọng tội",
+    "fine": 320000.0,
+    "prison_months": 36,
+    "description": "Xúi giục, thuê mướn, chỉ đạo hoặc yêu cầu người khác thực hiện hành vi giết người. Mức án tối đa lên tới 150 tháng."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 21510",
+    "title": "Tàng trữ dao bấm",
+    "category": "Tội nhẹ",
+    "fine": 87000.0,
+    "prison_months": 6,
+    "description": "Mang theo trên người, trong xe hoặc tài sản dao bấm có lưỡi dài hơn 2 inch. Ngoại lệ cho người đi săn có giấy phép săn bắn hợp lệ."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 12022b",
+    "title": "Trang bị vũ khí khi thực hiện trọng tội",
+    "category": "Trọng tội",
+    "fine": 10500.0,
+    "prison_months": 12,
+    "description": "Sử dụng vũ khí nguy hiểm hoặc chết người trong khi thực hiện trọng tội sẽ bị áp dụng hình phạt tù cộng dồn liên tiếp."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 23920",
+    "title": "Tàng trữ súng bị xóa số sê-ri",
+    "category": "Trọng tội",
+    "fine": 200000.0,
+    "prison_months": 6,
+    "description": "Cố ý mua, nhận hoặc tàng trữ súng có số sê-ri bị cạo sửa hoặc xóa bỏ. Có thể phạt tù đến 6 tháng trong nhà tù quận và/hoặc phạt tới 1.000 USD."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 29800",
+    "title": "Người có tiền án trọng tội tàng trữ súng",
+    "category": "Trọng tội",
+    "fine": 170000.0,
+    "prison_months": 12,
+    "description": "Bất kỳ cá nhân nào từng bị kết án Trọng tội bị phát hiện đang sở hữu súng ống."
+  },
+  {
+    "section": "Phần 2: Các Tội Phạm Xâm Phạm Con Người",
+    "code": "PC 25850",
+    "title": "Mang theo súng đã nạp đạn",
+    "category": "Tội nhẹ",
+    "fine": 135500.0,
+    "prison_months": 10,
+    "description": "Mang theo súng đã nạp sẵn đạn trên người hoặc trong phương tiện giao thông tại các khu vực công cộng hoặc đường phố thuộc thành phố."
+  },
+  {
+    "section": "Phần 3: Các Tội Xâm Phạm Thuần Phong Mỹ Tục",
+    "code": "PC 647.1",
+    "title": "Lảng vảng công cộng mục đích xấu",
+    "category": "Vi phạm vi cảnh",
+    "fine": 66000.0,
+    "prison_months": 0,
+    "description": "Đứng hoặc chờ đợi quanh khu vực lối đi chung nhằm mục đích ăn xin hoặc chèo kéo mại dâm."
+  },
+  {
+    "section": "Phần 3: Các Tội Xâm Phạm Thuần Phong Mỹ Tục",
+    "code": "PC 314",
+    "title": "Phô bày thân thể khiếm nhã",
+    "category": "Tội nhẹ",
+    "fine": 80500.0,
+    "prison_months": 6,
+    "description": "Cố ý phô bày cơ thể hoặc bộ phận sinh dục tại nơi công cộng hoặc trước mặt người khác gây xúc phạm hay khó chịu."
+  },
+  {
+    "section": "Phần 3: Các Tội Xâm Phạm Thuần Phong Mỹ Tục",
+    "code": "PC 330",
+    "title": "Cờ bạc bất hợp pháp",
+    "category": "Vi phạm vi cảnh",
+    "fine": 168000.0,
+    "prison_months": 0,
+    "description": "Tổ chức, gạ gẫm hoặc tham gia đánh bạc trái phép tại bất kỳ địa điểm nào, hoặc thiết lập, phát hành các hình thức xổ số không được cấp phép."
+  },
+  {
+    "section": "Phần 3: Các Tội Xâm Phạm Thuần Phong Mỹ Tục",
+    "code": "PC 32",
+    "title": "Tòng phạm / Che giấu tội phạm",
+    "category": "Tội nhẹ",
+    "fine": 100500.0,
+    "prison_months": 10,
+    "description": "Chứa chấp, che giấu hoặc hỗ trợ người đang bị buộc tội hay bị điều tra nhằm giúp họ trốn tránh sự trừng phạt của pháp luật."
+  },
+  {
+    "section": "Phần 4: Các Tội Xâm Phạm Sức Khỏe & An Toàn Công Cộng",
+    "code": "PC 369",
+    "title": "Lái xe trên đường ray xe lửa",
+    "category": "Tội nhẹ",
+    "fine": 170000.0,
+    "prison_months": 0,
+    "description": "Lái xe hoặc điều khiển phương tiện di chuyển trên và dọc theo đường ray xe lửa thuộc quyền lưu thông riêng."
+  },
+  {
+    "section": "Phần 4: Các Tội Xâm Phạm Sức Khỏe & An Toàn Công Cộng",
+    "code": "PC 372",
+    "title": "Gây mất trật tự/Ô nhiễm công cộng",
+    "category": "Vi phạm vi cảnh",
+    "fine": 25000.0,
+    "prison_months": 0,
+    "description": "Hành vi gây hại cho sức khỏe, khiếm nhã, cản trở việc sử dụng tài sản tự do của cộng đồng, hoặc cản trở lưu thông trên sông, hồ, công viên, đường sá."
+  },
+  {
+    "section": "Phần 4: Các Tội Xâm Phạm Sức Khỏe & An Toàn Công Cộng",
+    "code": "PC 374",
+    "title": "Xả rác bừa bãi",
+    "category": "Vi phạm vi cảnh",
+    "fine": 36500.0,
+    "prison_months": 0,
+    "description": "Cố ý hoặc cẩu thả ném, thả, đặt rác thải xuống đất hoặc nguồn nước không đúng nơi quy định."
+  },
+  {
+    "section": "Phần 4: Các Tội Xâm Phạm Sức Khỏe & An Toàn Công Cộng",
+    "code": "PC 148",
+    "title": "Cản trở lực lượng cứu hộ khẩn cấp",
+    "category": "Tội nhẹ",
+    "fine": 87400.0,
+    "prison_months": 6,
+    "description": "Tụ tập hoặc dừng lại tại hiện trường khẩn cấp để hiếu kỳ đứng xem cảnh sát, lính cứu hỏa, y tế làm việc gây cản trở nhiệm vụ."
+  },
+  {
+    "section": "Phần 4: Các Tội Xâm Phạm Sức Khỏe & An Toàn Công Cộng",
+    "code": "PC 21810",
+    "title": "Tàng trữ tay đấm gấu (Brass Knuckles)",
+    "category": "Tội nhẹ",
+    "fine": 39500.0,
+    "prison_months": 6,
+    "description": "Hành vi sở hữu, sản xuất, mua bán, tặng hoặc nhập khẩu vũ khí tay đấm kim loại là bất hợp pháp."
+  },
+  {
+    "section": "Phần 5: Các Tội Xâm Phạm Trật Tự Công Cộng",
+    "code": "PC 404",
+    "title": "Bạo loạn",
+    "category": "Trọng tội",
+    "fine": 115000.0,
+    "prison_months": 24,
+    "description": "Sử dụng vũ lực hoặc bạo lực gây rối trật tự công cộng bởi từ 2 người trở lên hành động cùng nhau mà không có thẩm quyền pháp luật."
+  },
+  {
+    "section": "Phần 5: Các Tội Xâm Phạm Trật Tự Công Cộng",
+    "code": "PC 404.6",
+    "title": "Kích động bạo loạn",
+    "category": "Tội nhẹ",
+    "fine": 133000.0,
+    "prison_months": 0,
+    "description": "Hành vi cố ý thúc giục, kích động người khác tham gia bạo loạn, sử dụng bạo lực hoặc đốt phá tài sản."
+  },
+  {
+    "section": "Phần 5: Các Tội Xâm Phạm Trật Tự Công Cộng",
+    "code": "PC 408",
+    "title": "Tụ tập trái pháp luật",
+    "category": "Tội nhẹ",
+    "fine": 80000.0,
+    "prison_months": 6,
+    "description": "Khi hai hoặc nhiều người tụ tập cùng nhau để thực hiện một hành vi phi pháp, hoặc làm một việc hợp pháp nhưng bằng thái độ bạo lực, ầm ĩ."
+  },
+  {
+    "section": "Phần 5: Các Tội Xâm Phạm Trật Tự Công Cộng",
+    "code": "PC 415",
+    "title": "Đánh nhau công cộng",
+    "category": "Tội nhẹ",
+    "fine": 67000.0,
+    "prison_months": 6,
+    "description": "Tham gia, xúi giục hoặc cổ vũ các cuộc đánh nhau tổ chức trái phép. Khán giả đứng xem cũng có thể bị phạt tới 1.000 USD."
+  },
+  {
+    "section": "Phần 5: Các Tội Xâm Phạm Trật Tự Công Cộng",
+    "code": "PC 415.5",
+    "title": "Gây rối trật tự",
+    "category": "Vi phạm vi cảnh",
+    "fine": 67000.0,
+    "prison_months": 0,
+    "description": "Gây mất trật tự hoặc sự bình yên chung bằng cách thực hiện các hành động nguy hiểm hoặc quấy rầy tại nơi công cộng."
+  },
+  {
+    "section": "Phần 5: Các Tội Xâm Phạm Trật Tự Công Cộng",
+    "code": "PC 422",
+    "title": "Đe dọa phạm tội nghiêm trọng",
+    "category": "Tội nhẹ",
+    "fine": 96500.0,
+    "prison_months": 6,
+    "description": "Đe dọa tước đoạt mạng sống hoặc gây thương tích nghiêm trọng cho người khác qua lời nói, văn bản hoặc thiết bị điện tử, ngay cả khi không có ý định thực hiện thực tế."
+  },
+  {
+    "section": "Phần 5: Các Tội Xâm Phạm Trật Tự Công Cộng",
+    "code": "PC 422.55",
+    "title": "Tội phạm thù ghét",
+    "category": "Trọng tội",
+    "fine": 50000.0,
+    "prison_months": 36,
+    "description": "Tội phạm nhắm vào cá nhân hoặc tài sản xuất phát từ định kiến của hung thủ đối với chủng tộc, tôn giáo, khuyết tật, xu hướng tính dục hoặc giới tính."
+  },
+  {
+    "section": "Phần 5: Các Tội Xâm Phạm Trật Tự Công Cộng",
+    "code": "PC 647",
+    "title": "Cư xử mất chuẩn mực công cộng",
+    "category": "Tội nhẹ",
+    "fine": 26300.0,
+    "prison_months": 6,
+    "description": "Hành vi cố ý gây phiền hà, náo động, hoang mang công cộng hoặc tạo ra nguy cơ mất trật tự công cộng."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 451",
+    "title": "Phóng hỏa",
+    "category": "Trọng tội",
+    "fine": 186000.0,
+    "prison_months": 35,
+    "description": "Cố ý và ác ý châm lửa đốt hoặc gây ra vụ cháy cho bất kỳ công trình, đất rừng hoặc tài sản nào."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 453",
+    "title": "Tàng trữ vật liệu phóng hỏa",
+    "category": "Trọng tội",
+    "fine": 115000.0,
+    "prison_months": 10,
+    "description": "Sở hữu, sản xuất vật liệu dễ cháy hoặc thiết bị gây cháy nhằm mục đích thực hiện hành vi phóng hỏa."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 459",
+    "title": "Đột nhập trộm cắp (Burglary)",
+    "category": "Trọng tội",
+    "fine": 89000.0,
+    "prison_months": 24,
+    "description": "Xâm nhập trái phép vào bất kỳ tài sản nào không thuộc sở hữu hoặc không có sự cho phép với ý định thực hiện trộm cắp."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 602.5",
+    "title": "Xâm nhập trái phép phương tiện",
+    "category": "Tội nhẹ",
+    "fine": 80500.0,
+    "prison_months": 0,
+    "description": "Cưỡng chế mở/đột nhập vào xe cơ giới với ý định thực hiện hành vi trộm cắp."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 464",
+    "title": "Phá két sắt / Container bảo mật",
+    "category": "Trọng tội",
+    "fine": 200500.0,
+    "prison_months": 24,
+    "description": "Đột nhập công trình và sử dụng đèn khò, hồ quang điện, ống nhiệt hoặc chất nổ để phá két sắt, hầm ngầm hoặc nơi bảo mật."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 466",
+    "title": "Tàng trữ công cụ đột nhập trộm cắp",
+    "category": "Tội nhẹ",
+    "fine": 85000.0,
+    "prison_months": 0,
+    "description": "Mang theo đồ nghề mở khóa, xà beng, kìm kẹp, chìa khóa vạn năng... với ý định đột nhập tòa nhà, xe cộ, máy bay."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 466.5",
+    "title": "Tàng trữ chìa khóa vạn năng xe cơ giới",
+    "category": "Tội nhẹ",
+    "fine": 100000.0,
+    "prison_months": 6,
+    "description": "Sở hữu chìa khóa vạn năng xe cơ giới hoặc chìa mở khóa bánh xe nhằm mục đích thực hiện hành vi phạm pháp."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 475",
+    "title": "Làm giả tiền tệ",
+    "category": "Trọng tội",
+    "fine": 200000.0,
+    "prison_months": 30,
+    "description": "Tạo ra, mua bán, chào mời hoặc tàng trữ tiền giả."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 484a",
+    "title": "Trộm cắp vặt",
+    "category": "Tội nhẹ",
+    "fine": 73000.0,
+    "prison_months": 6,
+    "description": "Hành vi trộm cắp, chiếm đoạt tài sản, tiền bạc hoặc hàng hóa có tổng giá trị không vượt quá 950 USD."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 487",
+    "title": "Trộm cắp tài sản giá trị lớn",
+    "category": "Trọng tội",
+    "fine": 111000.0,
+    "prison_months": 12,
+    "description": "Hành vi trộm cắp, chiếm đoạt tài sản, tiền bạc hoặc hàng hóa có tổng giá trị vượt trên 950 USD."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 487d(2)",
+    "title": "Trộm cắp súng ống",
+    "category": "Trọng tội",
+    "fine": 128000.0,
+    "prison_months": 24,
+    "description": "Hành vi trộm cắp hoặc chiếm đoạt súng ống có giá trị vượt quá 950 USD."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 496.5",
+    "title": "Tiêu thụ/Trộm cắp phụ tùng xe",
+    "category": "Tội nhẹ",
+    "fine": 89000.0,
+    "prison_months": 12,
+    "description": "Tàng trữ trái phép tài sản có được từ hành vi trộm cắp trong xe cộ, cậy khóa xe hoặc tháo dỡ phụ tùng xe."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 499",
+    "title": "Trộm cắp máy bay",
+    "category": "Trọng tội",
+    "fine": 360000.0,
+    "prison_months": 12,
+    "description": "Vận hành hoặc chiếm đoạt máy bay không thuộc sở hữu của mình mà không được phép nhằm tước đoạt quyền sở hữu tạm thời hay vĩnh viễn."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 518",
+    "title": "Tống tiền",
+    "category": "Trọng tội",
+    "fine": 400000.0,
+    "prison_months": 6,
+    "description": "Dùng vũ lực hoặc đe dọa ép buộc người khác phải giao tài sản hoặc ép buộc công chức thực hiện hành vi công vụ."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 529",
+    "title": "Mạo danh người khác",
+    "category": "Trọng tội",
+    "fine": 89000.0,
+    "prison_months": 12,
+    "description": "Mạo danh người khác một cách gian dối hoặc tàng trữ giấy tờ tùy thân của người khác."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 537",
+    "title": "Tàng trữ hàng hóa bị xóa mã nhận dạng",
+    "category": "Vi phạm vi cảnh",
+    "fine": 75000.0,
+    "prison_months": 0,
+    "description": "Cố ý mua bán, tàng trữ hoặc che giấu tài sản bị xóa bỏ, cạo sửa số sê-ri hoặc mã nhận dạng của nhà sản xuất."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 538",
+    "title": "Mạo danh quan chức công",
+    "category": "Trọng tội",
+    "fine": 84600.0,
+    "prison_months": 48,
+    "description": "Cố ý mặc đồng phục, đeo huy hiệu hoặc sử dụng thẻ công chức nhằm mục đích lừa đảo mạo danh quan chức nhà nước."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 550",
+    "title": "Trục lợi bảo hiểm",
+    "category": "Trọng tội",
+    "fine": 146450.0,
+    "prison_months": 16,
+    "description": "Cố ý phá hủy, giấu giếm hoặc vứt bỏ tài sản đang được mua bảo hiểm nhằm lừa đảo tiền bồi thường."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 602",
+    "title": "Xâm phạm gia cư/Tài sản tư nhân",
+    "category": "Tội nhẹ",
+    "fine": 10000.0,
+    "prison_months": 6,
+    "description": "Xâm nhập hoặc cố tình lưu lại trên tài sản riêng đã có biển báo cấm mà không có sự cho phép bằng văn bản của chủ sở hữu."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 594.1",
+    "title": "Phá hoại đường sá, biển báo giao thông",
+    "category": "Tội nhẹ",
+    "fine": 88680.0,
+    "prison_months": 0,
+    "description": "Ác ý phá hủy, tháo dỡ, làm hư hỏng hoặc cản trở đường sá, vỉa hè, cầu cống hoặc biển báo giao thông."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 3004",
+    "title": "Gian lận danh tính cá nhân",
+    "category": "Tội nhẹ",
+    "fine": 97500.0,
+    "prison_months": 10,
+    "description": "Thu thập hoặc tàng trữ thông tin nhận dạng cá nhân (ID) của người khác nhằm mục đích lừa đảo."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 3005",
+    "title": "Chiếm giữ tài sản chính phủ",
+    "category": "Trọng tội",
+    "fine": 107000.0,
+    "prison_months": 20,
+    "description": "Tàng trữ hoặc chiếm giữ trái phép trang thiết bị do chính phủ cấp phát."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 148.5",
+    "title": "Báo án giả",
+    "category": "Vi phạm vi cảnh",
+    "fine": 60000.0,
+    "prison_months": 0,
+    "description": "Hành vi trình báo một tội phạm hoặc vụ án không hề xảy ra."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 487d(1)",
+    "title": "Trộm cắp ô tô (GTA)",
+    "category": "Trọng tội",
+    "fine": 93000.0,
+    "prison_months": 12,
+    "description": "Chiếm đoạt xe ô tô trái pháp luật nhằm tước đoạt quyền sở hữu của chủ xe."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 459.5",
+    "title": "Trộm cắp trong cửa hàng",
+    "category": "Tội nhẹ",
+    "fine": 103500.0,
+    "prison_months": 2,
+    "description": "Vào cửa hàng kinh doanh trong giờ mở cửa với ý định trộm cắp hàng hóa trị giá dưới 950 USD."
+  },
+  {
+    "section": "Phần 6: Các Tội Xâm Phạm Tài Sản",
+    "code": "PC 602.5",
+    "title": "Đột nhập nhà ở",
+    "category": "Trọng tội",
+    "fine": 179500.0,
+    "prison_months": 25,
+    "description": "Hành vi đột nhập vào nhà dân, nơi cư trú hoặc bất kỳ địa điểm nào được sử dụng làm nhà ở."
+  },
+  {
+    "section": "Phần 7: Phá Hoại Ác Ý",
+    "code": "PC 594",
+    "title": "Phá hoại tài sản (Vandalism)",
+    "category": "Vi phạm vi cảnh",
+    "fine": 69000.0,
+    "prison_months": 0,
+    "description": "Ác ý bôi bẩn, phá hủy hoặc làm hư hỏng tài sản động sản hay bất động sản của người khác."
+  },
+  {
+    "section": "Phần 7: Phá Hoại Ác Ý",
+    "code": "PC 597",
+    "title": "Ngược đãi động vật",
+    "category": "Trọng tội",
+    "fine": 80000.0,
+    "prison_months": 12,
+    "description": "Gây nguy hiểm cho động vật do nhốt trong nhiệt độ khắc nghiệt, thiếu thông khí, thức ăn nước uống, hoặc tra tấn, hành hạ động vật."
+  },
+  {
+    "section": "Phần 7: Phá Hoại Ác Ý",
+    "code": "PC 594",
+    "title": "Phá hoại tài sản nghiêm trọng",
+    "category": "Tội nhẹ",
+    "fine": 93000.0,
+    "prison_months": 6,
+    "description": "Cố ý làm hư hỏng, phá hủy hoặc bôi bẩn tài sản hữu hình của người khác mà không được sự đồng ý."
+  },
+  {
+    "section": "Phần 7: Phá Hoại Ác Ý",
+    "code": "PC 602.1",
+    "title": "Cản trở hoạt động kinh doanh",
+    "category": "Vi phạm vi cảnh",
+    "fine": 81600.0,
+    "prison_months": 0,
+    "description": "Cố tình cản trở kinh doanh hợp pháp bằng cách quấy rối, đe dọa khách hàng và từ chối rời đi khi được chủ cửa hàng hoặc cảnh sát yêu cầu."
+  },
+  {
+    "section": "Phần 7: Phá Hoại Ác Ý",
+    "code": "PC 640",
+    "title": "Phá hoại phương tiện giao thông công cộng",
+    "category": "Trọng tội",
+    "fine": 80500.0,
+    "prison_months": 10,
+    "description": "Cố ý tháo dỡ, phá hoại phương tiện chở khách công cộng, đường ray, cầu dao nhằm mục đích gây thương tích nghiêm trọng cho hành khách."
+  },
+  {
+    "section": "Phần 8: Các Tội Phạm Khác",
+    "code": "PC 26500",
+    "title": "Mua bán súng không phép",
+    "category": "Trọng tội",
+    "fine": 160000.0,
+    "prison_months": 24,
+    "description": "Bán, cho thuê hoặc chuyển nhượng súng mà không có giấy phép kinh doanh hợp lệ. Phạt tới 250 tháng tù và 50.000 USD."
+  },
+  {
+    "section": "Phần 8: Các Tội Phạm Khác",
+    "code": "PC 30305",
+    "title": "Tàng trữ/Phân phối đạn dược trái phép",
+    "category": "Trọng tội",
+    "fine": 158000.0,
+    "prison_months": 6,
+    "description": "Người có tiền án trọng tội mà tàng trữ, mua bán hoặc chuyển nhượng đạn dược."
+  },
+  {
+    "section": "Phần 8: Các Tội Phạm Khác",
+    "code": "PC 632",
+    "title": "Xâm phạm quyền riêng tư",
+    "category": "Vi phạm vi cảnh",
+    "fine": 83000.0,
+    "prison_months": 0,
+    "description": "Xâm nhập trái phép vào không gian, đời tư hoặc thông tin cá nhân của người khác mà không được sự đồng ý."
+  },
+  {
+    "section": "Phần 8: Các Tội Phạm Khác",
+    "code": "PC 646.9",
+    "title": "Quấy rối theo dõi (Stalking)",
+    "category": "Tội nhẹ",
+    "fine": 49000.0,
+    "prison_months": 6,
+    "description": "Cố ý theo dõi lặp đi lặp lại hoặc ác ý quấy rối người khác kèm theo đe dọa thực tế khiến họ sợ hãi cho an toàn bản thân hoặc gia đình."
+  },
+  {
+    "section": "Phần 8: Các Tội Phạm Khác",
+    "code": "PC 647.9",
+    "title": "Chụp ảnh thi thể trái phép",
+    "category": "Tội nhẹ",
+    "fine": 49000.0,
+    "prison_months": 6,
+    "description": "Công chức hoặc cá nhân tại hiện trường tai nạn/vụ án chụp ảnh người đã khuất vì mục đích cá nhân, không phục vụ điều tra chính thức."
+  },
+  {
+    "section": "Phần 8: Các Tội Phạm Khác",
+    "code": "PC 653f",
+    "title": "Xúi giục phạm tội",
+    "category": "Trọng tội",
+    "fine": 70350.0,
+    "prison_months": 0,
+    "description": "Kêu gọi, xúi giục người khác thực hiện các tội nghiêm trọng như hối lộ, trộm cướp, bắt cóc, phóng hỏa hoặc khai man."
+  },
+  {
+    "section": "Phần 8: Các Tội Phạm Khác",
+    "code": "653.2",
+    "title": "Quấy rối mạng / Phát tán thông tin cá nhân (Doxxing)",
+    "category": "Tội nhẹ",
+    "fine": 63000.0,
+    "prison_months": 6,
+    "description": "Sử dụng thiết bị điện tử cố ý gây sợ hãi cho an toàn của người khác, bao gồm phát tán thông tin cá nhân, hình ảnh riêng tư mà không được phép."
+  },
+  {
+    "section": "Phần 9: Các Chất Cấm (Ma Túy)",
+    "code": "PC 11357",
+    "title": "Tàng trữ cần sa",
+    "category": "Vi phạm vi cảnh",
+    "fine": 107500.0,
+    "prison_months": 0,
+    "description": "Tàng trữ số lượng vượt quá 28,5 gram cần sa."
+  },
+  {
+    "section": "Phần 9: Các Chất Cấm (Ma Túy)",
+    "code": "PC 11379.6",
+    "title": "Điều chế / Sản xuất cần sa",
+    "category": "Trọng tội",
+    "fine": 102450.0,
+    "prison_months": 15,
+    "description": "Sản xuất, điều chế hoặc tổng hợp hóa học bất kỳ hình thức nào của cần sa mà không có quyền hợp pháp."
+  },
+  {
+    "section": "Phần 9: Các Chất Cấm (Ma Túy)",
+    "code": "PC 11358",
+    "title": "Trồng cây cần sa",
+    "category": "Tội nhẹ",
+    "fine": 102363.0,
+    "prison_months": 10,
+    "description": "Trồng trọt, chăm sóc, thu hoạch, phơi khô hoặc chế biến cây cần sa trái phép."
+  },
+  {
+    "section": "Phần 9: Các Chất Cấm (Ma Túy)",
+    "code": "PC 11359",
+    "title": "Tàng trữ cần sa mục đích phân phối",
+    "category": "Tội nhẹ",
+    "fine": 100000.0,
+    "prison_months": 6,
+    "description": "Tàng trữ cần sa với ý định chủ quan nhằm mục đích mua bán."
+  },
+  {
+    "section": "Phần 9: Các Chất Cấm (Ma Túy)",
+    "code": "PC 11350",
+    "title": "Tàng trữ chất cấm",
+    "category": "Trọng tội",
+    "fine": 140000.0,
+    "prison_months": 12,
+    "description": "Tàng trữ các loại ma túy/chất kiểm soát mà không có chỉ định y tế hoặc quyền hợp pháp."
+  },
+  {
+    "section": "Phần 9: Các Chất Cấm (Ma Túy)",
+    "code": "PC 11351",
+    "title": "Sản xuất ma túy / Chất cấm",
+    "category": "Trọng tội",
+    "fine": 140000.0,
+    "prison_months": 22,
+    "description": "Điều chế, sản xuất, phân phối hoặc tổng hợp hóa học các chất cấm trái phép."
+  },
+  {
+    "section": "Phần 9: Các Chất Cấm (Ma Túy)",
+    "code": "PC 11352",
+    "title": "Tàng trữ chất cấm mục đích phân phối",
+    "category": "Trọng tội",
+    "fine": 200750.0,
+    "prison_months": 12,
+    "description": "Tàng trữ các loại ma túy/chất cấm với ý định tiêu thụ, mua bán."
+  },
+  {
+    "section": "Phần 9: Các Chất Cấm (Ma Túy)",
+    "code": "HS 11352",
+    "title": "Buôn lậu ma túy",
+    "category": "Trọng tội",
+    "fine": 193500.0,
+    "prison_months": 15,
+    "description": "Nhập khẩu, vận chuyển buôn bán, cung cấp hoặc chào mời vận chuyển ma túy vào địa phận tiểu bang."
+  },
+  {
+    "section": "Phần 10: Luật Săn Bắn & Thủy Sản",
+    "code": "FGC 2000",
+    "title": "Săn trộm",
+    "category": "Trọng tội",
+    "fine": 103000.0,
+    "prison_months": 35,
+    "description": "Săn bắt chim, thú, cá, bò sát trái quy định. Tàng trữ động vật hoang dã tại rừng, sông hồ khi mang theo dụng cụ săn bắn là bằng chứng sơ bộ của hành vi săn trộm."
+  },
+  {
+    "section": "Phần 10: Luật Săn Bắn & Thủy Sản",
+    "code": "FGC 3031",
+    "title": "Săn bắn không có giấy phép",
+    "category": "Tội nhẹ",
+    "fine": 100000.0,
+    "prison_months": 10,
+    "description": "Thực hiện hoạt động săn bắn mà không có giấy phép hợp lệ."
+  },
+  {
+    "section": "Phần 10: Luật Săn Bắn & Thủy Sản",
+    "code": "PC 25850(a)",
+    "title": "Chở súng trường/Súng săn nạp sẵn đạn trên xe",
+    "category": "Tội nhẹ",
+    "fine": 86000.0,
+    "prison_months": 10,
+    "description": "Mang theo súng nạp sẵn đạn trong phương tiện di chuyển tại nơi công cộng hoặc đường phố."
+  },
+  {
+    "section": "Phần 10: Luật Săn Bắn & Thủy Sản",
+    "code": "FGC 3004(b)",
+    "title": "Nổ súng từ đường giao thông",
+    "category": "Trọng tội",
+    "fine": 140000.0,
+    "prison_months": 12,
+    "description": "Nổ súng nhắm vào động vật qua hoặc dọc theo đường giao thông công cộng một cách nguy hiểm."
+  },
+  {
+    "section": "Phần 10: Luật Săn Bắn & Thủy Sản",
+    "code": "FCG 3004(a)",
+    "title": "Săn bắn gần khu dân cư",
+    "category": "Trọng tội",
+    "fine": 163000.0,
+    "prison_months": 10,
+    "description": "Săn bắn hoặc nổ súng/bắn cung nỏ trong phạm vi 150 yard (450 feet) quanh nhà ở có người cư trú (trừ khi là chủ sở hữu đất)."
+  },
+  {
+    "section": "Phần 10: Luật Săn Bắn & Thủy Sản",
+    "code": "FGC 3003.5",
+    "title": "Dùng xe truy đuổi động vật hoang dã",
+    "category": "Trọng tội",
+    "fine": 83000.0,
+    "prison_months": 30,
+    "description": "Sử dụng các phương tiện cơ giới đường bộ, đường thủy hoặc hàng không để xua đuổi, truy đuổi chim hoặc thú hoang dã."
+  },
+  {
+    "section": "Phần 11: Đưa Hàng Cấm Vào Cơ Sở Giam Giữ",
+    "code": "PC 4573.5",
+    "title": "Đưa hàng cấm (Ma túy/Rượu) vào trại giam",
+    "category": "Trọng tội",
+    "fine": 170000.0,
+    "prison_months": 10,
+    "description": "Cố ý mang rượu hoặc các loại thuốc không được phép vào nhà tù hoặc trại giam."
+  },
+  {
+    "section": "Phần 11: Đưa Hàng Cấm Vào Cơ Sở Giam Giữ",
+    "code": "PC 4573",
+    "title": "Đưa chất cấm vào trại giam",
+    "category": "Trọng tội",
+    "fine": 217000.0,
+    "prison_months": 15,
+    "description": "Mang các loại ma túy bất hợp pháp vào cơ sở cải tạo/giam giữ."
+  },
+  {
+    "section": "Phần 11: Đưa Hàng Cấm Vào Cơ Sở Giam Giữ",
+    "code": "PC 4573.6",
+    "title": "Tàng trữ hàng cấm trong cơ sở giam giữ",
+    "category": "Trọng tội",
+    "fine": 170000.0,
+    "prison_months": 15,
+    "description": "Cố ý tàng trữ các vật phẩm cấm bên trong khuôn viên trại giam."
+  },
+  {
+    "section": "Phần 11: Đưa Hàng Cấm Vào Cơ Sở Giam Giữ",
+    "code": "PC 4574",
+    "title": "Đưa vũ khí/Điện thoại vào trại giam",
+    "category": "Trọng tội",
+    "fine": 200000.0,
+    "prison_months": 50,
+    "description": "Mang súng ống, vũ khí chết người hoặc chất nổ vào cơ sở giam giữ."
+  },
+  {
+    "section": "Phần 12: Bộ Luật Đô Thị",
+    "code": "LAMC SEC 56.12",
+    "title": "Cản trở đường phố hoặc vỉa hè",
+    "category": "Vi phạm vi cảnh",
+    "fine": 21000.0,
+    "prison_months": 0,
+    "description": "Đặt hoặc để lại các vật dụng gây cản trở vỉa hè, đường phố, hẻm công cộng mà không có giấy phép (KHÔNG ĐƯỢC BẮT GIỮ CHỈ VÌ LỖI NÀY)."
+  }
+]

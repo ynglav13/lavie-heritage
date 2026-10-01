@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Windows 10 - LSPD Desktop (MDT & CAD)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main id="app" hidden>
+    <div class="desktop">
+      <div class="desktop-icons">
+        <div class="desktop-icon" id="dt-mdt">
+          <div class="icon-box mdt-box"><i class="fa-solid fa-shield-halved"></i></div>
+          <span>MDT System</span>
+        </div>
+        <div class="desktop-icon" id="dt-cad">
+          <div class="icon-box cad-box"><i class="fa-solid fa-laptop-code"></i></div>
+          <span>C.A.D Terminal</span>
+        </div>
+        <div class="desktop-icon">
+          <div class="icon-box bin-box"><i class="fa-solid fa-trash-can"></i></div>
+          <span>Recycle Bin</span>
+        </div>
+      </div>
+
+      <section class="window" style="display: none;">
+        <header>
+          <div class="brand">
+            <i class="fa-solid fa-shield-halved win-app-icon" id="win-app-icon"></i>
+            <span class="app-name" id="win-app-title">MDT System</span>
+          </div>
+          <div id="officer"></div>
+          <div class="win-controls">
+            <button id="minimize" title="Minimize">—</button>
+            <button id="close" title="Close">✕</button>
+          </div>
+        </header>
+        <section class="shell">
+          <nav id="app-nav"></nav>
+          <article id="content"></article>
+          <div id="mdt-toast" hidden></div>
+          <div id="mdt-confirm" hidden>
+            <section>
+              <strong>Xác nhận đóng BOLO</strong>
+              <p>Bạn có chắc chắn muốn đóng BOLO này?</p>
+              <div class="confirm-buttons">
+                <button id="confirm-no" class="secondary">Hủy</button>
+                <button id="confirm-yes" class="primary">Xác nhận</button>
+              </div>
+            </section>
+          </div>
+        </section>
+      </section>
+
+      <footer>
+        <button class="start" title="Close NUI">
+          <i class="fa-solid fa-power-off start-logo"></i>
+        </button>
+        <div class="taskbar-apps">
+          <div class="task active-task">Desktop</div>
+        </div>
+        <div class="system-tray">
+          <i class="fa-solid fa-chevron-up tray-icon"></i>
+          <i class="fa-solid fa-network-wired tray-icon"></i>
+          <i class="fa-solid fa-volume-high tray-icon"></i>
+          <div class="clock-wrap">
+            <div class="clock-time" id="win-time">12:00:00 PM</div>
+            <div class="clock-date" id="win-date">27/07/2026</div>
+          </div>
+          <i class="fa-regular fa-comment tray-icon notification-icon"></i>
+          <div class="show-desktop-btn" id="win-show-desktop" title="Show desktop"></div>
+        </div>
+        <div class="clock" style="display:none;">Internal Network</div>
+      </footer>
+    </div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

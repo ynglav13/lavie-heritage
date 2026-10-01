@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Faction Panel</title>
+
+    <!-- Modern Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jQuery must load FIRST -->
+    <script src="JS/jquery.min.js"></script>
+
+    <!-- Scripts -->
+    <script src="JS/app.js"></script>
+    <script src="JS/general.js"></script>
+    <script src="JS/members.js"></script>
+    <script src="JS/rank.js"></script>
+    <script src="JS/division.js"></script>
+    <script src="JS/permission.js"></script>
+    <script src="JS/select.js"></script>
+    <script src="JS/bizSelect.js"></script>
+    <script src="JS/bizEdit.js"></script>
+    <script src="JS/garage.js"></script>
+    <script src="JS/garageVehicles.js"></script>
+    <script src="JS/locker.js"></script>
+    <script src="JS/armory.js"></script>
+    <script src="JS/garageSpawn.js"></script>
+    <script src="JS/budget.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="panel-wrapper">
+            <div class="overlap-icon"><i class="fa-solid fa-users-gear"></i></div>
+            <div class="header"></div>
+            <div class="panel-body">
+                <div class="listmenu"></div>
+                <div class="main-bg">
+                    <div class="search-container" style="display: none;">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search" placeholder="Search vehicle model...">
+                    </div>
+                    <div class="content"></div>
+                </div>
+            </div>
+            <div class="footer"></div>
+        </div>
+    </div>
+
+    <div class="receipt-container" id="receipt-container" style="display: none;">
+        <div class="receipt-paper">
+            <!-- Jagged Top Border -->
+            <div class="receipt-jagged-top"></div>
+
+            <div class="receipt-inner">
+                <div class="receipt-header">
+                    <div class="receipt-shop-name" id="receipt-shop-name">SHOP NAME</div>
+                    <div class="receipt-shop-address">LOS SANTOS, SAN ANDREAS</div>
+                    <div class="receipt-divider">* * * * * * * * * * * * * * * * * * * * * *</div>
+                    <div class="receipt-title">CASH RECEIPT</div>
+                    <div class="receipt-divider">* * * * * * * * * * * * * * * * * * * * * *</div>
+                </div>
+
+                <div class="receipt-details">
+                    <div class="receipt-row receipt-header-row">
+                        <span class="receipt-col-desc">Nội dung</span>
+                        <span class="receipt-col-qty"
+                            style="width: 40px; text-align: center; font-weight: bold;">SL</span>
+                        <span class="receipt-col-price">Giá</span>
+                    </div>
+                    <div id="receipt-items-list">
+                        <!-- Dynamically populated rows -->
+                    </div>
+                    <div class="receipt-divider-double">==========================================</div>
+                    <div class="receipt-row receipt-total-row">
+                        <span>TOTAL</span>
+                        <span id="receipt-total-price">$0.00</span>
+                    </div>
+                    <div class="receipt-divider">* * * * * * * * * * * * * * * * * * * * * *</div>
+                </div>
+
+                <div class="receipt-footer">
+                    <div class="receipt-thankyou">THANK YOU!</div>
+                    <div class="receipt-barcode">
+                        <div class="barcode-line w-2"></div>
+                        <div class="barcode-line w-1"></div>
+                        <div class="barcode-line w-4"></div>
+                        <div class="barcode-line w-2"></div>
+                        <div class="barcode-line w-1"></div>
+                        <div class="barcode-line w-3"></div>
+                        <div class="barcode-line w-1"></div>
+                        <div class="barcode-line w-2"></div>
+                        <div class="barcode-line w-4"></div>
+                        <div class="barcode-line w-1"></div>
+                        <div class="barcode-line w-2"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Jagged Bottom Border -->
+            <div class="receipt-jagged-bottom"></div>
+        </div>
+
+        <div class="receipt-actions">
+            <button class="receipt-btn btn-cash" onclick="payReceipt('cash')">Thanh toán Tiền mặt</button>
+            <button class="receipt-btn btn-bank" onclick="payReceipt('bank')">Thanh toán Ngân hàng</button>
+            <button class="receipt-btn btn-decline" onclick="payReceipt('decline')">Từ chối</button>
+        </div>
+    </div>
+
+    <div class="receipt-container" id="receipt-creator-container" style="display: none;">
+        <div class="receipt-paper">
+            <!-- Jagged Top Border -->
+            <div class="receipt-jagged-top"></div>
+
+            <div class="receipt-inner">
+                <div class="receipt-header">
+                    <div class="receipt-shop-name" id="creator-shop-name">SHOP NAME</div>
+                    <div class="receipt-shop-address">LOS SANTOS, SAN ANDREAS</div>
+                    <div class="receipt-divider">* * * * * * * * * * * * * * * * * * * * * *</div>
+                    <div class="receipt-title">NEW BILL</div>
+                    <div class="receipt-divider">* * * * * * * * * * * * * * * * * * * * * *</div>
+                </div>
+
+                <div class="receipt-details">
+                    <div class="receipt-row" style="margin-bottom: 12px;">
+                        <span class="receipt-col-desc" style="font-weight: bold;">Khách hàng:</span>
+                        <select id="creator-customer-id" required
+                            style="width: 160px; text-align: right; border: none; border-bottom: 1px dashed #222; background: transparent; color: #222; outline: none; font-family: inherit; font-size: 13px; cursor: pointer; direction: rtl;">
+                            <option value="">Chọn người ở gần...</option>
+                        </select>
+                    </div>
+                    <div class="receipt-divider">* * * * * * * * * * * * * * * * * * * * * *</div>
+                    <div class="receipt-row receipt-header-row" style="margin-bottom: 8px;">
+                        <span class="receipt-col-desc">Dịch vụ / Sản phẩm</span>
+                        <span class="receipt-col-qty"
+                            style="width: 40px; text-align: center; font-weight: bold; margin-right: 15px;">SL</span>
+                        <span class="receipt-col-price" style="margin-right: 20px;">Giá</span>
+                    </div>
+
+                    <!-- Dynamic Creator Input Rows -->
+                    <div id="creator-items-container">
+                        <!-- Appended dynamic rows will go here -->
+                    </div>
+
+                    <div style="text-align: left; margin-top: 8px; margin-bottom: 12px;">
+                        <button type="button" onclick="addCreatorRow()"
+                            style="background: #2ecc71; border: none; color: #fff; padding: 4px 10px; border-radius: 4px; font-family: inherit; font-size: 11px; cursor: pointer; font-weight: bold;">+
+                            Thêm dòng</button>
+                    </div>
+
+                    <div class="receipt-divider-double">==========================================</div>
+                    <div class="receipt-row receipt-total-row">
+                        <span>TOTAL</span>
+                        <span id="creator-total-val">$0.00</span>
+                    </div>
+                    <div class="receipt-divider" style="margin-top: 15px;">* * * * * * * * * * * * * * * * * * * * * *
+                    </div>
+                </div>
+
+                <div class="receipt-footer">
+                    <div class="receipt-thankyou" style="font-size: 11px; letter-spacing: 1px;">SOẠN THẢO HÓA ĐƠN</div>
+                </div>
+            </div>
+
+            <!-- Jagged Bottom Border -->
+            <div class="receipt-jagged-bottom"></div>
+        </div>
+
+        <div class="receipt-actions">
+            <button class="receipt-btn btn-cash" onclick="submitReceiptCreator()">Xuất Hóa Đơn</button>
+            <button class="receipt-btn btn-decline" onclick="closeReceiptCreator()">Hủy bỏ</button>
+        </div>
+    </div>
+</body>
+
+</html>

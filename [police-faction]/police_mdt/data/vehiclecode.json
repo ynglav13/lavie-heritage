@@ -1,0 +1,427 @@
+[
+  {
+    "code": "CVC 14601.1",
+    "title": "Lái xe khi bị treo hoặc thu hồi bằng",
+    "category": "Tội nhẹ",
+    "fine": 60000.0,
+    "prison_months": 12,
+    "description": "Không được điều khiển phương tiện cơ giới trong thời gian giấy phép lái xe bị đình chỉ hoặc thu hồi."
+  },
+  {
+    "code": "PC 5200",
+    "title": "Không gắn biển số xe",
+    "category": "Vi phạm vi cảnh",
+    "fine": 25000.0,
+    "prison_months": 0,
+    "description": "Điều khiển phương tiện không gắn biển số ở vị trí quy định một cách rõ ràng, dễ quan sát."
+  },
+  {
+    "code": "CVC 21461",
+    "title": "Không chấp hành hiệu lệnh",
+    "category": "Tội nhẹ",
+    "fine": 60000.0,
+    "prison_months": 4,
+    "description": "Hành vi trái pháp luật khi cố ý không chấp hành hoặc từ chối tuân thủ hiệu lệnh, tín hiệu hoặc sự chỉ dẫn hợp pháp của sĩ quan cảnh sát hoặc lực lượng phòng cháy chữa cháy."
+  },
+  {
+    "code": "CVC 2800.1",
+    "title": "Trốn chạy cảnh sát",
+    "category": "Trọng tội",
+    "fine": 83000.0,
+    "prison_months": 26,
+    "description": "Người điều khiển xe cơ giới cố ý phóng xe bỏ chạy hoặc tìm cách lẩn trốn xe cảnh sát đang truy đuổi."
+  },
+  {
+    "code": "CVC 2800.2",
+    "title": "Trốn chạy cảnh sát liều lĩnh",
+    "category": "Trọng tội",
+    "fine": 100850.0,
+    "prison_months": 35,
+    "description": "Bỏ chạy hoặc tìm cách lẩn trốn sự truy đuổi của cảnh sát bằng cách điều khiển phương tiện bất chấp an toàn tính mạng con người hoặc tài sản."
+  },
+  {
+    "code": "CVC 2800.3",
+    "title": "Bỏ chạy gây thương tích",
+    "category": "Trọng tội",
+    "fine": 86000.0,
+    "prison_months": 24,
+    "description": "Cố gắng lẩn trốn sự truy đuổi của cảnh sát và gây ra thương tích nghiêm trọng cho người khác."
+  },
+  {
+    "code": "CVC 2818",
+    "title": "Đặt biển báo/Cọc tiêu giao thông trái phép",
+    "category": "Vi phạm vi cảnh",
+    "fine": 20000.0,
+    "prison_months": 0,
+    "description": "Đi qua hoặc tự ý di chuyển các hệ thống đèn báo hiệu, cọc tiêu, pháo sáng phân luồng giao thông của lực lượng chức năng tại hiện trường khẩn cấp."
+  },
+  {
+    "code": "CVC 4463",
+    "title": "Lái xe không đăng ký/Bảo hiểm",
+    "category": "Vi phạm vi cảnh",
+    "fine": 70000.0,
+    "prison_months": 0,
+    "description": "Không được lái, di chuyển hoặc đỗ phương tiện cơ giới trên đường bộ hoặc bãi xe công cộng nếu phương tiện chưa được đăng ký và mua bảo hiểm."
+  },
+  {
+    "code": "CVC 10852",
+    "title": "Cậy phá/Tháo dỡ phương tiện trái phép",
+    "category": "Tội nhẹ",
+    "fine": 86000.0,
+    "prison_months": 6,
+    "description": "Cá nhân hoặc nhóm cố ý cậy phá, tháo dỡ phụ tùng hoặc xâm phạm các vật dụng bên trong xe của người khác khi chưa được chủ xe đồng ý."
+  },
+  {
+    "code": "CVC 22658",
+    "title": "Cản trở xe cứu hộ/xe cẩu xe",
+    "category": "Vi phạm vi cảnh",
+    "fine": 80000.0,
+    "prison_months": 0,
+    "description": "Không được cản trở nhân viên cứu hộ/thu hồi tài sản đưa xe vi phạm về bãi tạm giữ hoặc đại lý."
+  },
+  {
+    "code": "CVC 12500",
+    "title": "Lái xe không có bằng lái hợp lệ",
+    "category": "Vi phạm vi cảnh",
+    "fine": 63500.0,
+    "prison_months": 0,
+    "description": "Không được điều khiển xe cơ giới trên đường bộ nếu không có giấy phép lái xe hợp lệ."
+  },
+  {
+    "code": "CVC 12511",
+    "title": "Tàng trữ nhiều bằng lái xe",
+    "category": "Vi phạm vi cảnh",
+    "fine": 55000.0,
+    "prison_months": 0,
+    "description": "Không cá nhân nào được tàng trữ hoặc sở hữu cùng lúc nhiều hơn một bằng lái xe do Nhà nước cấp."
+  },
+  {
+    "code": "CVC 12951(b)",
+    "title": "Không xuất trình bằng lái xe",
+    "category": "Tội nhẹ",
+    "fine": 36000.0,
+    "prison_months": 4,
+    "description": "Người lái xe phải xuất trình giấy phép lái xe khi có yêu cầu của quan tòa hoặc cảnh sát."
+  },
+  {
+    "code": "CVC 20002",
+    "title": "Bỏ chạy khỏi hiện trường tai nạn",
+    "category": "Tội nhẹ",
+    "fine": 80000.0,
+    "prison_months": 6,
+    "description": "Rời khỏi hiện trường vụ tai nạn giao thông mà bản thân gây ra hư hỏng tài sản hoặc thương tích cho người khác."
+  },
+  {
+    "code": "CVC 21802",
+    "title": "Không nhường đường",
+    "category": "Vi phạm vi cảnh",
+    "fine": 25000.0,
+    "prison_months": 0,
+    "description": "Không nhường đường theo tín hiệu giao thông, biển báo, vạch kẻ đường hoặc không nhường đường cho xe ưu tiên, cho người đi bộ."
+  },
+  {
+    "code": "CVC 22350",
+    "title": "Chạy quá tốc độ quy định",
+    "category": "Vi phạm vi cảnh",
+    "fine": 36000.0,
+    "prison_months": 0,
+    "description": "Điều khiển phương tiện vượt quá tốc độ tối đa cho phép ghi trên biển báo đường bộ."
+  },
+  {
+    "code": "CVC 22350",
+    "title": "Chạy quá tốc độ nghiêm trọng (>110 MPH)",
+    "category": "Tội nhẹ",
+    "fine": 55450.0,
+    "prison_months": 6,
+    "description": "Lái xe với tốc độ từ 110 dặm/giờ (177 km/h) trở lên trên các tuyến đường bộ công cộng hoặc cao tốc."
+  },
+  {
+    "code": "CVC 22400",
+    "title": "Chạy xe quá chậm gây cản trở",
+    "category": "Vi phạm vi cảnh",
+    "fine": 20000.0,
+    "prison_months": 0,
+    "description": "Lái xe dưới tốc độ quy định của tuyến đường gây cản trở, ách tắc dòng lưu thông."
+  },
+  {
+    "code": "CVC 21460",
+    "title": "Đè vạch / Sai làn đường",
+    "category": "Vi phạm vi cảnh",
+    "fine": 15000.0,
+    "prison_months": 0,
+    "description": "Không tuân thủ các vạch kẻ đường, làn đường hoặc chỉ dẫn sơn trên mặt đường."
+  },
+  {
+    "code": "CVC 26708",
+    "title": "Lái xe bị che khuất tầm nhìn / Che mặt",
+    "category": "Vi phạm vi cảnh",
+    "fine": 20000.0,
+    "prison_months": 0,
+    "description": "Lái xe trong tình trạng tầm nhìn bị hạn chế, bao gồm việc đeo mặt nạ, kính che hoặc trùm kín mặt làm cản trở quan sát."
+  },
+  {
+    "code": "CVC 21703",
+    "title": "Bám đuôi quá sát xe phía trước",
+    "category": "Vi phạm vi cảnh",
+    "fine": 15000.0,
+    "prison_months": 0,
+    "description": "Lái xe bám quá sát phương tiện phía trước. Người lái phải duy trì khoảng cách an toàn bằng 1 đến 2 chiều dài thân xe."
+  },
+  {
+    "code": "CVC 2500",
+    "title": "Sử dụng xe bọc thép không phép",
+    "category": "Vi phạm vi cảnh",
+    "fine": 87000.0,
+    "prison_months": 0,
+    "description": "Vận hành xe bọc thép (xe chở tiền/xe quân sự) mà không có sự cấp phép."
+  },
+  {
+    "code": "CVC 22400",
+    "title": "Cản trở giao thông",
+    "category": "Vi phạm vi cảnh",
+    "fine": 36000.0,
+    "prison_months": 0,
+    "description": "Dừng, đỗ hoặc bỏ lại xe cộ trên lòng đường hay vỉa hè gây cản trở lưu thông công cộng."
+  },
+  {
+    "section": "Phần 12: Vehicle Code",
+    "code": "CVC 21809",
+    "title": "Không nhường làn cho xe ưu tiên",
+    "category": "Vi phạm vi cảnh",
+    "fine": 60000.0,
+    "prison_months": 0,
+    "description": "Không chuyển làn đường và giảm tốc độ khi gặp phương tiện khẩn cấp đang phát tín hiệu."
+  },
+  {
+    "code": "CVC 21955",
+    "title": "Sang đường bừa bãi gây mất an toàn",
+    "category": "Vi phạm vi cảnh",
+    "fine": 15450.0,
+    "prison_months": 0,
+    "description": "Đi bộ sang đường ngoài vạch kẻ cho phép hoặc phớt lờ đèn tín hiệu. Chỉ xử phạt nếu có phương tiện đang lưu thông vào thời điểm vi phạm."
+  },
+  {
+    "code": "CVC 23103",
+    "title": "Lái xe liều lĩnh",
+    "category": "Tội nhẹ",
+    "fine": 27000.0,
+    "prison_months": 6,
+    "description": "Lái xe bất chấp an toàn của người và tài sản. Nếu gây thương tích nặng hoặc chết người, có thể nâng lên Trọng tội (phạt $2,500 và 12 tháng tù)."
+  },
+  {
+    "code": "CVC 22651",
+    "title": "Đỗ xe trái phép",
+    "category": "Vi phạm vi cảnh",
+    "fine": 20000.0,
+    "prison_months": 0,
+    "description": "Đỗ xe tại nơi cấm đỗ, đỗ trong làn đường khẩn cấp/chữa cháy, hoặc đỗ chắn trụ nước cứu hỏa."
+  },
+  {
+    "code": "CVC 22953",
+    "title": "Tự ý di chuyển xe trái phép",
+    "category": "Vi phạm vi cảnh",
+    "fine": 29000.0,
+    "prison_months": 0,
+    "description": "Tự ý cẩu kéo hoặc di chuyển phương tiện ra khỏi bãi đỗ, gara hay lòng đường trái quy định."
+  },
+  {
+    "code": "CVC 23109",
+    "title": "Đua xe trái phép",
+    "category": "Tội nhẹ",
+    "fine": 83450.0,
+    "prison_months": 6,
+    "description": "Tham gia đua xe tốc độ trên đường phố, cao tốc hoặc bãi xe. Áp dụng bổ sung hình phạt tạm giữ phương tiện và treo bằng lái tới 1 tuần."
+  },
+  {
+    "code": "CVC 23116",
+    "title": "Chở người ở thùng xe tải",
+    "category": "Vi phạm vi cảnh",
+    "fine": 32000.0,
+    "prison_months": 0,
+    "description": "Người điều khiển xe bán tải hoặc xe tải sàn phẳng không được chở người phía sau thùng xe trên đường giao thông."
+  },
+  {
+    "code": "CVC 23123",
+    "title": "Sử dụng điện thoại khi lái xe",
+    "category": "Vi phạm vi cảnh",
+    "fine": 15000.0,
+    "prison_months": 0,
+    "description": "Cầm và sử dụng điện thoại khi đang lái xe, trừ trường hợp dùng thiết bị kết nối rảnh tay điều khiển bằng giọng nói."
+  },
+  {
+    "code": "CVC 24002",
+    "title": "Phương tiện không đủ điều kiện an toàn",
+    "category": "Vi phạm vi cảnh",
+    "fine": 23500.0,
+    "prison_months": 0,
+    "description": "Lái xe không gắn biển số, thiếu đèn pha, đèn hậu, đèn phanh hoặc đèn xi-nhan. Lái xe hư hỏng nặng hoặc rơi rụng các bộ phận khung vỏ."
+  },
+  {
+    "code": "BPC 25662",
+    "title": "Người dưới tuổi quy định có cồn trong máu",
+    "category": "Vi phạm vi cảnh",
+    "fine": 36450.0,
+    "prison_months": 0,
+    "description": "Người dưới 21 tuổi điều khiển phương tiện có nồng độ cồn từ 0,01% trở lên hoặc tàng trữ đồ uống có cồn."
+  },
+  {
+    "code": "CVC 23152",
+    "title": "Lái xe trong tình trạng say xỉn (DWI)",
+    "category": "Tội nhẹ",
+    "fine": 90000.0,
+    "prison_months": 12,
+    "description": "Điều khiển phương tiện cơ giới trong tình trạng chịu ảnh hưởng của bia rượu."
+  },
+  {
+    "code": "CVC 23152",
+    "title": "Lái xe dưới ảnh hưởng của chất kích thích (DUI)",
+    "category": "Tội nhẹ",
+    "fine": 80000.0,
+    "prison_months": 12,
+    "description": "Điều khiển phương tiện cơ giới dưới sự ảnh hưởng của ma túy hoặc các loại chất kích thích."
+  },
+  {
+    "code": "CVC 23222(a)",
+    "title": "Để đồ uống có cồn đã mở nắp trên xe",
+    "category": "Vi phạm vi cảnh",
+    "fine": 13000.0,
+    "prison_months": 0,
+    "description": "Để chai/lon bia rượu đã mở nắp hoặc dụng cụ sử dụng ma túy trong khoang xe khi đang lái xe."
+  },
+  {
+    "code": "CVC 24250",
+    "title": "Lái xe không bật đèn pha khi trời tối",
+    "category": "Vi phạm vi cảnh",
+    "fine": 15000.0,
+    "prison_months": 0,
+    "description": "Không bật đèn chiếu sáng khi trời tối (30 phút sau hoàng hôn đến 30 phút trước bình minh) hoặc khi thời tiết hạn chế tầm nhìn."
+  },
+  {
+    "code": "CVC 25250",
+    "title": "Độ chế đèn xe trái phép",
+    "category": "Vi phạm vi cảnh",
+    "fine": 20000.0,
+    "prison_months": 0,
+    "description": "Sử dụng đèn nháy hoặc đèn gầm neon giống màu xe ưu tiên (Đỏ, Xanh, Trắng, Vàng). Đèn pha cấm dùng màu sắc màu mè, phải là đèn chuẩn halogen hoặc xenon."
+  },
+  {
+    "code": "CVC 26708",
+    "title": "Dán kính mờ/chắn kính lái trái phép",
+    "category": "Vi phạm vi cảnh",
+    "fine": 15000.0,
+    "prison_months": 0,
+    "description": "Dán decal, sơn hoặc chắn vật dụng lên kính lái. Phim cách nhiệt kính trước phải đảm bảo độ truyền sáng tối thiểu 70%."
+  },
+  {
+    "code": "CVC 27315",
+    "title": "Lái xe không thắt dây an toàn",
+    "category": "Vi phạm vi cảnh",
+    "fine": 10000.0,
+    "prison_months": 0,
+    "description": "Lái xe hoặc để hành khách ngồi trên xe không thắt dây an toàn. Tất cả người trên xe đều phải thắt dây."
+  },
+  {
+    "code": "CVC 27001",
+    "title": "Sử dụng còi xe trái phép / Còi quá to",
+    "category": "Vi phạm vi cảnh",
+    "fine": 10000.0,
+    "prison_months": 0,
+    "description": "Lái xe không có còi, hoặc lắp đặt còi xe phát ra âm thanh quá lớn, chói tai trái quy định."
+  },
+  {
+    "code": "CVC 27465(b)",
+    "title": "Sử dụng lốp xe trái quy định (Lốp đua)",
+    "category": "Vi phạm vi cảnh",
+    "fine": 12500.0,
+    "prison_months": 0,
+    "description": "Sử dụng các dòng lốp chuyên dụng cho xe đua (lốp trơn) trên đường giao thông công cộng."
+  },
+  {
+    "code": "CVC 21712",
+    "title": "Chở người sai quy định.",
+    "category": "Vi phạm vi cảnh",
+    "fine": 10000.0,
+    "prison_months": 0,
+    "description": "Chở người trên mô tô không ngồi trên yên cố định. Người điều khiển và hành khách xe máy đều phải đội mũ bảo hiểm."
+  },
+  {
+    "code": "CVC 27602",
+    "title": "Lắp đặt thiết bị phá sóng radar",
+    "category": "Vi phạm vi cảnh",
+    "fine": 195000.0,
+    "prison_months": 0,
+    "description": "Lắp đặt trên xe các thiết bị phá sóng, gây nhiểu hoặc vô hiệu hóa máy đo tốc độ radar/laser của cảnh sát."
+  },
+  {
+    "code": "CVC 22651",
+    "title": "Kéo xe trái phép / Kéo xe không an toàn",
+    "category": "Vi phạm vi cảnh",
+    "fine": 26000.0,
+    "prison_months": 0,
+    "description": "Kéo phương tiện khác khi không có giấy phép cứu hộ, hoặc chằng buộc phương tiện được kéo không chắc chắn, mất an toàn."
+  },
+  {
+    "code": "CVC 1.57",
+    "title": "Sử dụng xe tự lái sai quy định",
+    "category": "Vi phạm vi cảnh",
+    "fine": 15000.0,
+    "prison_months": 0,
+    "description": "Vận hành phương tiện tự lái (tự động) không có chức năng chuyển sang điều khiển thủ công khi khẩn cấp."
+  },
+  {
+    "code": "CVC 40508",
+    "title": "Không hầu tòa",
+    "category": "Tội nhẹ",
+    "fine": 78000.0,
+    "prison_months": 12,
+    "description": "Không có mặt tại phiên tòa xét xử theo giấy triệu tập."
+  },
+  {
+    "code": "CVC 40508(a)",
+    "title": "Từ chối ký cam kết hầu tòa",
+    "category": "Tội nhẹ",
+    "fine": 63000.0,
+    "prison_months": 12,
+    "description": "Từ chối ký vào biên bản cam kết sẽ có mặt tại phiên tòa."
+  },
+  {
+    "code": "CVC 38300",
+    "title": "Không chấp hành biển báo/đèn tín hiệu",
+    "category": "Vi phạm vi cảnh",
+    "fine": 13450.0,
+    "prison_months": 0,
+    "description": "Không tuân thủ các chỉ dẫn của biển báo, vạch kẻ hoặc đèn tín hiệu giao thông."
+  },
+  {
+    "code": "CVC 16029",
+    "title": "Lái xe không có bảo hiểm trách nhiệm",
+    "category": "Vi phạm vi cảnh",
+    "fine": 12000.0,
+    "prison_months": 0,
+    "description": "Điều khiển phương tiện cơ giới mà không có giấy chứng nhận bảo hiểm trách nhiệm dân sự hợp lệ."
+  },
+  {
+    "code": "CVC 26708",
+    "title": "Dán phim cách nhiệt quá đậm màu",
+    "category": "Vi phạm vi cảnh",
+    "fine": 18300.0,
+    "prison_months": 0,
+    "description": "Dán kính đen cách nhiệt vượt quá tiêu chuẩn độ tối cho phép của luật pháp San Andreas."
+  },
+  {
+    "code": "CVC 20",
+    "title": "Khai man với sĩ quan tuần tra",
+    "category": "Tội nhẹ",
+    "fine": 17700.0,
+    "prison_months": 6,
+    "description": "Cố ý cung cấp thông tin sai lệch, dùng tên giả hoặc che giấu sự thật khi làm việc với Cảnh sát Tuần tra Cao tốc San Andreas."
+  },
+  {
+    "code": "CVC 10851(a)",
+    "title": "Trộm cắp / Lái xe của người khác trái phép",
+    "category": "Trọng tội",
+    "fine": 57000.0,
+    "prison_months": 20,
+    "description": "Tự ý lấy hoặc điều khiển xe cơ giới của người khác mà không được sự đồng ý của họ."
+  }
+]
